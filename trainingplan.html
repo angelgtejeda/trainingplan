@@ -602,6 +602,13 @@ hr.input-sep{border:0;border-top:1px solid var(--border);margin:10px 0;grid-colu
 [data-theme="slate"]{--bg:#f1f5f9;--bg-grad:linear-gradient(145deg,#f1f5f9,#e2e8f0);--panel:#ffffff;--panel-alt:#e2e8f0;--card-bg:#ffffff;--border:#b9c9db;--text:#15263b;--muted:#4b6078;--accent:#175a9e;--secondary:#7c3aed;--accent-soft:#175a9e20;--secondary-soft:#7c3aed20;--pass:#08745e;--warn:#b42349;}
 .command{padding:22px;background:linear-gradient(125deg,var(--panel),var(--panel-alt));border-radius:18px}.command-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.command-stat{position:relative;overflow:hidden;padding:18px;border-radius:14px;border-top:3px solid var(--accent);background:linear-gradient(145deg,var(--card-bg),var(--accent-soft));min-height:145px}.command-stat:nth-child(3n+2){border-top-color:var(--secondary)}.command-stat:nth-child(3n){border-top-color:var(--pass)}.command-stat .val{font-family:inherit;font-size:1.45rem;letter-spacing:-.035em;margin:14px 0 8px;line-height:1.2;overflow-wrap:anywhere}.command-stat .ws-lbl{text-transform:uppercase;font-size:.67rem;letter-spacing:.09em;color:var(--muted)}.command-stat .hint{line-height:1.5}.command-icon{float:right;color:var(--accent);font-size:1rem}.s2-box{grid-column:1/-1;padding:18px;border:1px solid var(--accent);border-radius:14px;background:var(--accent-soft)}.s2-box .modal-grid{margin-top:14px}.weekly-rollup{margin-top:20px}#sessionPreview{margin-top:12px;color:var(--accent);font-size:.82rem;line-height:1.5}@media(max-width:600px){.command{padding:12px}.command-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.command-stat{padding:12px}.command-stat .val{font-size:1.12rem}.s2-box .modal-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.modal-grid{grid-template-columns:minmax(0,1fr)}.modal-grid>.input-field{grid-column:1/-1!important}.modal-grid input,.modal-grid select,.modal-grid textarea{min-width:0;width:100%}.s2-box>div:first-child{flex-wrap:wrap;gap:8px}.modal{min-width:0;width:100%;overflow-x:hidden}.modal-grid{min-width:0}.modal button{white-space:normal}}
+/* Meals & Fueling — inherits all eight planner themes. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#viewFuel{padding:24px}#viewFuel h2{color:var(--text);font-size:clamp(1.8rem,3vw,2.65rem);letter-spacing:-.04em;margin:6px 0}#viewFuel h3,.fuel-dialog h3{font-size:1.15rem;color:var(--text);margin:0}#viewFuel p{line-height:1.5}.fuel-eyebrow{color:var(--accent);font-size:.66rem;letter-spacing:.16em;font-weight:800}.fuel-toolbar,.fuel-panel-heading,.fuel-hero-top{display:flex;justify-content:space-between;gap:16px;align-items:center}.fuel-toolbar{margin-bottom:10px}.fuel-toolbar p,.fuel-panel-heading p{font-size:.8rem;color:var(--muted);margin-top:5px}.fuel-date-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.fuel-date-controls input,.fuel-library-controls input,.fuel-settings input,.fuel-dialog input:not([type=checkbox]),.fuel-dialog select,.fuel-settings select,.fuel-dialog textarea{background:var(--card-bg);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px 12px;font:inherit;font-size:.84rem;min-width:0;color-scheme:dark}[data-theme=daylight] input,[data-theme=slate] input{color-scheme:light}.fuel-hero{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:16px;padding:24px;background:linear-gradient(115deg,var(--panel-alt),var(--panel));margin:16px 0 20px}.fuel-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,transparent 42%,var(--accent-soft) 43%,transparent 63%);clip-path:polygon(15% 100%,49% 0,65% 52%,80% 13%,100% 100%);pointer-events:none}.fuel-hero>*{position:relative}.fuel-pill{display:inline-flex;align-items:center;border:1px solid var(--accent);color:var(--accent);background:var(--accent-soft);padding:5px 10px;border-radius:20px;font-size:.68rem;letter-spacing:.08em;font-weight:800}.fuel-rest-note{font-size:.75rem;color:var(--muted)}.fuel-equation{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.3fr;align-items:center;gap:16px;margin:28px 0}.fuel-equation>div>span{display:block;color:var(--muted);font-size:.65rem;letter-spacing:.12em;margin-bottom:9px}.fuel-equation strong{font-size:clamp(1.5rem,2.6vw,2.4rem);letter-spacing:-.045em;white-space:nowrap}.fuel-equation small{font-size:.75rem;font-weight:500;letter-spacing:0}.fuel-equation>b{font-size:1.2rem;color:var(--muted)}.fuel-answer strong{color:var(--accent)}.fuel-meter-row{display:flex;align-items:center;gap:20px;border-top:1px solid var(--border);padding-top:18px}.fuel-meter-row>div:first-child,.fuel-meter-row>div:last-child{display:flex;gap:6px;flex-wrap:wrap;font-size:.85rem}.fuel-meter-row span{color:var(--muted)}.fuel-meter{height:10px;background:var(--border);border-radius:20px;flex:1;min-width:50px;overflow:hidden}.fuel-meter>span{display:block;height:100%;width:0;max-width:100%;background:linear-gradient(90deg,var(--secondary),var(--accent));border-radius:20px;transition:width .3s}.fuel-hero-note{margin-top:12px;color:var(--muted);font-size:.73rem}.fuel-layout{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(260px,1fr);gap:16px}.fuel-panel{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:20px;margin-bottom:18px;min-width:0}.fuel-panel-heading{margin-bottom:18px;flex-wrap:wrap}.fuel-panel-heading button{font-size:.73rem}.fuel-suggestion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.fuel-suggestion{background:linear-gradient(145deg,var(--panel-alt),var(--card-bg));border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:11px;min-width:0}.fuel-food-art{height:64px;display:flex;align-items:center;font-size:2.4rem;background:radial-gradient(ellipse at 15% 50%,var(--accent-soft),transparent 75%);border-bottom:1px solid var(--border);padding-bottom:10px}.fuel-suggestion h4{font-size:1.02rem;line-height:1.35}.fuel-suggestion .btn-group{margin-top:auto}.fuel-tag{display:inline-block;border:1px solid var(--border);border-radius:16px;padding:4px 8px;font-size:.65rem;color:var(--accent);width:fit-content}.fuel-nutrients{font-size:.76rem;color:var(--muted);line-height:1.6}.fuel-nutrients strong{color:var(--text)}.fuel-suggestion .fuel-portion{font-size:.73rem;color:var(--muted)}.fuel-exercise-row{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);font-size:.83rem}.fuel-exercise-row span{color:var(--muted);display:block;font-size:.72rem;margin-top:5px}.fuel-burn-total{display:flex;justify-content:space-between;margin-top:16px;font-size:.86rem}.fuel-settings{border-top:1px solid var(--border);margin-top:18px;padding-top:12px;font-size:.77rem}.fuel-settings summary{cursor:pointer;color:var(--accent);margin-bottom:10px}.fuel-settings label{display:block;color:var(--muted);margin:12px 0 5px}.fuel-settings input,.fuel-settings select{width:100%}.fuel-log-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--border)}.fuel-log-row h4{font-size:.88rem;margin-bottom:4px;overflow-wrap:anywhere}.fuel-log-row p{font-size:.72rem;color:var(--muted)}.fuel-log-row>strong{font-size:.88rem}.fuel-log-row .btn-group{justify-content:flex-end}.fuel-macro-summary{display:flex;gap:20px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:14px;color:var(--muted);font-size:.8rem}.fuel-macro-summary strong{color:var(--text)}.fuel-library-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.fuel-library-controls input{flex:1;min-width:180px}.fuel-library-list{display:grid;gap:0}.fuel-library-item{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(95px,.8fr) minmax(95px,.6fr) auto;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--border)}.fuel-library-item h4{font-size:.84rem;overflow-wrap:anywhere;margin-bottom:5px}.fuel-library-item p{font-size:.71rem;color:var(--muted)}.fuel-library-item .fuel-serving{font-size:.76rem;overflow-wrap:anywhere;color:var(--muted)}.fuel-library-item .btn-group{justify-content:flex-end}.fuel-library-item button{font-size:.7rem;padding:6px 8px}.fuel-library-item .is-favorite{color:var(--accent);border-color:var(--accent)}.fuel-library-footer{margin-top:20px;border-top:1px solid var(--border);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.71rem}.fuel-empty{padding:25px 10px;color:var(--muted);font-size:.83rem;line-height:1.65}.fuel-toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);max-width:min(90vw,650px);padding:12px 18px;border:1px solid var(--accent);border-radius:12px;background:var(--panel);color:var(--text);box-shadow:0 10px 45px #0006;z-index:1200;font-size:.83rem}.fuel-dialog{color:var(--text);background:var(--panel);border:1px solid var(--accent);border-radius:16px;padding:24px;max-width:650px;width:calc(100% - 24px);max-height:90vh;overflow:auto;margin:auto}.fuel-dialog::backdrop{background:#000a;backdrop-filter:blur(5px)}.fuel-dialog .full{grid-column:1/-1}.fuel-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}.fuel-checks{display:flex;gap:20px;flex-wrap:wrap;font-size:.8rem}.fuel-checks label{display:flex;gap:7px;align-items:center}.fuel-log-preview{background:var(--accent-soft);border:1px solid var(--border);border-radius:10px;padding:15px;margin:18px 0;color:var(--accent);font-size:.9rem;line-height:1.7}.fuel-builder-row{display:grid;grid-template-columns:minmax(0,1fr) 85px auto;gap:9px;align-items:end;margin:14px 0}.fuel-builder-row select{width:100%}.fuel-builder-row .input-field{min-width:0}.fuel-dialog button{white-space:normal}.fuel-dialog :focus-visible,#viewFuel :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(min-width:1450px){.fuel-suggestion-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1000px){.fuel-layout{grid-template-columns:1fr}.fuel-equation{gap:10px}.fuel-toolbar{flex-wrap:wrap}.fuel-library-item{grid-template-columns:minmax(0,1fr) 105px 95px}.fuel-library-item>.btn-group{grid-column:1/-1;justify-content:flex-start}}
+@media(max-width:600px){#viewFuel{padding:12px}.fuel-panel{padding:14px}.fuel-hero{padding:16px}.fuel-equation{grid-template-columns:1fr auto 1fr;gap:16px 8px}.fuel-equation>div:nth-child(1){grid-column:1}.fuel-equation>b:nth-child(4){grid-column:2;grid-row:2}.fuel-equation>div:nth-child(5){grid-column:1;grid-row:2}.fuel-equation>b:nth-child(6){display:none}.fuel-equation>div:nth-child(7){grid-column:3;grid-row:2}.fuel-equation strong{font-size:1.6rem}.fuel-equation>div>span{font-size:.56rem}.fuel-equation>b:nth-child(4){font-size:0}.fuel-equation>b:nth-child(4):after{content:'→';font-size:1.2rem}.fuel-equation>div:nth-child(5)>strong:before{content:'−';margin-right:3px}.fuel-rest-note{max-width:145px;text-align:right;font-size:.65rem}.fuel-suggestion-grid{grid-template-columns:1fr}.fuel-meter-row{flex-wrap:wrap;gap:12px}.fuel-meter{flex-basis:100%;order:3}.fuel-meter-row>div:last-child{margin-left:auto}.fuel-library-item{grid-template-columns:minmax(0,1fr) 85px;gap:10px}.fuel-library-item>.fuel-serving{grid-column:1}.fuel-library-item>.fuel-nutrients{grid-column:2;grid-row:1/3}.fuel-library-item>.btn-group{grid-column:1/-1}.fuel-log-row{grid-template-columns:minmax(0,1fr) auto;gap:10px}.fuel-log-row>.btn-group{grid-column:1/-1;justify-content:flex-start}.fuel-form-grid{grid-template-columns:1fr}.fuel-builder-row{grid-template-columns:minmax(0,1fr) 70px auto}.fuel-dialog{padding:16px}.fuel-date-controls{width:100%;gap:5px}.fuel-date-controls input{flex:1;width:130px}.fuel-panel-heading{gap:10px}.fuel-library-controls input{min-width:0;width:100%;flex-basis:100%}}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
@@ -741,6 +748,7 @@ hr.input-sep{border:0;border-top:1px solid var(--border);margin:10px 0;grid-colu
   <button class="view-tab active" id="tabBtnWeekly" onclick="switchView('weekly')">1. Day-by-Day Plan &amp; Accomplishment Logger</button>
   <button class="view-tab" id="tabBtnHistory" onclick="switchView('history')">2. Historical Weekly Totals &amp; Averages Tracker</button>
   <button class="view-tab" id="tabBtnMaster" onclick="switchView('master')">3. Full 48-Week Master Grid (Prescribed + Accomplished)</button>
+  <button class="view-tab" id="tabBtnFuel" onclick="switchView('fuel')">4. Meals &amp; Fueling</button>
 </div>
 
 <!-- VIEW 1: DAY-BY-DAY PLAN & ACCOMPLISHMENT LOGGER -->
@@ -839,6 +847,46 @@ hr.input-sep{border:0;border-top:1px solid var(--border);margin:10px 0;grid-colu
     </table>
   </div>
 </div>
+
+<!-- MEALS & FUELING: personal library and actual meal log -->
+<section id="viewFuel" class="section-panel" style="display:none" aria-labelledby="fuelHeading">
+  <div class="fuel-toolbar">
+    <div><span class="fuel-eyebrow">PROJECT CLOUD CITY · PERSONAL NUTRITION</span><h2 id="fuelHeading">Meals &amp; Fueling</h2><p>Your foods. Your training. Your daily plan.</p></div>
+    <div class="fuel-date-controls"><button type="button" data-fuel-action="prev-day" aria-label="Previous nutrition day">←</button><label class="sr-only" for="fuelDate">Nutrition date</label><input type="date" id="fuelDate"><button type="button" data-fuel-action="next-day" aria-label="Next nutrition day">→</button><button type="button" data-fuel-action="today">Today</button></div>
+  </div>
+  <div id="fuelDayLabel" class="analytics-note"></div>
+  <div class="fuel-hero">
+    <div class="fuel-hero-top"><span class="fuel-pill" id="fuelModeLabel">REST DAY</span><span class="fuel-rest-note">Rest days stay at 1,650 kcal</span></div>
+    <div class="fuel-equation"><div><span>BASELINE</span><strong>1,650 <small>kcal</small></strong></div><b>+</b><div><span>EXERCISE</span><strong id="fuelBurn">0 <small>kcal</small></strong></div><b>−</b><div><span>ADJUSTMENT</span><strong id="fuelAdjustment">0 <small>kcal</small></strong></div><b>=</b><div class="fuel-answer"><span>TODAY’S TARGET</span><strong id="fuelTarget">1,650 <small>kcal</small></strong></div></div>
+    <div class="fuel-meter-row"><div><span>Logged</span><strong id="fuelConsumed">0 kcal</strong></div><div class="fuel-meter" role="progressbar" aria-label="Daily calorie intake" aria-valuemin="0" aria-valuemax="1650" aria-valuenow="0" id="fuelMeter"><span id="fuelMeterFill"></span></div><div><span id="fuelRemainingLabel">Remaining</span><strong id="fuelRemaining">1,650 kcal</strong></div></div>
+    <p id="fuelTargetNote" class="fuel-hero-note"></p>
+  </div>
+  <div class="fuel-layout">
+    <article class="fuel-panel"><div class="fuel-panel-heading"><div><h3>Suggested for the rest of today</h3><p>Based on your remaining calories, favorites, and meals you actually log.</p></div><button type="button" data-fuel-action="refresh-suggestions">↻ Reset suggestions</button></div><div id="fuelSuggestions" class="fuel-suggestion-grid"></div><p id="fuelSuggestedTotal" class="analytics-note"></p></article>
+    <aside class="fuel-panel"><div class="fuel-panel-heading"><h3>Today’s exercise</h3><button type="button" id="fuelEditWorkout" data-fuel-action="workout">Edit workout</button></div><div id="fuelWorkoutList"></div><details class="fuel-settings"><summary>Day type &amp; calorie correction</summary><label for="fuelDayMode">Day type</label><select id="fuelDayMode"><option value="auto">Auto from logged exercise</option><option value="rest">Rest day · 1,650 kcal</option><option value="exercise">Exercise day · apply −500 kcal</option></select><label for="fuelBurnOverride">Corrected exercise calories (optional)</label><input id="fuelBurnOverride" type="number" min="0" step="1" placeholder="Use workout log"><p class="analytics-note">A correction replaces the reported total; it is never added twice. Leave blank to use the workout log. Use exercise calories, not your device’s full-day calorie total.</p><button type="button" data-fuel-action="save-day" class="primary">Save day settings</button></details></aside>
+  </div>
+  <article class="fuel-panel fuel-log-panel"><div class="fuel-panel-heading"><div><h3>What you’ve eaten</h3><p>Only meals you log count toward your daily totals.</p></div><button type="button" class="primary" data-fuel-action="browse">＋ Log from library</button></div><div id="fuelLogList"></div><div id="fuelMacroSummary" class="fuel-macro-summary"></div><div id="fuelUndo" class="analytics-note" role="status"></div></article>
+  <article class="fuel-panel" id="fuelLibraryPanel"><div class="fuel-panel-heading"><div><h3>Your meal library</h3><p>Add foods, edit nutrition, or save a new combination anytime.</p></div><div class="btn-group"><button type="button" data-fuel-action="builder">Mix &amp; match</button><button type="button" class="primary" data-fuel-action="add-food">＋ Add food or meal</button></div></div>
+    <div class="fuel-library-controls"><label class="sr-only" for="fuelSearch">Search your meal library</label><input type="search" id="fuelSearch" placeholder="Search foods, meals, or ingredients…"><label class="sr-only" for="fuelFilter">Library filter</label><select id="fuelFilter"><option value="frequent">Frequently used</option><option value="favorites">Favorites</option><option value="all">All active entries</option><option value="meal">Saved meals</option><option value="food">Individual foods</option><option value="missing">Needs nutrition</option><option value="archived">Archived</option></select><span id="fuelLibraryCount" class="analytics-note"></span></div>
+    <div id="fuelLibraryList" class="fuel-library-list"></div><button type="button" id="fuelShowMore" data-fuel-action="show-more">Show more</button>
+    <div class="fuel-library-footer"><span>Imported from your meal workbook. Original meal totals and exact recorded portions are preserved.</span><div class="btn-group"><button type="button" data-fuel-action="export-library">Export library JSON</button><button type="button" data-fuel-action="import-library">Import library JSON</button><input type="file" id="fuelLibraryImport" accept=".json,application/json" hidden></div></div>
+  </article>
+  <p class="analytics-note">Your selected rule: rest = 1,650 kcal; exercise = 1,650 + reported exercise calories − 500. Reported burn is an estimate. Calorie and macro values use the food record, including label rounding.</p>
+  <div id="fuelMessage" class="fuel-toast" role="status" hidden></div>
+</section>
+
+<dialog id="foodEditor" class="fuel-dialog" aria-labelledby="foodEditorTitle">
+  <form id="foodEditorForm"><div class="fuel-panel-heading"><div><span class="fuel-eyebrow">YOUR LIBRARY</span><h3 id="foodEditorTitle">Add food or meal</h3></div><button type="button" data-fuel-action="close-editor" aria-label="Close food editor">✕</button></div>
+    <input type="hidden" id="foodEditId"><div class="fuel-form-grid"><div class="input-field full"><label for="foodName">Name</label><input id="foodName" required maxlength="180" placeholder="e.g. Chicken & rice bowl"></div><div class="input-field"><label for="foodType">Type</label><select id="foodType"><option value="meal">Saved meal</option><option value="food">Individual food</option></select></div><div class="input-field"><label for="foodServing">One serving means…</label><input id="foodServing" required maxlength="100" placeholder="e.g. 1 bowl or 150 g"></div><div class="input-field"><label for="foodCalories">Calories per serving</label><input id="foodCalories" type="number" min="0" max="50000" step="0.1" required></div><div class="input-field"><label for="foodProtein">Protein (g)</label><input id="foodProtein" type="number" min="0" max="10000" step="0.1" required></div><div class="input-field"><label for="foodCarbs">Carbs (g)</label><input id="foodCarbs" type="number" min="0" max="10000" step="0.1" required></div><div class="input-field"><label for="foodFat">Fat (g)</label><input id="foodFat" type="number" min="0" max="10000" step="0.1" required></div><div class="input-field full"><label for="foodNotes">Ingredients, preparation, or source notes</label><textarea id="foodNotes" rows="4" maxlength="6000"></textarea></div></div>
+    <div class="fuel-checks"><label><input id="foodFavorite" type="checkbox"> Favorite</label><label><input id="foodRecommend" type="checkbox" checked> Include in suggestions</label></div><p class="analytics-note">Editing the library won’t change meals already logged. Historical meal entries keep their original nutrition values.</p><div class="modal-actions"><button type="button" data-fuel-action="close-editor">Cancel</button><button type="submit" class="primary">Save to library</button></div>
+  </form>
+</dialog>
+<dialog id="mealLogDialog" class="fuel-dialog" aria-labelledby="mealLogTitle">
+  <form id="mealLogForm"><div class="fuel-panel-heading"><div><span class="fuel-eyebrow">ACTUAL FOOD LOG</span><h3 id="mealLogTitle">Log meal</h3></div><button type="button" data-fuel-action="close-log" aria-label="Close meal log">✕</button></div><p id="mealLogServing" class="analytics-note"></p><div class="fuel-form-grid"><div class="input-field"><label for="mealLogQty">Servings eaten</label><input id="mealLogQty" type="number" min="0.05" max="100" step="0.05" value="1" required></div><div class="input-field"><label for="mealLogSlot">Meal</label><select id="mealLogSlot"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option><option>Workout fuel</option></select></div><div class="input-field full"><label for="mealLogNote">Note (optional)</label><input id="mealLogNote" maxlength="500" placeholder="Preparation, timing, how it felt…"></div></div><div id="mealLogPreview" class="fuel-log-preview" aria-live="polite"></div><p class="analytics-note">This records food you ate. Recommendations alone never change your intake.</p><div class="modal-actions"><button type="button" data-fuel-action="close-log">Cancel</button><button type="submit" class="primary">Save eaten meal</button></div></form>
+</dialog>
+<dialog id="mealBuilderDialog" class="fuel-dialog" aria-labelledby="mealBuilderTitle">
+  <form id="mealBuilderForm"><div class="fuel-panel-heading"><div><span class="fuel-eyebrow">MIX &amp; MATCH</span><h3 id="mealBuilderTitle">Build a saved meal</h3></div><button type="button" data-fuel-action="close-builder" aria-label="Close meal builder">✕</button></div><p class="analytics-note">Choose foods or saved meals with known nutrition. Amounts multiply each item’s recorded serving. Add missing foods to your library first.</p><div class="input-field"><label for="builderName">Meal name</label><input id="builderName" required maxlength="180" placeholder="e.g. My post-run rice bowl"></div><div id="builderRows"></div><button type="button" data-fuel-action="builder-add">＋ Add ingredient</button><div id="builderTotal" class="fuel-log-preview" aria-live="polite"></div><p class="analytics-note">The whole combination becomes one serving. Ingredients keep their current nutrition snapshot; edit the combination here to recalculate.</p><div class="modal-actions"><button type="button" data-fuel-action="close-builder">Cancel</button><button type="submit" class="primary">Save combination</button></div></form>
+</dialog>
 
 <!-- MODAL FOR LOGGING DAILY WORKOUT, SCREENSHOT OCR & DOUBLE-DAY COMBINER -->
 <div class="modal-backdrop" id="dayModal">
@@ -1443,7 +1491,7 @@ const GRADE_SECONDS_PER_PERCENT = 12; // explicitly labeled heuristic grade adju
 let nasRevision = null, nasReady = false, nasLoading = false, syncTimer = null, syncBusy = false, syncPending = false;
 const num = x => Number.isFinite(Number(x)) && x!=='' && x!==null && x!==undefined ? Number(x) : 0;
 const optionalNumber = x => (x==='' || x===null || x===undefined || !Number.isFinite(Number(x))) ? null : Number(x);
-function fingerprint(data){const str=JSON.stringify(data?.daily||{});let a=2166136261,b=5381;for(let i=0;i<str.length;i++){a=Math.imul(a^str.charCodeAt(i),16777619);b=(Math.imul(b,33)^str.charCodeAt(i))|0;}return str.length+':'+(a>>>0).toString(36)+':'+(b>>>0).toString(36);}
+function fingerprint(data){const str=JSON.stringify(fuelCanonical(fuelPayload(data)));let a=2166136261,b=5381;for(let i=0;i<str.length;i++){a=Math.imul(a^str.charCodeAt(i),16777619);b=(Math.imul(b,33)^str.charCodeAt(i))|0;}return str.length+':'+(a>>>0).toString(36)+':'+(b>>>0).toString(36);}
 function markSynced(data){localStorage.setItem('leadvilleNasLastSyncedFingerprint',fingerprint(data));}
 function isLastSynced(data){return localStorage.getItem('leadvilleNasLastSyncedFingerprint')===fingerprint(data);}
 function sessionCompliance(w,day,e){if(!e||!Array.isArray(e.sessions)||e.sessions.length<2)return '';return e.sessions.map((x,i)=>{const k=x.kind||kindFor(w,day,e);const cap=k==='m6'&&day==='THU'?125:(k==='run'&&day==='SAT'?144:PLAN[w-1].days[DAYS.indexOf(day)].cap);return `<div>${i+1}. ${safe(KINDS[k]?.[1]||k)} • ≤${cap} bpm ${complianceBadge(x.avgHr,cap)}</div>`;}).join('');}
@@ -1509,21 +1557,21 @@ function nasToken(){return sessionStorage.getItem('leadvilleNasToken')||'';}
 function nasStatus(msg,klass='warning'){const el=document.getElementById('syncStatus');el.className='sync-status '+klass;el.textContent=msg;}
 function configureNas(){const current=nasToken();const x=prompt('Enter your NAS sync access token (configured in api.php). Stored for this browser tab session only.',current);if(x===null)return;sessionStorage.setItem('leadvilleNasToken',x.trim());loadFromNas(false);}
 async function nasRequest(method,body){const headers={'X-Leadville-Token':nasToken(),'Accept':'application/json'};if(method!=='GET')headers['Content-Type']='application/json';let res=await fetch('./api.php',{method,headers,cache:'no-store',body:body?JSON.stringify(body):undefined});let obj=await res.json().catch(()=>({error:'Non-JSON response: verify PHP is enabled for this site.'}));if(!res.ok)throw Object.assign(new Error(obj.error||`HTTP ${res.status}`),{status:res.status});return obj;}
-function dataCount(x){return Object.keys(x?.daily||{}).length;}
-function mergeStores(remote,local){const merged=structuredClone(remote&&typeof remote==='object'?remote:{theme:'copper',daily:{}});merged.daily={...(remote?.daily||{}),...(local?.daily||{})};merged.theme=local.theme||remote?.theme||'copper';return merged;}
-function renderAll(){const theme=store.theme||'copper';document.documentElement.setAttribute('data-theme',theme);document.getElementById('themeSelector').value=theme;selectWeek(currentWeek);renderHistoryTable();if(document.getElementById('viewMaster').style.display!=='none')renderMasterGrid();updateTopBanner();}
-async function loadFromNas(force){if(nasLoading)return;nasLoading=true;nasReady=false;clearTimeout(syncTimer);nasStatus('Contacting NAS…');try{const reply=await nasRequest('GET');nasRevision=reply.revision;const remote=reply.store||{daily:{}};const same=JSON.stringify(remote.daily||{})===JSON.stringify(store.daily||{});
+function dataCount(x){return Object.keys(x?.daily||{}).length+Object.keys(x?.nutrition?.foods||{}).length+Object.keys(x?.nutrition?.days||{}).length+Object.values(x?.nutrition?.logs||{}).reduce((a,d)=>a+Object.keys(d?.entries||{}).length,0);}
+function mergeStores(remote,local){const merged=structuredClone(remote&&typeof remote==='object'?remote:{theme:'copper',daily:{}});merged.daily={...(remote?.daily||{}),...(local?.daily||{})};merged.theme=local.theme||remote?.theme||'copper';merged.nutrition=fuelMergeNutrition(remote?.nutrition,local?.nutrition);return merged;}
+function renderAll(){fuelEnsure();renderFuel();const theme=store.theme||'copper';document.documentElement.setAttribute('data-theme',theme);document.getElementById('themeSelector').value=theme;selectWeek(currentWeek);renderHistoryTable();if(document.getElementById('viewMaster').style.display!=='none')renderMasterGrid();updateTopBanner();}
+async function loadFromNas(force){if(nasLoading)return;nasLoading=true;nasReady=false;clearTimeout(syncTimer);nasStatus('Contacting NAS…');try{const reply=await nasRequest('GET');nasRevision=reply.revision;const remote=reply.store||{daily:{}};const same=fingerprint(remote)===fingerprint(store);
  if(force){if(dataCount(store)>0&&!confirm('Replace this device’s displayed data with NAS data? Export a JSON backup first. This does NOT delete the NAS file.')){nasStatus('Refresh cancelled. Local data kept.','warning');return;}store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');return;}
  if((!dataCount(store)||isLastSynced(store))&&dataCount(remote)){store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');}
  else if(same){nasReady=true;markSynced(store);nasStatus('Connected to NAS. Auto-save is ON.','good');}
- else {nasStatus(`NAS connected, but device and NAS differ (${dataCount(store)} device entries / ${dataCount(remote)} NAS entries). Export backup, then click “Merge this device to NAS”. Auto-save paused to prevent overwrites.`,'warning');}
+ else {nasStatus(`NAS connected, but device and NAS differ (${dataCount(store)} device records / ${dataCount(remote)} NAS records). Export backup, then click “Merge this device to NAS”. Auto-save paused to prevent overwrites.`,'warning');}
  }catch(err){nasStatus(`NAS unavailable (${err.message}). Changes save locally only.`, 'warning');}finally{nasLoading=false;}}
 async function uploadToNas(){if(!nasToken()){configureNas();if(!nasToken())return;}
- if(!confirm('Merge this device’s day logs into NAS? Entries with identical day keys will use THIS DEVICE values; the NAS makes a backup of its previous version. Export this device first.'))return;
- try{nasStatus('Merging local entries with NAS…');const response=await nasRequest('GET');const merged=mergeStores(response.store,store);const saved=await nasRequest('PUT',{revision:response.revision,store:merged});nasRevision=saved.revision;store=merged;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('Merged to NAS. Auto-save is ON. Open your phone and configure the same token.','good');}
+ if(!confirm('Merge this device’s workouts, meal library and food logs into NAS? Workout dates use THIS DEVICE values; nutrition records use the latest edit; the NAS makes a backup of its previous version. Export this device first.'))return;
+ try{nasStatus('Merging local entries with NAS…');const response=await nasRequest('GET');const merged=mergeStores(response.store,store);const saved=await nasRequest('PUT',{revision:response.revision,store:merged});nasRevision=saved.revision;await fuelVerifyNas(merged);store=merged;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('Merged to NAS. Auto-save is ON. Open your phone and configure the same token.','good');}
  catch(err){nasReady=false;nasStatus(`NAS merge failed: ${err.message}. Local data preserved.`, 'warning');}}
 function queueNasSync(){if(!nasReady)return;clearTimeout(syncTimer);syncTimer=setTimeout(flushNasSync,700);}
-async function flushNasSync(){if(!nasReady)return;if(syncBusy){syncPending=true;return;}syncBusy=true;const snapshot=JSON.stringify(store);try{const reply=await nasRequest('PUT',{revision:nasRevision,store:JSON.parse(snapshot)});nasRevision=reply.revision;markSynced(JSON.parse(snapshot));nasStatus('Saved to NAS • synced across devices','good');}
+async function flushNasSync(){if(!nasReady)return;if(syncBusy){syncPending=true;return;}syncBusy=true;const snapshot=JSON.stringify(store);try{const reply=await nasRequest('PUT',{revision:nasRevision,store:JSON.parse(snapshot)});nasRevision=reply.revision;await fuelVerifyNas(JSON.parse(snapshot));markSynced(JSON.parse(snapshot));nasStatus('Saved to NAS • synced across devices','good');}
  catch(err){nasReady=false;nasStatus(`NAS save failed (${err.message}). Local backup remains on this device. Export JSON before refreshing, then resolve via merge.`, 'warning');}
  finally{syncBusy=false;if(nasReady&&(syncPending||JSON.stringify(store)!==snapshot)){syncPending=false;queueNasSync();}}}
 
@@ -1536,6 +1584,8 @@ function init() {
     document.documentElement.setAttribute("data-theme", store.theme);
     document.getElementById("themeSelector").value = store.theme;
   }
+
+  fuelEnsure();
 
   // Listen for clipboard image paste inside Day Modal
   window.addEventListener("paste", e => {
@@ -1568,6 +1618,7 @@ function saveStore() {
     renderMasterGrid();
   }
   weeklyCommand(currentWeek);
+  if(document.getElementById("viewFuel").style.display!=="none")renderFuel();
 }
 
 function setTheme(themeName) {
@@ -2149,6 +2200,9 @@ function updateTopBanner() {
 }
 
 function switchView(view) {
+  document.getElementById("viewFuel").style.display=view==="fuel"?"block":"none";
+  document.getElementById("tabBtnFuel").classList.toggle("active",view==="fuel");
+  if(view==="fuel")renderFuel();
   document.getElementById("viewWeekly").style.display = (view === "weekly") ? "block" : "none";
   document.getElementById("viewHistory").style.display = (view === "weekly" || view === "history") ? "block" : "none";
   document.getElementById("viewMaster").style.display = (view === "master") ? "block" : "none";
@@ -2184,6 +2238,8 @@ function importBackup(e) {
         document.documentElement.setAttribute("data-theme", store.theme);
         document.getElementById("themeSelector").value = store.theme;
       }
+      fuelEnsure();
+      renderFuel();
       saveStore();
       selectWeek(currentWeek);
       renderMasterGrid();
@@ -2194,7 +2250,3497 @@ function importBackup(e) {
   reader.readAsText(file);
 }
 
+const FOOD_SEED = [
+  {
+    "id": "PERSONAL-001",
+    "type": "meal",
+    "name": "Ground turkey rice bowl + kidney beans + Pepsi",
+    "serving": "1 logged meal",
+    "calories": 1038,
+    "protein": 42,
+    "fat": 24,
+    "carbs": 164,
+    "notes": "Ground turkey rice bowl + kidney beans + Pepsi (Jun 20, 2 PM): Chipotle white rice 12 oz (600 kcal; P10 F12 C109), 93/7 ground turkey raw 5 oz (213; P27 F12 C0), Goya kidney beans 3 oz (76; P6 F0 C15), Pepsi 12 fl oz (150; P0 F0 C40). Logged meal total 1,038 kcal; P42 F24 C164. Note: individual displayed values sum to 1,039 kcal/P43/F24/C164 because of rounding/database discrepancy; preserve the logged meal total.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-002",
+    "type": "meal",
+    "name": "Turkey + rice",
+    "serving": "1 logged meal",
+    "calories": 770,
+    "protein": 32,
+    "fat": 22,
+    "carbs": 109,
+    "notes": "Turkey + rice (Jun 22, 11 AM): 93/7 ground turkey raw 4 oz (170; P21 F9 C0) + Chipotle white rice 12 oz (600; P10 F12 C109). Logged meal total 770 kcal; P32 F22 C109 (rounding difference from individual values).",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-003",
+    "type": "meal",
+    "name": "Grilled chicken + rice",
+    "serving": "1 logged meal",
+    "calories": 493,
+    "protein": 53,
+    "fat": 11,
+    "carbs": 45,
+    "notes": "Grilled chicken + rice (Jun 22, 4:38 PM): grilled skinless chicken breast 5.8 oz (243; P48 F6 C0) + Chipotle white rice 5 oz (250; P4 F5 C45). Logged meal total 493 kcal; P53 F11 C45.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-004",
+    "type": "meal",
+    "name": "Grilled chicken + rice",
+    "serving": "1 logged meal",
+    "calories": 709,
+    "protein": 50,
+    "fat": 15,
+    "carbs": 91,
+    "notes": "Grilled chicken + rice (Jun 23, 12:24 PM): grilled skinless chicken breast 5 oz (210; P42 F5 C0) + Chipotle white rice 10 oz (500; P9 F10 C91). Logged meal total 709 kcal; P50 F15 C91.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-005",
+    "type": "meal",
+    "name": "Chipotle burrito",
+    "serving": "1 logged meal",
+    "calories": 822,
+    "protein": 45,
+    "fat": 29,
+    "carbs": 90,
+    "notes": "Chipotle burrito (Jun 26, 2 PM): Chipotle white rice 1 order (200; P3 F4 C36), Chipotle chicken 1 order (189; P32 F6 C0), Chipotle sour cream 1 order (109; P2 F10 C3), Chipotle burrito-size flour tortilla 1 (324; P8 F10 C50). Logged meal total 822 kcal; P45 F29 C90.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-006",
+    "type": "meal",
+    "name": "Chipotle rice + double chicken",
+    "serving": "1 logged meal",
+    "calories": 886,
+    "protein": 73,
+    "fat": 30,
+    "carbs": 76,
+    "notes": "Chipotle rice + double chicken (Jun 30, 6:19 PM): Chipotle white rice 8 oz (400; P7 F8 C73), Chipotle chicken 2 orders (377; P64 F11 C1), Chipotle sour cream shown but portion/macros cut off. Visible items total 777 kcal; P71 F19 C74. Logged meal group total 886 kcal; P73 F30 C76; the sour cream and any rounding explain the remainder. Treat the meal total as authoritative.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-007",
+    "type": "meal",
+    "name": "Salmon + rice + coconut milk + Coke",
+    "serving": "1 logged meal",
+    "calories": 856,
+    "protein": 49,
+    "fat": 35,
+    "carbs": 83,
+    "notes": "Salmon + rice + coconut milk + Coke (Jun 30, ~11 AM): salmon fillet 7.5 oz (433; P43 F28 C0), white rice cooked without salt 8 oz (295; P5 F0 C65), coconut milk 1 oz (65; P1 F7 C2), Coke 6 oz (63; P0 F0 C16). Logged group total 856 kcal; P49 F35 C83 (individual displayed values sum to 856 kcal).",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-008",
+    "type": "meal",
+    "name": "Rice + fried eggs + egg whites + avocado",
+    "serving": "1 logged meal",
+    "calories": 810,
+    "protein": 41,
+    "fat": 25,
+    "carbs": 102,
+    "notes": "Rice + fried eggs + egg whites + avocado (Jul 1, 12:48 PM): white rice cooked in salted water 12 oz (442; P9 F1 C96), fried eggs 2 (180; P13 F14 C1), liquid egg whites Member's Mark 6 oz (74; P18 F0 C0), Hass avocado 1/2 (114; P1 F10 C6). Logged meal total 810 kcal; P41 F25 C102.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-009",
+    "type": "meal",
+    "name": "Beef roast + white rice",
+    "serving": "1 logged meal",
+    "calories": 512,
+    "protein": 33,
+    "fat": 5,
+    "carbs": 81,
+    "notes": "Beef roast + white rice (Jun 29, 11 AM): lean beef round eye roast 4 oz (144; P26 F4 C0), cooked white rice no salt 10 oz (369; P7 F1 C81). Logged group total 512 kcal; P33 F5 C81.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-010",
+    "type": "meal",
+    "name": "Beef roast + rice",
+    "serving": "1 logged meal",
+    "calories": 365,
+    "protein": 30,
+    "fat": 5,
+    "carbs": 49,
+    "notes": "Beef roast + rice (Jun 28, 6 PM): lean beef round eye roast 4 oz (144; P26 F4 C0) + cooked white rice no salt 6 oz (221; P4 F0 C49). Logged group total 365 kcal; P30 F5 C49.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-011",
+    "type": "meal",
+    "name": "Chicken sandwich",
+    "serving": "1 logged meal",
+    "calories": 468,
+    "protein": 33,
+    "fat": 20,
+    "carbs": 41,
+    "notes": "Chicken sandwich (Jun 23, 8 AM): Sam's Kaiser roll 1 (190; P8 F1 C39), Member's Mark sharp cheddar 1 slice (90; P5 F7 C0), buffalo-style deli chicken breast 3.5 oz (106; P19 F3 C2), mayonnaise 1 packet (82; P0 F9 C0). Logged meal total 468 kcal; P33 F20 C41.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-012",
+    "type": "meal",
+    "name": "Chinese takeout",
+    "serving": "1 logged meal",
+    "calories": 521,
+    "protein": 21,
+    "fat": 27,
+    "carbs": 70,
+    "notes": "Chinese takeout (Jun 25, ~2:45 PM): Hy-Vee Chinese plain fried rice 6 fl oz (167; P7 F9 C36), Chinese restaurant sweet-and-sour chicken without rice 5 oz (354; P14 F18 C34). Logged meal total 521 kcal; P21 F27 C70.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-013",
+    "type": "meal",
+    "name": "Burger + soda",
+    "serving": "1 logged meal",
+    "calories": 890,
+    "protein": 31,
+    "fat": 45,
+    "carbs": 92,
+    "notes": "Burger + soda (Jun 25, 6:50 PM): Burger King Whopper with cheese 1 (740; P31 F45 C52), Pepsi 12 fl oz (150; P0 F0 C40). Logged meal total 890 kcal; P31 F45 C92.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-014",
+    "type": "meal",
+    "name": "White rice + sweet Italian sausage",
+    "serving": "1 logged meal",
+    "calories": 364,
+    "protein": 17,
+    "fat": 17,
+    "carbs": 34,
+    "notes": "White rice + sweet Italian sausage (Jun 24, 5:19 PM): cooked white rice no salt 4 oz (147; P3 F0 C32), Premio sweet Italian sausage 2.5 oz (217; P14 F17 C2). Logged meal total 364 kcal; P17 F17 C34.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-015",
+    "type": "meal",
+    "name": "Breaded chicken + Parmesan + rice",
+    "serving": "1 logged meal",
+    "calories": 839,
+    "protein": 53,
+    "fat": 32,
+    "carbs": 84,
+    "notes": "Breaded chicken + Parmesan + rice (Jun 27, 5 PM): Tyson panko breaded chicken breast tenderloins 2 servings (420; P40 F18 C26), grated Parmesan 1 oz (119; P8 F8 C4), Chipotle white rice 6 oz (300; P5 F6 C55). Logged meal group total 839 kcal; P53 F32 C84.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-016",
+    "type": "meal",
+    "name": "Pork pupusas",
+    "serving": "1 logged meal",
+    "calories": 849,
+    "protein": 42,
+    "fat": 38,
+    "carbs": 84,
+    "notes": "Pork pupusas (Jun 21, 5:04 PM): restaurant Latino pork pupusas 3 pieces (849; P42 F38 C84). Later separate meal: Italian-style panko breaded chicken breast 2 servings (460; P64 F10 C26).",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-017",
+    "type": "meal",
+    "name": "Chicken & gnocchi soup",
+    "serving": "1 logged meal",
+    "calories": 250,
+    "protein": 10,
+    "fat": 13,
+    "carbs": 24,
+    "notes": "Chicken & gnocchi soup: Olive Garden 1 bowl (250; P10 F13 C24) or 2 bowls (500; P20 F26 C48), logged Jun 23 and Jul 1.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-018",
+    "type": "meal",
+    "name": "Fried eggs breakfast on Kaiser roll",
+    "serving": "1 logged meal",
+    "calories": 605,
+    "protein": 31,
+    "fat": 36,
+    "carbs": 40,
+    "notes": "Fried eggs breakfast on Kaiser roll (Jun 21, 12 PM): pork sausage patty 1 (145; P5 F14 C0), Sam's Kaiser roll 1 (190; P8 F1 C39), fried eggs 2 (180; P13 F14 C1), Member's Mark cheddar 1 slice (90; P5 F7 C0). Visible sum 605 kcal; P31 F36 C40.",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "PERSONAL-019",
+    "type": "meal",
+    "name": "Egg whites + roasted potatoes + Mexican cheese",
+    "serving": "1 logged meal",
+    "calories": 430,
+    "protein": 59,
+    "fat": 13,
+    "carbs": 20,
+    "notes": "Jul 1, 9 PM: Member's Mark 100% Liquid Egg Whites 16 oz (197 kcal; P49 F0 C0); Reser's Sea Salt & Black Pepper Oven Roasted Potatoes 113 g (121 kcal; P2 F4 C19); Kirkland Signature Mexican Style Shredded Cheese Blend 1 oz (111 kcal; P7 F9 C1). Logged total 430 kcal; P59 F13 C20. Individual values sum to 429 kcal and P58 due to rounding. Frequently eaten breakfast combination (logged at 9 PM on this date).",
+    "source": "Personal grouped meal · spreadsheet",
+    "verified": true
+  },
+  {
+    "id": "FOOD-001",
+    "type": "food",
+    "name": "Fairlife Core Power Elite vanilla",
+    "serving": "1 bottle",
+    "calories": 236,
+    "protein": 42,
+    "fat": 3,
+    "carbs": 8,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-002",
+    "type": "food",
+    "name": "Chipotle white rice",
+    "serving": "1 order",
+    "calories": 200,
+    "protein": 3,
+    "fat": 4,
+    "carbs": 36,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-003",
+    "type": "food",
+    "name": "Chipotle white rice",
+    "serving": "5 oz",
+    "calories": 250,
+    "protein": 4,
+    "fat": 5,
+    "carbs": 45,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-004",
+    "type": "food",
+    "name": "Chipotle white rice",
+    "serving": "6 oz",
+    "calories": 300,
+    "protein": 5,
+    "fat": 6,
+    "carbs": 55,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-005",
+    "type": "food",
+    "name": "Chipotle white rice",
+    "serving": "8 oz",
+    "calories": 400,
+    "protein": 7,
+    "fat": 8,
+    "carbs": 73,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-006",
+    "type": "food",
+    "name": "Chipotle white rice",
+    "serving": "10 oz",
+    "calories": 500,
+    "protein": 9,
+    "fat": 10,
+    "carbs": 91,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-007",
+    "type": "food",
+    "name": "Chipotle white rice",
+    "serving": "12 oz",
+    "calories": 600,
+    "protein": 10,
+    "fat": 12,
+    "carbs": 109,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-008",
+    "type": "food",
+    "name": "Cooked white rice without salt",
+    "serving": "4 oz",
+    "calories": 147,
+    "protein": 3,
+    "fat": 0,
+    "carbs": 32,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-009",
+    "type": "food",
+    "name": "Cooked white rice without salt",
+    "serving": "6 oz",
+    "calories": 221,
+    "protein": 4,
+    "fat": 0,
+    "carbs": 49,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-010",
+    "type": "food",
+    "name": "Cooked white rice without salt",
+    "serving": "8 oz",
+    "calories": 295,
+    "protein": 5,
+    "fat": 0,
+    "carbs": 65,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-011",
+    "type": "food",
+    "name": "Cooked white rice without salt",
+    "serving": "10 oz",
+    "calories": 369,
+    "protein": 7,
+    "fat": 1,
+    "carbs": 81,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-012",
+    "type": "food",
+    "name": "Cooked white rice in salted water",
+    "serving": "12 oz",
+    "calories": 442,
+    "protein": 9,
+    "fat": 1,
+    "carbs": 96,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-013",
+    "type": "food",
+    "name": "Chipotle chicken",
+    "serving": "1 order",
+    "calories": 189,
+    "protein": 32,
+    "fat": 6,
+    "carbs": 0,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-014",
+    "type": "food",
+    "name": "Chipotle chicken",
+    "serving": "2 orders",
+    "calories": 377,
+    "protein": 64,
+    "fat": 11,
+    "carbs": 1,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-015",
+    "type": "food",
+    "name": "Chipotle sour cream",
+    "serving": "1 order",
+    "calories": 109,
+    "protein": 2,
+    "fat": 10,
+    "carbs": 3,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-016",
+    "type": "food",
+    "name": "Fried eggs",
+    "serving": "2 eggs",
+    "calories": 180,
+    "protein": 13,
+    "fat": 14,
+    "carbs": 1,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-017",
+    "type": "food",
+    "name": "Member’s Mark liquid egg whites",
+    "serving": "6 oz",
+    "calories": 74,
+    "protein": 18,
+    "fat": 0,
+    "carbs": 0,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-018",
+    "type": "food",
+    "name": "Hass avocado",
+    "serving": "½ avocado",
+    "calories": 114,
+    "protein": 1,
+    "fat": 10,
+    "carbs": 6,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-019",
+    "type": "food",
+    "name": "Member’s Mark sharp cheddar",
+    "serving": "1 slice",
+    "calories": 90,
+    "protein": 5,
+    "fat": 7,
+    "carbs": 0,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-020",
+    "type": "food",
+    "name": "Member’s Mark sharp cheddar",
+    "serving": "½ slice",
+    "calories": 45,
+    "protein": 2,
+    "fat": 3,
+    "carbs": 0,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-021",
+    "type": "food",
+    "name": "Coors Light",
+    "serving": "72 fl oz (aggregate log)",
+    "calories": 612,
+    "protein": 6,
+    "fat": 0,
+    "carbs": 30,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding. Aggregate alcohol serving; excluded from automatic suggestions.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": false
+  },
+  {
+    "id": "FOOD-022",
+    "type": "food",
+    "name": "Coors Light",
+    "serving": "112 oz (aggregate log)",
+    "calories": 952,
+    "protein": 9,
+    "fat": 0,
+    "carbs": 47,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding. Aggregate alcohol serving; excluded from automatic suggestions.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": false
+  },
+  {
+    "id": "FOOD-023",
+    "type": "food",
+    "name": "Modelo Especial",
+    "serving": "8 logged servings (aggregate)",
+    "calories": 1144,
+    "protein": 9,
+    "fat": 0,
+    "carbs": 112,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding. Aggregate alcohol serving; excluded from automatic suggestions.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": false
+  },
+  {
+    "id": "FOOD-024",
+    "type": "food",
+    "name": "Doritos Spicy Nacho",
+    "serving": "1 single bag",
+    "calories": 151,
+    "protein": 2,
+    "fat": 8,
+    "carbs": 19,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-025",
+    "type": "food",
+    "name": "Pepperoni thick-crust pizza, 14-inch",
+    "serving": "2 slices",
+    "calories": 608,
+    "protein": 24,
+    "fat": 27,
+    "carbs": 67,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-026",
+    "type": "food",
+    "name": "Coke",
+    "serving": "6 fl oz",
+    "calories": 63,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 16,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-027",
+    "type": "food",
+    "name": "Pepsi",
+    "serving": "12 fl oz",
+    "calories": 150,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 40,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-028",
+    "type": "food",
+    "name": "Member’s Mark liquid egg whites",
+    "serving": "16 oz",
+    "calories": 197,
+    "protein": 49,
+    "fat": 0,
+    "carbs": 0,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-029",
+    "type": "food",
+    "name": "Reser’s sea salt & black pepper roasted potatoes",
+    "serving": "113 g",
+    "calories": 121,
+    "protein": 2,
+    "fat": 4,
+    "carbs": 19,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "FOOD-030",
+    "type": "food",
+    "name": "Kirkland Mexican-style shredded cheese",
+    "serving": "1 oz",
+    "calories": 111,
+    "protein": 7,
+    "fat": 9,
+    "carbs": 1,
+    "notes": "Recorded serving from Personal Food Notes. Values may reflect label rounding.",
+    "source": "Personal Food Notes · spreadsheet",
+    "verified": true,
+    "recommend": true
+  },
+  {
+    "id": "HISTORY-001",
+    "type": "food",
+    "name": "100% Liquid Egg Whites By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-002",
+    "type": "food",
+    "name": "3 Pieces Chicken Tenders By Popeye's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-003",
+    "type": "food",
+    "name": "All Natural 93% Lean 7% Fat Lean Ground Beef By TSD Sales & Distribution",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-004",
+    "type": "food",
+    "name": "Andy Capp's Hot Fries",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-005",
+    "type": "food",
+    "name": "Arroz Con Gandules, Sin Jamon (Rice With Pigeon Peas Without Ham)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-006",
+    "type": "food",
+    "name": "Atlantic Salmon Fillet Portions Skinless Boneless By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-007",
+    "type": "food",
+    "name": "Avocado, Black Skin (Hass)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-008",
+    "type": "food",
+    "name": "Bacon Ranch Chicken Quesadilla By Chili's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-009",
+    "type": "food",
+    "name": "Beef Round Eye Of Roast Boneless Separable Lean And Fat Trimmed To 0\" Choice Raw",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-010",
+    "type": "food",
+    "name": "Beef Round Top Separable Lean And Fat Trimmed To 1/8\" All Grades Raw London Broil Minute Steak",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-011",
+    "type": "food",
+    "name": "Beef Stew",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-012",
+    "type": "food",
+    "name": "Beer Bottle Modelo Especial By Abuelo's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-013",
+    "type": "food",
+    "name": "Belvita Breakfast Biscuit - Cinnamon Brown Sugar By Nabisco",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-014",
+    "type": "food",
+    "name": "Birria De Carne (Shredded Meat)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-015",
+    "type": "food",
+    "name": "Birria Taco By Generic",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-016",
+    "type": "food",
+    "name": "Bj's Roll",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-017",
+    "type": "food",
+    "name": "Blazin Buffalo Style Oven Roasted Chicken Breast By Boars Head",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-018",
+    "type": "food",
+    "name": "Boneless Skinless Chicken Breast Italian Style Panko Breaded By Reddi Gourmet",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-019",
+    "type": "food",
+    "name": "Boneless Wings By Applebee's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-020",
+    "type": "food",
+    "name": "Bread With Cheese",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-021",
+    "type": "food",
+    "name": "Breaded Chicken Cutlets By Home Chef",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-022",
+    "type": "food",
+    "name": "Breakfast Sausage Patties",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-023",
+    "type": "food",
+    "name": "Buffalo Style Chicken Breast By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-024",
+    "type": "food",
+    "name": "Burger Buns By Ball Park",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-025",
+    "type": "food",
+    "name": "Burger King Chicken Fries",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-026",
+    "type": "food",
+    "name": "Burger King Whopper With Cheese",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-027",
+    "type": "food",
+    "name": "Burgers Cheeseburger By Five Guys",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-028",
+    "type": "food",
+    "name": "Burritos Supreme Chicken By Taco Bell",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-029",
+    "type": "food",
+    "name": "Calcium Fortified Classic White Enriched Bread By Wonder",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-030",
+    "type": "food",
+    "name": "Carb Balance Flour By Mission",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-031",
+    "type": "food",
+    "name": "Cheddar Shredded Fat Free Cheddar Cheese By Kraft",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-032",
+    "type": "food",
+    "name": "Cheese Bread",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-033",
+    "type": "food",
+    "name": "Cheetos Crunchy Flamin' Hot By Frito-Lay",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-034",
+    "type": "food",
+    "name": "Chick-Fil-a Grilled Nuggets",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-035",
+    "type": "food",
+    "name": "Chicken & Gnocchi Soup By Olive Garden",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-036",
+    "type": "food",
+    "name": "Chicken Breast Grilled Boneless Skinless",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-037",
+    "type": "food",
+    "name": "Chicken Ceasar Wrap By Simply To Go",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-038",
+    "type": "food",
+    "name": "Chicken Crunchwrap Supreme By Taco Bell",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-039",
+    "type": "food",
+    "name": "Chicken McChicken Sandwich By McDonald's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-040",
+    "type": "food",
+    "name": "Chicken Pastel By Homemade",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-041",
+    "type": "food",
+    "name": "Chicken Tamales In Red Sauce Wrapped In Traditional Corn Husk By Del Real Foods",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-042",
+    "type": "food",
+    "name": "Chicken Tenders, Strips, Wings, Or Fingers, Store Bought",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-043",
+    "type": "food",
+    "name": "Chicken Teriyaki",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-044",
+    "type": "food",
+    "name": "Chicken Traditional Breast By Pollo Campero",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-045",
+    "type": "food",
+    "name": "Chinese Plain Fried Rice By Hy-Vee",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-046",
+    "type": "food",
+    "name": "Chinese Restaurant Sweet And Sour Chicken Without Rice",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-047",
+    "type": "food",
+    "name": "Chipotle Burrito Size Flour Tortilla",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-048",
+    "type": "food",
+    "name": "Chipotle Chicken",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-049",
+    "type": "food",
+    "name": "Chipotle Sour Cream",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-050",
+    "type": "food",
+    "name": "Chipotle White Rice",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-051",
+    "type": "food",
+    "name": "Chocolate Chunk Cookie By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-052",
+    "type": "food",
+    "name": "Chocolate Deluxe High Protein Bars By Pure Protein",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-053",
+    "type": "food",
+    "name": "Chocolate Nutrition Shake By Fairlife",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-054",
+    "type": "food",
+    "name": "Chunk Light Tuna By Bumble Bee",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-055",
+    "type": "food",
+    "name": "Cinnamon Brown Sugar Breakfast Biscuits By Belvita",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-056",
+    "type": "food",
+    "name": "Classic Potato Chips By Lay's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-057",
+    "type": "food",
+    "name": "Classic Wraps Plain By Toufayan",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-058",
+    "type": "food",
+    "name": "Club Crackers - Original By Kellogg's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-059",
+    "type": "food",
+    "name": "Coca-Cola Original Taste By Coca-Cola",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-060",
+    "type": "food",
+    "name": "Coconut Milk, Raw (Liquid From Grated Meat, Water Added)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-061",
+    "type": "food",
+    "name": "Coke 375ml Can By The Coca-Cola",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-062",
+    "type": "food",
+    "name": "Coke By Coca-Cola",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-063",
+    "type": "food",
+    "name": "Coke Original Taste By Coca-Cola",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-064",
+    "type": "food",
+    "name": "Cooked Pasta",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-065",
+    "type": "food",
+    "name": "Cool Ranch Flavored By Doritos",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-066",
+    "type": "food",
+    "name": "Coors Light By Miller Coors",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-067",
+    "type": "food",
+    "name": "Core Power 26g Complete Protein Shake - Chocolate By Fairlife",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-068",
+    "type": "food",
+    "name": "Core Power Elite 42g Complete Protein Shake - Chocolate By Fairlife",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-069",
+    "type": "food",
+    "name": "Core Power Elite 42g Complete Protein Shake - Vanilla By Fairlife",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-070",
+    "type": "food",
+    "name": "Corona",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-071",
+    "type": "food",
+    "name": "Crispy Beef Birria Tacos By Don Lee Farms",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-072",
+    "type": "food",
+    "name": "Crispy Chicken Crispers By Chili's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-073",
+    "type": "food",
+    "name": "Crispy Chicken Sandwich By Wendy's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-074",
+    "type": "food",
+    "name": "Crispy Seasoned Fries By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-075",
+    "type": "food",
+    "name": "Deli Sliced Buffalo Style Chicken Breast Gluten Free By Aldi",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-076",
+    "type": "food",
+    "name": "Domino 14\" Pepperoni Pizza Classic Hand-Tossed Crust",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-077",
+    "type": "food",
+    "name": "Domino's Stuffed Cheesy Bread",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-078",
+    "type": "food",
+    "name": "Doritos Tortilla Chips - Cool Ranch",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-079",
+    "type": "food",
+    "name": "Doritos Tortilla Chips - Spicy Nacho",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-080",
+    "type": "food",
+    "name": "Egg Fried",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-081",
+    "type": "food",
+    "name": "Empanada Discs By Goya",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-082",
+    "type": "food",
+    "name": "English Muffin W/ Egg, Cheese, Sausage By VCS Patriot Café",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-083",
+    "type": "food",
+    "name": "Especial Pilsner-Style Lager By Modelo",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-084",
+    "type": "food",
+    "name": "Family Pizza Slices Pepperoni By Papa Murphy's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-085",
+    "type": "food",
+    "name": "Famous Fries Crispy French Fried Seasoned Potatoes By Checker Rally's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-086",
+    "type": "food",
+    "name": "Filled With Chewy Tootsie Roll Pops By Tootsie Roll",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-087",
+    "type": "food",
+    "name": "Flame Grilled Angus Beef Patties By Don Lee Farms",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-088",
+    "type": "food",
+    "name": "For The Table Classic Nachos Chicken By Chili's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-089",
+    "type": "food",
+    "name": "Four Pepper Turkey Breast By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-090",
+    "type": "food",
+    "name": "French Fries By Chili's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-091",
+    "type": "food",
+    "name": "French Fries By In-N-Out",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-092",
+    "type": "food",
+    "name": "French Fries Small By McDonald's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-093",
+    "type": "food",
+    "name": "French Fries, From A Restaurant Other Than Fast Food",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-094",
+    "type": "food",
+    "name": "French Toast Sticks",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-095",
+    "type": "food",
+    "name": "Funyuns",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-096",
+    "type": "food",
+    "name": "Garlic Bread, With Butter",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-097",
+    "type": "food",
+    "name": "Generic Everything Bagel With Cream Cheese By Giant",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-098",
+    "type": "food",
+    "name": "Glazed Donuts By Maple",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-099",
+    "type": "food",
+    "name": "Green Beans (String Beans), Cooked From Fresh",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-100",
+    "type": "food",
+    "name": "Homemade Brownies",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-101",
+    "type": "food",
+    "name": "Homemade Plain Pancakes",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-102",
+    "type": "food",
+    "name": "Hot Go-Go Taquitos Buffalo Chicken By 7-Eleven",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-103",
+    "type": "food",
+    "name": "Hot Pepper Sauce",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-104",
+    "type": "food",
+    "name": "Hot Pepperoni Pizza By 7-Eleven",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-105",
+    "type": "food",
+    "name": "Ice Cream Sandwich Premium Vanilla By Fat Boy",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-106",
+    "type": "food",
+    "name": "Italian Style Small Plate 57g Pack By Beretta",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-107",
+    "type": "food",
+    "name": "Jasmine Rice Cooked Without Salt",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-108",
+    "type": "food",
+    "name": "Jasmine Rice, Cooked In Unsalted Water",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-109",
+    "type": "food",
+    "name": "KFC Biscuit",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-110",
+    "type": "food",
+    "name": "Kaiser Deli Rolls By Europa",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-111",
+    "type": "food",
+    "name": "Kaiser Roll",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-112",
+    "type": "food",
+    "name": "Kaiser Roll By Sam’s",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-113",
+    "type": "food",
+    "name": "Ketchup",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-114",
+    "type": "food",
+    "name": "Lasagna, Homemade, Beef",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-115",
+    "type": "food",
+    "name": "Light Mayonnaise By Hellmann's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-116",
+    "type": "food",
+    "name": "Lightly Breaded Chicken Breast Chunks By Just Bare",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-117",
+    "type": "food",
+    "name": "Lollipops By Chupa Chups",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-118",
+    "type": "food",
+    "name": "Low Moisture Part Skim Shredded Mozzarella Cheese By Kirkland Signature",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-119",
+    "type": "food",
+    "name": "Mayonnaise",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-120",
+    "type": "food",
+    "name": "Mayonnaise, Low Fat",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-121",
+    "type": "food",
+    "name": "McChicken Patty By McDonald's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-122",
+    "type": "food",
+    "name": "McDonald's Chicken McNuggets",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-123",
+    "type": "food",
+    "name": "McDonald's McChicken Sandwich",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-124",
+    "type": "food",
+    "name": "McDonald's McDouble",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-125",
+    "type": "food",
+    "name": "McDonald's Quarter Pounder With Cheese",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-126",
+    "type": "food",
+    "name": "Meatballs, Without Sauce, Beef",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-127",
+    "type": "food",
+    "name": "Medium Classic Coke By McDonald's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-128",
+    "type": "food",
+    "name": "Medium Pepperoni Pizza Slice By Domino's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-129",
+    "type": "food",
+    "name": "Medium Red Potatoes By Publix",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-130",
+    "type": "food",
+    "name": "Mega Monster Energy By Monster",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-131",
+    "type": "food",
+    "name": "Member's Mark Lightly Breaded Chicken Tenders",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-132",
+    "type": "food",
+    "name": "Mexican Blend Cheese",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-133",
+    "type": "food",
+    "name": "Mexican Style Shredded Cheese Blend By Kirkland Signature",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-134",
+    "type": "food",
+    "name": "Mini Tacos By Don Miguel",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-135",
+    "type": "food",
+    "name": "Monster Energy By Monster",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-136",
+    "type": "food",
+    "name": "Monterey Jack Taquito By 7-Eleven",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-137",
+    "type": "food",
+    "name": "Mozzarella Cheese Part Skim Milk",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-138",
+    "type": "food",
+    "name": "Mozzarella Cheese Whole Milk",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-139",
+    "type": "food",
+    "name": "Nachos Chicken Super With Shredded Cheese By Taco Cabana",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-140",
+    "type": "food",
+    "name": "Olive Oil",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-141",
+    "type": "food",
+    "name": "Orange Juice, Fresh",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-142",
+    "type": "food",
+    "name": "Oreo Cookies - Spring By Nabisco",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-143",
+    "type": "food",
+    "name": "Original Coconut Water 330ml Pack By Vita Coco",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-144",
+    "type": "food",
+    "name": "Original Plantain Chips By Chiffles",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-145",
+    "type": "food",
+    "name": "Original Pops By Starburst",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-146",
+    "type": "food",
+    "name": "Panko Breaded Chicken Breast Tenderloins By Tyson",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-147",
+    "type": "food",
+    "name": "Panko Breaded Chicken Breast Tenderloins By Tyson",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-148",
+    "type": "food",
+    "name": "Panko Peanut Chicken Cutlets",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-149",
+    "type": "food",
+    "name": "Parmesan Cheese Shredded",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-150",
+    "type": "food",
+    "name": "Parmesan Cheese, Dry (Grated)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-151",
+    "type": "food",
+    "name": "Party Mix By Utz",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-152",
+    "type": "food",
+    "name": "Pepperoni Pizza Slice By Sam's Club Cafe",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-153",
+    "type": "food",
+    "name": "Pepsi 12 Fl Oz Can By Pepsi Co",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-154",
+    "type": "food",
+    "name": "Pepsi 355ml Bottle By Pepsi",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-155",
+    "type": "food",
+    "name": "Pepsi By Pepsi-Cola",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-156",
+    "type": "food",
+    "name": "Pizza 14\" Pepperoni Topping, Thick Crust",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-157",
+    "type": "food",
+    "name": "Pizza Dough",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-158",
+    "type": "food",
+    "name": "Pizzeria Baked Pretzel By Combos",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-159",
+    "type": "food",
+    "name": "Popeyes Fries",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-160",
+    "type": "food",
+    "name": "Popeyes, Biscuit",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-161",
+    "type": "food",
+    "name": "Pork Sausage Link Patty Fully Cooked Unheated",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-162",
+    "type": "food",
+    "name": "Power Chicken Burrito By Taco Bell",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-163",
+    "type": "food",
+    "name": "Quesadilla With Chicken",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-164",
+    "type": "food",
+    "name": "Real Mayonnaise By Hellmann's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-165",
+    "type": "food",
+    "name": "Red Kidney Beans Premium By Goya",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-166",
+    "type": "food",
+    "name": "Redhot Original Cayenne Pepper Sauce By Frank's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-167",
+    "type": "food",
+    "name": "Redhot Original Hot Sauce By Frank's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-168",
+    "type": "food",
+    "name": "Restaurant Latino Pupusas Con Queso (Pupusas Cheese)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-169",
+    "type": "food",
+    "name": "Restaurant Latino Pupusas Del Cerdo (Pupusas Pork)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-170",
+    "type": "food",
+    "name": "Rice White Cooked Without Salt",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-171",
+    "type": "food",
+    "name": "Salsa Roja Cocida (Cooked Red Salsa)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-172",
+    "type": "food",
+    "name": "Salsa Verde Chicken Bowls By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-173",
+    "type": "food",
+    "name": "Salsa, Store Bought",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-174",
+    "type": "food",
+    "name": "Sea Salt & Black Peoper Oven Roasted Potatoes By Resers Main St Bistro",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-175",
+    "type": "food",
+    "name": "Seasoned Crispy Fries French Fried Potatoes By Kroger",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-176",
+    "type": "food",
+    "name": "Sharp Cheddar Cheese By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-177",
+    "type": "food",
+    "name": "Sharp Shredded Cheddar Cheese By Member's Mark",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-178",
+    "type": "food",
+    "name": "Slow Cooker Beef & Stout Beer Stew",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-179",
+    "type": "food",
+    "name": "Smoked Cooked Chicken And Pork Salami By Del Pueblo",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-180",
+    "type": "food",
+    "name": "Soft White Hoagie Rolls By Pepperidge Farm",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-181",
+    "type": "food",
+    "name": "Solid White Tuna Albacore In Water By Bumble Bee",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-182",
+    "type": "food",
+    "name": "Spaghetti Noodles Cooked",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-183",
+    "type": "food",
+    "name": "Spicy Poblano Fajita Burrito By Ihop",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-184",
+    "type": "food",
+    "name": "Starburst - Original By Wrigley",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-185",
+    "type": "food",
+    "name": "Subway Sweet Onion Chicken Teriyaki Sandwich With Veggies, Without Mayo",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-186",
+    "type": "food",
+    "name": "Super Blow Pop By Charms",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-187",
+    "type": "food",
+    "name": "Sweet Italian Sausage By Premio",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-188",
+    "type": "food",
+    "name": "Taco Bell Beefy 5-Layer Burrito",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-189",
+    "type": "food",
+    "name": "Taco Bell Cheesy Fiesta Potatoes",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-190",
+    "type": "food",
+    "name": "Taco Bell Chicken Chalupa Supreme",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-191",
+    "type": "food",
+    "name": "Taco Bell Original With Beef",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-192",
+    "type": "food",
+    "name": "Taco Bell Soft With Beef Cheese And Lettuce",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-193",
+    "type": "food",
+    "name": "Taquitos Chicken & Cheese In Flour Tortillas By Jose Ole",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-194",
+    "type": "food",
+    "name": "Tea Ready-to-Drink Lipton Brisk Iced With Lemon Flavor",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-195",
+    "type": "food",
+    "name": "The Original Corn Chips By Fritos",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-196",
+    "type": "food",
+    "name": "Tomato Ketchup By Heinz",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-197",
+    "type": "food",
+    "name": "Tortilla Chips With Salsa By Chili's",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-198",
+    "type": "food",
+    "name": "Tostones Or Patacones (Fried Green Plantains)",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-199",
+    "type": "food",
+    "name": "Tres Leches Cake",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-200",
+    "type": "food",
+    "name": "Tuna, Canned, Light, Water Pack, Low Sodium, Drained, Not Rinsed",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-201",
+    "type": "food",
+    "name": "Turkey Breast Low Salt Prepackaged Or Deli Meat",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-202",
+    "type": "food",
+    "name": "Turkey Ground 93% Lean 7% Fat Raw",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-203",
+    "type": "food",
+    "name": "Vanilla Frozen Yogurt Cup By Sam's Club",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-204",
+    "type": "food",
+    "name": "Wendy's Chicken Nuggets",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-205",
+    "type": "food",
+    "name": "Wendy's French Fries",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-206",
+    "type": "food",
+    "name": "Wendy's Spicy Chicken Sandwich",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-207",
+    "type": "food",
+    "name": "White Corn Tortillas By Guerrero",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-208",
+    "type": "food",
+    "name": "White Rice, Cooked In Salted Water",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-209",
+    "type": "food",
+    "name": "White Rice, Cooked In Unsalted Water",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "HISTORY-210",
+    "type": "food",
+    "name": "Wild Cherry Drink By Pepsi",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Food name only in MacroFactor export. Add a serving and nutrition before logging or recommending.",
+    "source": "MacroFactor food history · nutrition missing",
+    "verified": false
+  },
+  {
+    "id": "CUSTOM-BJS",
+    "type": "food",
+    "name": "Bj’s Roll",
+    "serving": "",
+    "calories": null,
+    "protein": null,
+    "fat": null,
+    "carbs": null,
+    "notes": "Custom food export contains no nutrition or serving details.",
+    "source": "MacroFactor custom foods · nutrition missing",
+    "verified": false
+  }
+];
+// Nutrition stores overrides only; bundled workbook data stays available offline.
+const FOOD_SEED_MAP=Object.fromEntries(FOOD_SEED.map(f=>[f.id,f]));
+const fuelUI={date:'',filter:'frequent',search:'',limit:24,excluded:new Set(),suggestions:[],logDraft:null,builderEditId:null,lastDeleted:null,toastTimer:null};
+const fuelNumber=n=>Math.round(num(n)*10)/10;
+const fuelFmt=n=>fuelNumber(n).toLocaleString(undefined,{maximumFractionDigits:1});
+const fuelUUID=()=>globalThis.crypto?.randomUUID?.()||'id-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
+function fuelToday(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function fuelValidDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false;const d=new Date(value+'T12:00:00');return !Number.isNaN(d.getTime())&&`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`===value;}
+function fuelEnsure(){if(!store||typeof store!=='object'||Array.isArray(store))store={theme:'copper',daily:{}};if(!store.daily||typeof store.daily!=='object'||Array.isArray(store.daily))store.daily={};if(!store.nutrition||typeof store.nutrition!=='object'||Array.isArray(store.nutrition))store.nutrition={};for(const k of ['foods','logs','days'])if(!store.nutrition[k]||typeof store.nutrition[k]!=='object'||Array.isArray(store.nutrition[k]))store.nutrition[k]={};store.nutrition.version=1;return store.nutrition;}
+function fuelDateInfo(date=fuelUI.date){const d=new Date(date+'T12:00:00');const start=Date.UTC(2026,8,28);const ordinal=Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-start)/86400000);const w=Math.floor(ordinal/7)+1;return {w,day:DAYS[((ordinal%7)+7)%7],key:`${w}-${DAYS[((ordinal%7)+7)%7]}`,inPlan:w>=1&&w<=48};}
+function fuelEntries(date=fuelUI.date){const es=fuelEnsure().logs[date]?.entries||{};return Object.values(es).filter(e=>e&&typeof e==='object'&&!e.deletedAt&&num(e.qty)>0&&e.food&&typeof e.food==='object');}
+function fuelFoods(includeArchived=false){const n=fuelEnsure();return Object.values({...FOOD_SEED_MAP,...n.foods}).filter(f=>f&&typeof f==='object'&&typeof f.id==='string'&&(includeArchived||!f.archived));}
+function fuelFood(id){return fuelEnsure().foods[id]||FOOD_SEED_MAP[id];}
+function fuelKnown(f){return !!f&&f.verified===true&&typeof f.name==='string'&&f.name.trim()&&typeof f.serving==='string'&&f.serving.trim()&&['calories','protein','carbs','fat'].every(k=>typeof f[k]==='number'&&Number.isFinite(f[k])&&f[k]>=0);}
+function fuelSnapshot(f){return {id:f.id,name:f.name,serving:f.serving,calories:num(f.calories),protein:num(f.protein),carbs:num(f.carbs),fat:num(f.fat),type:f.type||'food',verified:true};}
+function fuelUsage(){const out={};for(const [date,day] of Object.entries(fuelEnsure().logs)){if(!fuelValidDate(date)||date>fuelUI.date)continue;for(const e of Object.values(day?.entries||{})){if(!e||e.deletedAt||!e.food||num(e.qty)<=0)continue;const id=e.foodId||e.food.id;const x=out[id]||(out[id]={count:0,last:''});x.count++;if(date>x.last)x.last=date;}}return out;}
+function fuelWorkout(){const info=fuelDateInfo(),e=info.inPlan?store.daily[info.key]:null;let rows=[],exercise=false,burn=0,missing=false;
+ if(e){if(Array.isArray(e.sessions)&&e.sessions.length){rows=e.sessions.map((s,i)=>({...s,label:`Session ${i+1}`,kind:s.kind==='auto'||!KINDS[s.kind]?kindFor(info.w,info.day,e):s.kind}));const allCalsKnown=rows.every(s=>s.cals!==undefined&&s.cals!==null&&Number.isFinite(Number(s.cals)));burn=allCalsKnown?rows.filter(s=>s.kind!=='recovery').reduce((a,s)=>a+Math.max(0,num(s.cals)),0):Math.max(0,num(e.cals));missing=!allCalsKnown;}
+ else{const kind=kindFor(info.w,info.day,e);rows=[{...e,label:'Logged session',kind}];burn=kind!=='recovery'?Math.max(0,num(e.cals)):0;}
+ exercise=rows.some(s=>s.kind!=='recovery'&&(num(s.timeMins)>0||num(s.miles)>0||num(s.cals)>0));if(!exercise)burn=0;
+ }
+ const settings=fuelEnsure().days[fuelUI.date]||{};const override=optionalNumber(settings.burnOverride);if(override!==null&&override>=0){burn=override;if(override>0)exercise=true;}
+ const mode=['rest','exercise'].includes(settings.mode)?settings.mode:'auto';if(mode==='rest'){exercise=false;burn=0;}if(mode==='exercise')exercise=true;
+ const adjustment=exercise?500:0,target=1650+(exercise?burn:0)-adjustment;
+ return {...info,rows,exercise,burn,adjustment,target,override,mode,missing,missingBurn:exercise&&burn===0};
+}
+function fuelTotals(){return fuelEntries().reduce((a,e)=>{for(const k of ['calories','protein','carbs','fat'])a[k]+=num(e.food[k])*num(e.qty);return a;},{calories:0,protein:0,carbs:0,fat:0});}
+function fuelArt(f){const n=(f.name||'').toLowerCase();return /shake|milk|yogurt/.test(n)?'🥛':/egg|breakfast/.test(n)?'🍳':/rice|bowl|turkey|chicken/.test(n)?'🍚':/soup/.test(n)?'🥣':/pizza/.test(n)?'🍕':/beef|steak|roast/.test(n)?'🥩':/salmon|fish/.test(n)?'🐟':/sandwich|burger|roll|burrito/.test(n)?'🥪':'🍽️';}
+function fuelNutritionHTML(f,qty=1){return `<strong>${fuelFmt(num(f.calories)*qty)} kcal</strong> · P ${fuelFmt(num(f.protein)*qty)}g · C ${fuelFmt(num(f.carbs)*qty)}g · F ${fuelFmt(num(f.fat)*qty)}g`;}
+function fuelRecommend(remaining){if(remaining<=0)return [];const usage=fuelUsage();const candidates=fuelFoods().filter(f=>fuelKnown(f)&&f.calories>0&&f.recommend!==false&&!fuelUI.excluded.has(f.id));const picks=[];let budget=remaining;const count=remaining>1100?3:remaining>400?2:1;
+ for(let slot=0;slot<count;slot++){const goal=budget/(count-slot);let best=null;
+ for(const f of candidates){if(picks.some(p=>p.food.id===f.id))continue;const quantity=Math.min(2,Math.max(.25,Math.round(goal/f.calories*4)/4));const qty=Math.min(quantity,Math.floor(budget/f.calories*4)/4);if(qty<.25)continue;const calories=f.calories*qty,fit=Math.abs(calories-goal)/Math.max(goal,1);const u=usage[f.id];const score=2.2-fit*2+Math.log1p(u?.count||0)*.45+(f.favorite?.65:0)+(f.type==='meal'?.25:0)-(qty===.25?.12:0);if(!best||score>best.score)best={food:f,qty,score,calories,reason:f.favorite?'Your favorite':u?.count?`Logged ${u.count} time${u.count===1?'':'s'}`:f.type==='meal'?'From your saved meals':'Fits your remaining calories'};}
+ if(!best)break;picks.push(best);budget-=best.calories;if(budget<20)break;
+ }return picks;}
+function fuelToast(message){const el=document.getElementById('fuelMessage');if(!el)return;el.textContent=message;el.hidden=false;clearTimeout(fuelUI.toastTimer);fuelUI.toastTimer=setTimeout(()=>el.hidden=true,5000);}
+function fuelSetDate(date){if(!fuelValidDate(date))return;fuelUI.date=date;fuelUI.excluded.clear();fuelUI.lastDeleted=null;renderFuel();}
+function fuelMoveDay(delta){const d=new Date(fuelUI.date+'T12:00:00');d.setDate(d.getDate()+delta);fuelSetDate(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`);}
+function renderFuel(){if(!document.getElementById('viewFuel'))return;fuelEnsure();if(!fuelValidDate(fuelUI.date))fuelUI.date=fuelToday();const workout=fuelWorkout(),total=fuelTotals(),remaining=workout.target-total.calories;const date=new Date(fuelUI.date+'T12:00:00');document.getElementById('fuelDate').value=fuelUI.date;document.getElementById('fuelDayLabel').textContent=date.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'})+(workout.inPlan?` · Week ${workout.w} · ${workout.day}`:' · Outside the 48-week plan; use a calorie correction to log exercise');
+ document.getElementById('fuelModeLabel').textContent=workout.exercise?'EXERCISE DAY':'REST DAY';for(const [id,value] of Object.entries({fuelBurn:workout.burn,fuelAdjustment:workout.adjustment,fuelTarget:workout.target}))document.getElementById(id).innerHTML=`${fuelFmt(value)} <small>kcal</small>`;
+ document.getElementById('fuelConsumed').textContent=`${fuelFmt(total.calories)} kcal`;document.getElementById('fuelRemainingLabel').textContent=remaining<0?'Over target':'Remaining';document.getElementById('fuelRemaining').textContent=`${fuelFmt(Math.abs(remaining))} kcal`;document.getElementById('fuelMeterFill').style.width=`${Math.min(100,Math.max(0,total.calories/workout.target*100))}%`;const meter=document.getElementById('fuelMeter');meter.setAttribute('aria-valuemax',String(workout.target));meter.setAttribute('aria-valuenow',String(Math.min(workout.target,total.calories)));meter.setAttribute('aria-valuetext',`${fuelFmt(total.calories)} of ${fuelFmt(workout.target)} calories logged`);
+ document.getElementById('fuelTargetNote').textContent=workout.missingBurn?'Exercise logged without calorie burn. Enter the reported exercise calories to complete this target.':workout.mode==='rest'?'Rest day selected. Exercise calories and the 500 kcal adjustment are excluded.':workout.exercise?`1,650 + ${fuelFmt(workout.burn)} − 500 = ${fuelFmt(workout.target)} kcal. ${workout.override!==null?'Using your corrected exercise calories.':workout.rows.length>1?'Both sessions counted once.':'Using reported exercise calories.'}`:'No exercise logged. Your rest-day target is 1,650 kcal.';
+ document.getElementById('fuelDayMode').value=workout.mode;document.getElementById('fuelBurnOverride').value=workout.override??'';document.getElementById('fuelEditWorkout').disabled=!workout.inPlan;
+ document.getElementById('fuelWorkoutList').innerHTML=(workout.rows.length?workout.rows.map(s=>`<div class="fuel-exercise-row"><div><strong>${safe(KINDS[s.kind]?.[1]||'Workout')}</strong><span>${safe(s.label)} · ${safe(formatMinsToHrMin(num(s.timeMins)))}</span></div><strong>${s.cals!=null?fuelFmt(Math.max(0,num(s.cals)))+' kcal':'Not recorded'}</strong></div>`).join(''):'<p class="fuel-empty">No workout logged for this date. Log a workout or enter reported exercise calories below.</p>')+`<div class="fuel-burn-total"><span>${workout.override!==null?'Corrected burn':workout.mode==='rest'?'Applied burn (rest day)':'Exercise calories applied'}</span><strong>${fuelFmt(workout.burn)} kcal</strong></div>`+(workout.missing?'<p class="analytics-note">Older session split has no individual calorie values; using its saved daily total once.</p>':'');
+ fuelUI.suggestions=workout.missingBurn?[]:fuelRecommend(Math.max(0,remaining));document.getElementById('fuelSuggestions').innerHTML=fuelUI.suggestions.map((s,i)=>`<div class="fuel-suggestion"><div class="fuel-food-art" aria-hidden="true">${fuelArt(s.food)}</div><h4>${safe(s.food.name)}</h4><div class="fuel-nutrients">${fuelNutritionHTML(s.food,s.qty)}</div><span class="fuel-tag">${safe(s.reason)}</span><p class="fuel-portion">${fuelFmt(s.qty)} × ${safe(s.food.serving)}</p><div class="btn-group"><button type="button" data-fuel-action="suggestion-log" data-index="${i}">Adjust portion</button><button type="button" class="primary" data-fuel-action="suggestion-log" data-index="${i}">＋ Log meal</button><button type="button" data-fuel-action="swap" data-index="${i}" aria-label="Swap ${safe(s.food.name)}">↻ Swap</button></div></div>`).join('')||`<p class="fuel-empty">${workout.missingBurn?'Enter exercise calories to get suggestions for your completed target.':remaining<=0?'Your logged intake meets or exceeds today’s target. You can still log food from your library.':'No more matching options. Try Reset suggestions, or add foods and portions to your library.'}</p>`;
+ const suggested=fuelUI.suggestions.reduce((a,x)=>a+x.calories,0);document.getElementById('fuelSuggestedTotal').textContent=fuelUI.suggestions.length?`Suggested total: ${fuelFmt(suggested)} kcal · ${fuelFmt(Math.max(0,remaining-suggested))} kcal left after these suggestions. Nothing is logged until you save it.`:'Suggestions never change your intake until logged.';
+ document.getElementById('fuelLogList').innerHTML=fuelEntries().sort((a,b)=>(a.createdAt||'').localeCompare(b.createdAt||'')).map(e=>`<div class="fuel-log-row"><div><h4>${safe(e.food.name)}</h4><p>${safe(e.slot||'Meal')} · ${fuelFmt(e.qty)} × ${safe(e.food.serving)}${e.note?' · '+safe(e.note):''}</p></div><strong>${fuelFmt(num(e.food.calories)*num(e.qty))} kcal</strong><div class="btn-group"><button type="button" data-fuel-action="edit-log" data-id="${safe(e.id)}">Edit</button><button type="button" data-fuel-action="remove-log" data-id="${safe(e.id)}">Remove</button></div></div>`).join('')||'<p class="fuel-empty">Nothing logged yet. Choose a suggestion or a food from your library to start today’s food log.</p>';
+ document.getElementById('fuelMacroSummary').innerHTML=`<span>Total <strong>${fuelFmt(total.calories)} kcal</strong></span><span>Protein <strong>${fuelFmt(total.protein)} g</strong></span><span>Carbs <strong>${fuelFmt(total.carbs)} g</strong></span><span>Fat <strong>${fuelFmt(total.fat)} g</strong></span>`;
+ document.getElementById('fuelUndo').innerHTML=fuelUI.lastDeleted?`Meal removed. <button type="button" data-fuel-action="undo-remove">Undo</button>`:'';renderFuelLibrary();}
+function renderFuelLibrary(){const usage=fuelUsage(),query=fuelUI.search.toLowerCase().trim(),filter=fuelUI.filter;let foods=fuelFoods(filter==='archived').filter(f=>(filter==='archived'?f.archived:!f.archived)&&(!query||`${f.name} ${f.notes||''} ${f.serving||''}`.toLowerCase().includes(query))&&(filter==='favorites'?f.favorite:filter==='meal'?f.type==='meal':filter==='food'?f.type==='food':filter==='missing'?!fuelKnown(f):true));foods.sort((a,b)=>filter==='frequent'?(usage[b.id]?.count||0)-(usage[a.id]?.count||0)||Number(!!b.favorite)-Number(!!a.favorite)||Number(fuelKnown(b))-Number(fuelKnown(a))||a.name.localeCompare(b.name):a.name.localeCompare(b.name));document.getElementById('fuelLibraryCount').textContent=`${foods.length} entries`;document.getElementById('fuelLibraryList').innerHTML=foods.slice(0,fuelUI.limit).map(f=>{const u=usage[f.id];return `<div class="fuel-library-item"><div><h4>${safe(f.name)}</h4><p>${f.type==='meal'?'Saved meal':'Food'}${u?` · Logged ${u.count} time${u.count===1?'':'s'} · Last ${safe(u.last)}`:''}${f.archived?' · Archived':''}</p></div><div class="fuel-serving">${safe(f.serving||'Serving not entered')}</div><div class="fuel-nutrients">${fuelKnown(f)?fuelNutritionHTML(f):'<span class="fuel-tag">Needs nutrition</span>'}</div><div class="btn-group">${!f.archived?`<button type="button" class="${f.favorite?'is-favorite':''}" data-fuel-action="favorite" data-id="${safe(f.id)}" aria-label="${f.favorite?'Unfavorite':'Favorite'} ${safe(f.name)}" aria-pressed="${!!f.favorite}">${f.favorite?'★':'☆'}</button><button type="button" data-fuel-action="edit-food" data-id="${safe(f.id)}">${fuelKnown(f)?'Edit':'Add nutrition'}</button>${f.components?.length?`<button type="button" data-fuel-action="edit-combination" data-id="${safe(f.id)}">Ingredients</button>`:''}${fuelKnown(f)?`<button type="button" class="primary" data-fuel-action="log-food" data-id="${safe(f.id)}">＋ Log</button>`:''}`:''}<button type="button" data-fuel-action="archive" data-id="${safe(f.id)}">${f.archived?'Restore':'Archive'}</button></div></div>`;}).join('')||'<p class="fuel-empty">No matching entries. Change the filter, or add a food or meal.</p>';document.getElementById('fuelShowMore').hidden=foods.length<=fuelUI.limit;}
+function fuelSave(){fuelEnsure();saveStore();renderFuel();}
+function fuelOpenEditor(id=null){const f=id?fuelFood(id):null;const form=document.getElementById('foodEditorForm');form.reset();document.getElementById('foodEditId').value=f?.id||'';document.getElementById('foodEditorTitle').textContent=f?'Edit food or meal':'Add food or meal';for(const [id,key] of Object.entries({foodName:'name',foodType:'type',foodServing:'serving',foodCalories:'calories',foodProtein:'protein',foodCarbs:'carbs',foodFat:'fat',foodNotes:'notes'}))document.getElementById(id).value=f?.[key]??(id==='foodType'?'meal':'');document.getElementById('foodFavorite').checked=!!f?.favorite;document.getElementById('foodRecommend').checked=f?.recommend!==false;document.getElementById('foodEditor').showModal();}
+function fuelSaveEditor(event){event.preventDefault();const id=document.getElementById('foodEditId').value||'USER-'+fuelUUID();const old=fuelFood(id);const f={...old,id,name:document.getElementById('foodName').value.trim(),type:document.getElementById('foodType').value,serving:document.getElementById('foodServing').value.trim(),notes:document.getElementById('foodNotes').value.trim(),favorite:document.getElementById('foodFavorite').checked,recommend:document.getElementById('foodRecommend').checked,verified:true,source:old?.source||'Your library',updatedAt:new Date().toISOString()};for(const [id,key] of Object.entries({foodCalories:'calories',foodProtein:'protein',foodCarbs:'carbs',foodFat:'fat'}))f[key]=Number(document.getElementById(id).value);if(!fuelKnown(f)){fuelToast('Enter a name, serving, and valid nonnegative nutrition values.');return;}
+ // Manual nutrition overrides detach a recipe; its old component snapshots remain in notes only.
+ if(old?.components&&['calories','protein','carbs','fat'].some(k=>f[k]!==old[k]))delete f.components;
+ fuelEnsure().foods[f.id]=f;document.getElementById('foodEditor').close();fuelSave();fuelToast('Saved to your library. Previously logged meals keep their original nutrition.');}
+function fuelOpenLog(food,qty=1,entry=null){if(!fuelKnown(food)){fuelToast('Add serving and nutrition details before logging this food.');return;}fuelUI.logDraft={food:entry?structuredClone(entry.food):fuelSnapshot(food),foodId:entry?.foodId||food.id,id:entry?.id||null,date:fuelUI.date,createdAt:entry?.createdAt||null};document.getElementById('mealLogForm').reset();document.getElementById('mealLogTitle').textContent=(entry?'Edit: ':'Log: ')+food.name;document.getElementById('mealLogServing').textContent=`One serving = ${food.serving} · ${fuelUI.date}`;document.getElementById('mealLogQty').value=entry?.qty??qty;document.getElementById('mealLogSlot').value=entry?.slot||'Breakfast';document.getElementById('mealLogNote').value=entry?.note||'';fuelPreviewLog();document.getElementById('mealLogDialog').showModal();}
+function fuelPreviewLog(){if(fuelUI.logDraft)document.getElementById('mealLogPreview').innerHTML=fuelNutritionHTML(fuelUI.logDraft.food,Math.max(0,num(document.getElementById('mealLogQty').value)));}
+function fuelSaveLog(event){event.preventDefault();const draft=fuelUI.logDraft,qty=Number(document.getElementById('mealLogQty').value);if(!draft||!Number.isFinite(qty)||qty<=0||qty>100)return;const n=fuelEnsure();if(!n.logs[draft.date])n.logs[draft.date]={entries:{}};if(!n.logs[draft.date].entries)n.logs[draft.date].entries={};const now=new Date().toISOString(),id=draft.id||fuelUUID();n.logs[draft.date].entries[id]={id,foodId:draft.foodId,food:structuredClone(draft.food),qty,slot:document.getElementById('mealLogSlot').value,note:document.getElementById('mealLogNote').value.trim(),createdAt:draft.createdAt||now,updatedAt:now};document.getElementById('mealLogDialog').close();fuelUI.logDraft=null;fuelUI.lastDeleted=null;fuelSave();fuelToast('Meal saved. Recommendations now use your updated remaining calories.');}
+function fuelRemoveLog(id){const entry=fuelEnsure().logs[fuelUI.date]?.entries?.[id];if(!entry)return;entry.deletedAt=new Date().toISOString();entry.updatedAt=entry.deletedAt;fuelUI.lastDeleted={date:fuelUI.date,id};fuelSave();}
+function fuelBuilderOptions(selected=''){return '<option value="">Choose food or saved meal…</option>'+fuelFoods().filter(f=>fuelKnown(f)&&f.id!==fuelUI.builderEditId).sort((a,b)=>a.name.localeCompare(b.name)).map(f=>`<option value="${safe(f.id)}" ${f.id===selected?'selected':''}>${safe(f.name)} · ${safe(f.serving)} · ${fuelFmt(f.calories)} kcal</option>`).join('');}
+function fuelBuilderRow(component=null){const row=document.createElement('div');row.className='fuel-builder-row';row.innerHTML=`<div class="input-field"><label>Ingredient<select class="builder-food" required>${fuelBuilderOptions(component?.foodId)}</select></label></div><div class="input-field"><label>Servings<input class="builder-qty" type="number" min="0.05" max="100" step="0.05" required value="${component?.qty||1}"></label></div><button type="button" data-fuel-action="builder-remove" aria-label="Remove ingredient">✕</button>`;if(component?.food&&component.foodId&&!fuelFoods().some(f=>f.id===component.foodId)){const option=document.createElement('option');option.value=component.foodId;option.textContent=component.food.name+' · archived snapshot';option.selected=true;row.querySelector('select').appendChild(option);}if(component?.food)row._snapshot=structuredClone(component.food);document.getElementById('builderRows').appendChild(row);fuelBuilderTotal();}
+function fuelOpenBuilder(id=null){const f=id?fuelFood(id):null;fuelUI.builderEditId=f?.id||null;document.getElementById('mealBuilderTitle').textContent=f?'Edit saved combination':'Build a saved meal';document.getElementById('builderName').value=f?.name||'';document.getElementById('builderRows').innerHTML='';if(f?.components?.length)f.components.forEach(c=>fuelBuilderRow(c));else{fuelBuilderRow();fuelBuilderRow();}document.getElementById('mealBuilderDialog').showModal();}
+function fuelBuilderComponents(){return [...document.querySelectorAll('.fuel-builder-row')].map(row=>{const id=row.querySelector('.builder-food').value,qty=Number(row.querySelector('.builder-qty').value);const f=fuelFood(id)||row._snapshot;return {foodId:id,qty,food:f&&fuelKnown(f)?fuelSnapshot(f):null};});}
+function fuelBuilderTotal(){const totals={calories:0,protein:0,carbs:0,fat:0};for(const c of fuelBuilderComponents())if(c.food&&c.qty>0)for(const k of Object.keys(totals))totals[k]+=num(c.food[k])*c.qty;document.getElementById('builderTotal').innerHTML=fuelNutritionHTML(totals);return totals;}
+function fuelSaveBuilder(event){event.preventDefault();const components=fuelBuilderComponents();if(!components.length||components.some(c=>!c.food||!Number.isFinite(c.qty)||c.qty<=0||c.qty>100)){fuelToast('Choose at least one ingredient and enter its servings.');return;}const old=fuelUI.builderEditId?fuelFood(fuelUI.builderEditId):null;const totals=fuelBuilderTotal();const f={...old,id:old?.id||'USER-'+fuelUUID(),name:document.getElementById('builderName').value.trim(),type:'meal',serving:'1 whole combination',...Object.fromEntries(Object.entries(totals).map(([k,v])=>[k,fuelNumber(v)])),components,notes:components.map(c=>`${fuelFmt(c.qty)} × ${c.food.name} (${c.food.serving})`).join('\n'),verified:true,recommend:old?.recommend!==false,source:'Your mix & match combination',updatedAt:new Date().toISOString()};if(!f.name)return;fuelEnsure().foods[f.id]=f;document.getElementById('mealBuilderDialog').close();fuelSave();fuelToast('Combination saved as one serving. It is ready to log or recommend.');}
+function fuelDownload(filename,value){const url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function fuelCleanImportedFood(f){if(!f||typeof f!=='object'||typeof f.id!=='string'||['__proto__','constructor','prototype'].includes(f.id)||!/^[A-Za-z0-9_-]{1,100}$/.test(f.id)||typeof f.name!=='string'||!f.name.trim())throw Error('Each food needs a valid ID and name.');const clean={id:f.id,name:f.name.trim().slice(0,180),serving:String(f.serving||'').slice(0,100),type:f.type==='meal'?'meal':'food',notes:String(f.notes||'').slice(0,6000),source:String(f.source||'Imported library').slice(0,180),favorite:f.favorite===true,recommend:f.recommend!==false,archived:f.archived===true,verified:f.verified===true,updatedAt:new Date().toISOString()};for(const k of ['calories','protein','fat','carbs']){const v=f[k];if(v!==null&&v!==undefined&&(typeof v!=='number'||!Number.isFinite(v)||v<0||v>(k==='calories'?50000:10000)))throw Error('Invalid nutrition in '+clean.name);clean[k]=v??null;}if(clean.verified&&!fuelKnown(clean))throw Error('Missing serving or nutrition in '+clean.name);if(Array.isArray(f.components))clean.components=f.components.slice(0,100).map(c=>{if(!c.food||!fuelKnown(c.food)||!Number.isFinite(c.qty)||c.qty<=0||c.qty>100)throw Error('Invalid ingredient snapshot.');return {foodId:String(c.foodId||c.food.id),qty:c.qty,food:fuelSnapshot(c.food)};});return clean;}
+async function fuelImportLibrary(event){const file=event.target.files[0];if(!file)return;try{if(file.size>5*1024*1024)throw Error('Library exceeds the 5 MB limit.');const parsed=JSON.parse(await file.text());const list=Array.isArray(parsed)?parsed:parsed.foods;if(!Array.isArray(list)||list.length>5000)throw Error('Expected a library JSON with a foods array (up to 5,000 entries).');const cleaned=list.map(fuelCleanImportedFood);if(new Set(cleaned.map(f=>f.id)).size!==cleaned.length)throw Error('Library contains duplicate IDs.');if(!confirm(`Import ${cleaned.length} library entries? Matching IDs replace library entries. Existing food logs are preserved.`))return;for(const f of cleaned)fuelEnsure().foods[f.id]=f;fuelSave();fuelToast(`Imported ${cleaned.length} library entries.`);}catch(err){alert('Library import failed: '+err.message);}finally{event.target.value='';}}
+function fuelAction(event){const btn=event.target.closest('[data-fuel-action]');if(!btn)return;const action=btn.dataset.fuelAction,id=btn.dataset.id,idx=Number(btn.dataset.index);const n=fuelEnsure();switch(action){case 'prev-day':fuelMoveDay(-1);break;case 'next-day':fuelMoveDay(1);break;case 'today':fuelSetDate(fuelToday());break;case 'refresh-suggestions':fuelUI.excluded.clear();renderFuel();fuelToast('Options refreshed. Swap individual suggestions for different meals.');break;case 'swap':if(fuelUI.suggestions[idx])fuelUI.excluded.add(fuelUI.suggestions[idx].food.id);renderFuel();break;case 'suggestion-log':{const s=fuelUI.suggestions[idx];if(s)fuelOpenLog(s.food,s.qty);break;}case 'log-food':fuelOpenLog(fuelFood(id));break;case 'add-food':fuelOpenEditor();break;case 'edit-food':fuelOpenEditor(id);break;case 'close-editor':document.getElementById('foodEditor').close();break;case 'close-log':document.getElementById('mealLogDialog').close();break;case 'close-builder':document.getElementById('mealBuilderDialog').close();break;case 'favorite':{const f=fuelFood(id);if(f)n.foods[id]={...f,favorite:!f.favorite,updatedAt:new Date().toISOString()};fuelSave();break;}case 'archive':{const f=fuelFood(id);if(f)n.foods[id]={...f,archived:!f.archived,updatedAt:new Date().toISOString()};fuelSave();break;}case 'edit-log':{const e=n.logs[fuelUI.date]?.entries?.[id];if(e&&!e.deletedAt)fuelOpenLog(e.food,e.qty,e);break;}case 'remove-log':fuelRemoveLog(id);break;case 'undo-remove':{const last=fuelUI.lastDeleted,e=last&&n.logs[last.date]?.entries?.[last.id];if(e){delete e.deletedAt;e.updatedAt=new Date().toISOString();}fuelUI.lastDeleted=null;fuelSave();break;}case 'save-day':{const value=document.getElementById('fuelBurnOverride').value;const burn=value===''?null:Number(value);if(burn!==null&&(!Number.isFinite(burn)||burn<0||burn>100000)){fuelToast('Enter exercise calories from 0 to 100,000, or leave blank.');break;}n.days[fuelUI.date]={mode:document.getElementById('fuelDayMode').value,burnOverride:burn,updatedAt:new Date().toISOString()};fuelSave();fuelToast('Daily calorie settings saved.');break;}case 'workout':{const info=fuelDateInfo();if(info.inPlan)openDayModal(info.w,info.day);break;}case 'browse':document.getElementById('fuelSearch').focus();document.getElementById('fuelLibraryPanel').scrollIntoView({behavior:'smooth',block:'start'});break;case 'show-more':fuelUI.limit+=24;renderFuelLibrary();break;case 'builder':fuelOpenBuilder();break;case 'edit-combination':fuelOpenBuilder(id);break;case 'builder-add':fuelBuilderRow();break;case 'builder-remove':btn.closest('.fuel-builder-row').remove();fuelBuilderTotal();break;case 'export-library':fuelDownload(`CloudCity_Meal_Library_${fuelToday()}.json`,{version:1,foods:fuelFoods(true)});break;case 'import-library':document.getElementById('fuelLibraryImport').click();break;}}
+function initFuel(){fuelEnsure();fuelUI.date=fuelToday();document.addEventListener('click',fuelAction);document.getElementById('fuelDate').addEventListener('change',e=>fuelSetDate(e.target.value));document.getElementById('fuelSearch').addEventListener('input',e=>{fuelUI.search=e.target.value;fuelUI.limit=24;renderFuelLibrary();});document.getElementById('fuelFilter').addEventListener('change',e=>{fuelUI.filter=e.target.value;fuelUI.limit=24;renderFuelLibrary();});document.getElementById('foodEditorForm').addEventListener('submit',fuelSaveEditor);document.getElementById('mealLogForm').addEventListener('submit',fuelSaveLog);document.getElementById('mealLogQty').addEventListener('input',fuelPreviewLog);document.getElementById('mealBuilderForm').addEventListener('submit',fuelSaveBuilder);document.getElementById('builderRows').addEventListener('input',fuelBuilderTotal);document.getElementById('fuelLibraryImport').addEventListener('change',fuelImportLibrary);renderFuel();}
+// Merge independent foods, dates, and individual meal entries. Tombstones preserve removals.
+function fuelMergeRecordMaps(remote={},local={}){const out={...remote};for(const [id,value] of Object.entries(local||{})){if(['__proto__','constructor','prototype'].includes(id)||!value||typeof value!=='object')continue;const prior=out[id];if(!prior||String(value.updatedAt||'')>=String(prior.updatedAt||''))out[id]=structuredClone(value);}return out;}
+function fuelMergeNutrition(remote={},local={}){const result={version:1,foods:fuelMergeRecordMaps(remote?.foods,local?.foods),days:fuelMergeRecordMaps(remote?.days,local?.days),logs:{}};for(const date of new Set([...Object.keys(remote?.logs||{}),...Object.keys(local?.logs||{})])){if(!fuelValidDate(date))continue;result.logs[date]={entries:fuelMergeRecordMaps(remote?.logs?.[date]?.entries,local?.logs?.[date]?.entries)};}return result;}
+function fuelCanonical(value){if(Array.isArray(value))return value.map(fuelCanonical);if(value&&typeof value==='object')return Object.fromEntries(Object.keys(value).sort().filter(k=>!['__proto__','constructor','prototype'].includes(k)).map(k=>[k,fuelCanonical(value[k])]));return value;}
+function fuelPayload(data){return {theme:data?.theme||'copper',daily:data?.daily||{},nutrition:{version:1,foods:data?.nutrition?.foods||{},days:data?.nutrition?.days||{},logs:data?.nutrition?.logs||{}}};}
+async function fuelVerifyNas(snapshot){if(!snapshot.nutrition)return;const check=await nasRequest('GET');const expected=JSON.stringify(fuelCanonical(fuelPayload(snapshot).nutrition));const actual=JSON.stringify(fuelCanonical(fuelPayload(check.store).nutrition));if(expected!==actual)throw Error('NAS did not confirm the full meal library and food log. Local data is preserved; check api.php support before syncing again.');nasRevision=check.revision;}
+
 init();
+initFuel();
 </script>
 </body>
 </html>
