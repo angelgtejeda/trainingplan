@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="copper">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadville 100 Hybrid Master Log — Accomplishment & Historical Tracker</title>
+<style>
+  /* Bespoke Non-Standard Color Themes */
+  :root, [data-theme="copper"] {
+    --bg: #0e0b09;
+    --bg-grad: linear-gradient(145deg, #16110d 0%, #211913 100%);
+    --panel: #17120e;
+    --panel-alt: #221b15;
+    --card-bg: #130f0c;
+    --border: #382c21;
+    --text: #f5efe6;
+    --muted: #b09f8d;
+    --accent: #e5a93c; /* Hammered Buckle Gold */
+    --accent-soft: rgba(229, 169, 60, 0.15);
+    --secondary: #e06d3b; /* Alpine Burnt Copper */
+    --secondary-soft: rgba(224, 109, 59, 0.16);
+    --pass: #2dd4bf; /* Turquoise Lake Aerobic Lock */
+    --pass-bg: rgba(45, 212, 191, 0.11);
+    --warn: #f43f5e; /* Crimson Over-Cap */
+    --warn-bg: rgba(244, 63, 94, 0.14);
+    --upgrade: #f59e0b;
+  }
+
+  [data-theme="timberline"] {
+    --bg: #09110e;
+    --bg-grad: linear-gradient(145deg, #0d1914 0%, #152720 100%);
+    --panel: #101d18;
+    --panel-alt: #182b24;
+    --card-bg: #0c1612;
+    --border: #264237;
+    --text: #ecfdf5;
+    --muted: #86a89a;
+    --accent: #f59e0b;
+    --accent-soft: rgba(245, 158, 11, 0.15);
+    --secondary: #34d399;
+    --secondary-soft: rgba(52, 211, 153, 0.15);
+    --pass: #10b981;
+    --pass-bg: rgba(16, 185, 129, 0.13);
+    --warn: #fb7185;
+    --warn-bg: rgba(251, 113, 133, 0.15);
+    --upgrade: #fbbf24;
+  }
+
+  [data-theme="tactical"] {
+    --bg: #09090b;
+    --bg-grad: linear-gradient(145deg, #121215 0%, #1c1c21 100%);
+    --panel: #141417;
+    --panel-alt: #1f1f24;
+    --card-bg: #0e0e11;
+    --border: #2e2e36;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --accent: #f97316;
+    --accent-soft: rgba(249, 115, 22, 0.16);
+    --secondary: #eab308;
+    --secondary-soft: rgba(234, 179, 8, 0.15);
+    --pass: #84cc16;
+    --pass-bg: rgba(132, 204, 22, 0.12);
+    --warn: #ef4444;
+    --warn-bg: rgba(239, 68, 68, 0.16);
+    --upgrade: #f59e0b;
+  }
+
+  [data-theme="daylight"] {
+    --bg: #f5f2eb;
+    --bg-grad: linear-gradient(145deg, #ede7db 0%, #e2d9c8 100%);
+    --panel: #ffffff;
+    --panel-alt: #efeae1;
+    --card-bg: #faf8f5;
+    --border: #d0c7b8;
+    --text: #1c1917;
+    --muted: #57534e;
+    --accent: #b45309;
+    --accent-soft: rgba(180, 83, 9, 0.12);
+    --secondary: #9a3412;
+    --secondary-soft: rgba(154, 52, 18, 0.1);
+    --pass: #0f766e;
+    --pass-bg: rgba(15, 118, 110, 0.1);
+    --warn: #be123c;
+    --warn-bg: rgba(190, 18, 60, 0.1);
+    --upgrade: #d97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+    padding: 16px;
+    max-width: 1560px;
+    margin: 0 auto;
+  }
+
+  /* Header & Controls */
+  header {
+    background: var(--bg-grad);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .title-group h1 {
+    font-size: 1.45rem;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .title-group p {
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 3px;
+    opacity: 0.9;
+  }
+  .btn-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  button, select {
+    background: var(--panel-alt);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 0.81rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  button:hover, select:hover {
+    border-color: var(--accent);
+  }
+  button.primary {
+    background: var(--accent);
+    color: #110d09;
+    border-color: var(--accent);
+  }
+  button.primary:hover { filter: brightness(1.1); }
+  button.copper {
+    background: var(--secondary-soft);
+    color: var(--secondary);
+    border-color: var(--secondary);
+  }
+
+  /* Course & Everest Progress Bars */
+  .campaign-bars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 900px) { .campaign-bars { grid-template-columns: 1fr; } }
+  .bar-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .bar-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+  .bar-head span.val { color: var(--accent); }
+  .bar-track {
+    height: 10px;
+    background: var(--card-bg);
+    border-radius: 99px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary), var(--accent), var(--pass));
+    width: 0%;
+    transition: width 0.35s ease;
+  }
+
+  /* 6 Core All-Time Metrics + Vert Banner */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap: 10px;
+  }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 11px 13px;
+  }
+  .stat-card .s-label {
+    font-size: 0.69rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    font-weight: 800;
+  }
+  .stat-card .s-val {
+    font-size: 1.32rem;
+    font-weight: 900;
+    color: var(--text);
+    margin: 3px 0 2px;
+    font-family: monospace;
+  }
+  .stat-card .s-sub { font-size: 0.72rem; color: var(--pass); font-weight: 600; }
+
+  /* Navigation Tabs */
+  .view-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  .view-tab {
+    padding: 9px 16px;
+    font-size: 0.84rem;
+    border-radius: 8px;
+  }
+  .view-tab.active {
+    background: var(--accent);
+    color: #110d09;
+    border-color: var(--accent);
+    font-weight: 900;
+  }
+
+  /* Section Containers */
+  .section-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header h2 { font-size: 1.15rem; color: var(--accent); font-weight: 900; }
+
+  /* Weekly Auto-Totals Banner inside Weekly View */
+  .weekly-rollup {
+    background: var(--panel-alt);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .weekly-rollup-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .weekly-rollup-top h3 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--accent);
+  }
+  .weekly-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 10px;
+  }
+  .w-stat {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 11px;
+  }
+  .w-stat .ws-lbl { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+  .w-stat .ws-num { font-size: 1.12rem; font-weight: 900; color: var(--text); font-family: monospace; margin-top: 2px; }
+  .w-stat .ws-sub { font-size: 0.68rem; color: var(--pass); margin-top: 1px; }
+
+  /* 7-Day Prescription & Accomplishment Cards */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 1380px) {
+    .days-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  }
+  .day-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.15s ease;
+  }
+  .day-card:hover { border-color: var(--accent); }
+  .day-card.logged-pass {
+    background: var(--pass-bg);
+    border-color: var(--pass);
+  }
+  .day-card.logged-warn {
+    background: var(--warn-bg);
+    border-color: var(--warn);
+  }
+
+  .day-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .day-role {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .rx-box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 9px;
+    margin-bottom: 8px;
+  }
+  .rx-box-label {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    font-weight: 800;
+  }
+  .rx-title { font-size: 0.88rem; font-weight: 800; color: var(--text); margin: 2px 0; }
+  .rx-sub { font-size: 0.74rem; color: var(--muted); }
+  .rx-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.64rem;
+    font-weight: 800;
+  }
+  .tag-cap { background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(229,169,60,0.35); }
+  .tag-up { background: var(--secondary-soft); color: var(--secondary); border: 1px solid rgba(224,109,59,0.4); }
+  .tag-fuel { background: rgba(45,212,191,0.12); color: var(--pass); }
+
+  /* Accomplished Section inside Card */
+  .acc-box {
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+    margin-top: 4px;
+    font-size: 0.74rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .acc-header {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--pass);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .acc-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 8px;
+    font-family: monospace;
+    font-size: 0.72rem;
+    margin-bottom: 6px;
+  }
+  .acc-metrics div span { color: var(--muted); }
+  .acc-metrics div strong { color: var(--text); }
+
+  .acc-annotation {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 6px 7px;
+    font-size: 0.73rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 46px;
+    margin-top: 4px;
+  }
+  .acc-annotation:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .thumb-preview {
+    width: 100%;
+    max-height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    margin-top: 5px;
+    cursor: zoom-in;
+  }
+  .card-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .card-actions button {
+    flex: 1;
+    padding: 6px 5px;
+    font-size: 0.71rem;
+  }
+
+  /* Tables (Historical & 48-Week Master) */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--card-bg);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.79rem;
+    min-width: 1050px;
+  }
+  th {
+    background: var(--panel-alt);
+    color: var(--accent);
+    text-align: left;
+    padding: 10px 9px;
+    border-bottom: 2px solid var(--border);
+    border-right: 1px solid var(--border);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  td {
+    padding: 9px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr.current-wk-highlight td {
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    background: var(--accent-soft);
+  }
+  .master-acc-pill {
+    margin-top: 6px;
+    padding: 5px 6px;
+    border-radius: 6px;
+    background: var(--pass-bg);
+    border-left: 3px solid var(--pass);
+    font-size: 0.7rem;
+  }
+  .master-acc-pill.warn {
+    background: var(--warn-bg);
+    border-left-color: var(--warn);
+  }
+
+  /* Modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.82);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 14px;
+    overflow-y: auto;
+  }
+  .modal {
+    background: var(--panel);
+    border: 1px solid var(--accent);
+    border-radius: 14px;
+    max-width: 620px;
+    width: 100%;
+    padding: 20px;
+    max-height: 94vh;
+    overflow-y: auto;
+  }
+  .modal h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 3px; }
+  .modal .m-sub { color: var(--text); font-size: 0.82rem; margin-bottom: 12px; opacity: 0.9; }
+  .ocr-dropzone {
+    border: 2px dashed var(--accent);
+    border-radius: 10px;
+    padding: 13px;
+    text-align: center;
+    background: var(--accent-soft);
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+  }
+  @media (max-width: 560px) { .modal-grid { grid-template-columns: 1fr 1fr; } }
+  .modal-grid .full { grid-column: 1 / -1; }
+  .input-field { display: flex; flex-direction: column; gap: 3px; }
+  .input-field label { font-size: 0.7rem; color: var(--muted); font-weight: 700; }
+  .input-field input, .input-field textarea {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 7px 9px;
+    border-radius: 6px;
+    font-size: 0.83rem;
+    font-family: inherit;
+  }
+  .s2-box {
+    grid-column: 1 / -1;
+    background: var(--panel-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 4px;
+  }
+  .check-row {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 6px 0;
+    font-size: 0.78rem;
+  }
+  .check-row label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+/* 2026 Cloud City analytics extensions */
+.cat-blue{--cat:#60a5fa}.cat-orange{--cat:#fb923c}.cat-red{--cat:#fb7185}
+.cat-green{--cat:#4ade80}.cat-purple{--cat:#c084fc}
+.day-card[class*="cat-"], td[class*="cat-"] {border-left:4px solid var(--cat)}
+.cat-chip{color:var(--cat);border:1px solid var(--cat);background:var(--panel-alt);font-size:.68rem;font-weight:800;padding:3px 6px;border-radius:5px;display:inline-block}
+.comply{font-size:.68rem;font-weight:800;border-radius:6px;padding:3px 6px;display:inline-block}
+.comply.ok{background:rgba(34,197,94,.14);color:#4ade80}
+.comply.drift{background:rgba(234,179,8,.15);color:#eab308}
+.comply.over{background:rgba(239,68,68,.15);color:#fb7185}
+.comply.unknown{background:var(--panel-alt);color:var(--muted)}
+.command{border:1px solid var(--border);border-radius:12px;padding:14px;background:var(--panel-alt);margin:0 0 17px}
+.command h3{color:var(--accent);font-size:.87rem;margin-bottom:10px;letter-spacing:.07em}
+.command-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(162px,1fr));gap:9px}
+.command-stat{border:1px solid var(--border);background:var(--card-bg);border-radius:9px;padding:9px}
+.command-stat .val{font-size:1.12rem;font-weight:900;font-family:monospace;margin:5px 0}
+.command-stat .hint{font-size:.7rem;color:var(--muted)}
+.mini-analytics{font-size:.7rem;line-height:1.65;margin:6px 0;border-top:1px solid var(--border);padding-top:6px}
+.mini-analytics strong{color:var(--accent)}
+.sync-status{border:1px solid var(--border);border-radius:9px;padding:9px 12px;background:var(--panel);font-size:.8rem;margin-bottom:12px}
+.sync-status.warning{border-color:var(--warn)}
+.sync-status.good{border-color:var(--pass)}
+.audit{background:var(--panel-alt);padding:9px;border:1px solid var(--border);border-radius:9px;margin:9px 0;font-size:.76rem;line-height:1.7}
+.analytics-note{font-size:.72rem;color:var(--muted);margin:10px 0}
+hr.input-sep{border:0;border-top:1px solid var(--border);margin:10px 0;grid-column:1/-1}
+@media(max-width:600px){body{padding:8px}header,.section-panel{padding:11px}.modal{padding:12px}.days-grid{grid-template-columns:1fr}.btn-group{gap:5px}.view-tab{font-size:.73rem;padding:7px}}
+
+[data-theme="glacier"]{--bg:#091421;--bg-grad:linear-gradient(145deg,#091421,#162f49);--panel:#102238;--panel-alt:#162f49;--card-bg:#102238;--border:#40546a;--text:#f0f6ff;--muted:#b2c4d8;--accent:#80d9ff;--secondary:#a9bfff;--accent-soft:#80d9ff20;--secondary-soft:#a9bfff20;--pass:#6ee7b7;--warn:#ff8ca8;}
+[data-theme="amethyst"]{--bg:#150f24;--bg-grad:linear-gradient(145deg,#150f24,#302347);--panel:#211936;--panel-alt:#302347;--card-bg:#211936;--border:#40546a;--text:#f0f6ff;--muted:#b2c4d8;--accent:#d3b1ff;--secondary:#f2a8cd;--accent-soft:#d3b1ff20;--secondary-soft:#f2a8cd20;--pass:#6ee7b7;--warn:#ff8ca8;}
+[data-theme="ocean"]{--bg:#071b20;--bg-grad:linear-gradient(145deg,#071b20,#193b43);--panel:#102c33;--panel-alt:#193b43;--card-bg:#102c33;--border:#40546a;--text:#f0f6ff;--muted:#b2c4d8;--accent:#68e4d0;--secondary:#89c8ff;--accent-soft:#68e4d020;--secondary-soft:#89c8ff20;--pass:#6ee7b7;--warn:#ff8ca8;}
+[data-theme="slate"]{--bg:#f1f5f9;--bg-grad:linear-gradient(145deg,#f1f5f9,#e2e8f0);--panel:#ffffff;--panel-alt:#e2e8f0;--card-bg:#ffffff;--border:#b9c9db;--text:#15263b;--muted:#4b6078;--accent:#175a9e;--secondary:#7c3aed;--accent-soft:#175a9e20;--secondary-soft:#7c3aed20;--pass:#08745e;--warn:#b42349;}
+.command{padding:22px;background:linear-gradient(125deg,var(--panel),var(--panel-alt));border-radius:18px}.command-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.command-stat{position:relative;overflow:hidden;padding:18px;border-radius:14px;border-top:3px solid var(--accent);background:linear-gradient(145deg,var(--card-bg),var(--accent-soft));min-height:145px}.command-stat:nth-child(3n+2){border-top-color:var(--secondary)}.command-stat:nth-child(3n){border-top-color:var(--pass)}.command-stat .val{font-family:inherit;font-size:1.45rem;letter-spacing:-.035em;margin:14px 0 8px;line-height:1.2;overflow-wrap:anywhere}.command-stat .ws-lbl{text-transform:uppercase;font-size:.67rem;letter-spacing:.09em;color:var(--muted)}.command-stat .hint{line-height:1.5}.command-icon{float:right;color:var(--accent);font-size:1rem}.s2-box{grid-column:1/-1;padding:18px;border:1px solid var(--accent);border-radius:14px;background:var(--accent-soft)}.s2-box .modal-grid{margin-top:14px}.weekly-rollup{margin-top:20px}#sessionPreview{margin-top:12px;color:var(--accent);font-size:.82rem;line-height:1.5}@media(max-width:600px){.command{padding:12px}.command-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.command-stat{padding:12px}.command-stat .val{font-size:1.12rem}.s2-box .modal-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.modal-grid{grid-template-columns:minmax(0,1fr)}.modal-grid>.input-field{grid-column:1/-1!important}.modal-grid input,.modal-grid select,.modal-grid textarea{min-width:0;width:100%}.s2-box>div:first-child{flex-wrap:wrap;gap:8px}.modal{min-width:0;width:100%;overflow-x:hidden}.modal-grid{min-width:0}.modal button{white-space:normal}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="title-group">
+      <h1>PROJECT CLOUD CITY: 10,200 FT — LEADVILLE 100 MASTER LOG</h1>
+      <p>Start Date: Mon 09/28/2026 &bull; Active Week: Week 3 (10/12 – 10/18/26) &bull; Caps: Easy/M6 &le; 134 bpm | Long &le; 144 bpm | PM Flush &le; 125 bpm</p>
+    </div>
+    <div class="btn-group">
+      <select id="themeSelector" onchange="setTheme(this.value)" title="Change Color Theme">
+        <option value="copper">Theme: Leadville Copper &amp; Gold</option>
+        <option value="timberline">Theme: Timberline Pine &amp; Amber</option>
+        <option value="tactical">Theme: Night Ops Carbon &amp; Orange</option>
+        <option value="daylight">Theme: High-Altitude Daylight</option><option value="glacier">Theme: Glacier Blue</option><option value="amethyst">Theme: Alpine Amethyst</option><option value="ocean">Theme: Pacific Teal</option><option value="slate">Theme: Summit Slate</option>
+      </select>
+      <button class="copper" onclick="jumpToWeek(1)">Wk 1 (09/28)</button>
+      <button class="copper" onclick="jumpToWeek(2)">Wk 2 (10/05)</button>
+      <button class="primary" onclick="jumpToWeek(3)">★ Active Wk 3 (10/12)</button>
+      <button onclick="exportBackup()">Export Backup (.json)</button>
+       <button onclick="configureNas()">🔐 NAS Setup</button>
+       <button onclick="loadFromNas(true)">↓ Refresh from NAS</button>
+       <button onclick="uploadToNas()">↑ Merge this device to NAS</button>
+      <button onclick="document.getElementById('importInput').click()">Import Backup</button>
+      <input type="file" id="importInput" style="display:none" accept=".json" onchange="importBackup(event)">
+    </div>
+  </div>
+
+  <div id="syncStatus" class="sync-status warning" role="status">Local-only mode — configure NAS to share logs across devices. Export a JSON backup first.</div>
+  <!-- Campaign Progress Bars -->
+  <div class="campaign-bars">
+    <div class="bar-card">
+      <div class="bar-head">
+        <span>48-WEEK CUMULATIVE MILEAGE PROGRESSION (START: 09/28/26)</span>
+        <span class="val" id="barMilesTxt">0.0 / 1,650.0 mi (0.0%)</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="barMilesFill"></div></div>
+    </div>
+    <div class="bar-card">
+      <div class="bar-head">
+        <span>CUMULATIVE VERTICAL CLIMB (1 MT. EVEREST = 29,032 FT)</span>
+        <span class="val" id="barVertTxt">0 ft (0.00x Everest)</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="barVertFill"></div></div>
+    </div>
+  </div>
+
+  <!-- 6 Core Historical Metrics + Vert Banner -->
+  <div class="summary-grid">
+    <div class="stat-card">
+      <div class="s-label">1. Cumulative Miles</div>
+      <div class="s-val" id="totMiles">0.00 mi</div>
+      <div class="s-sub" id="subMiles">0 workouts logged</div>
+    </div>
+    <div class="stat-card">
+      <div class="s-label">2. Cumulative Time</div>
+      <div class="s-val" id="totTime">0h 00m</div>
+      <div class="s-sub" id="subTime">0 total mins</div>
+    </div>
+    <div class="stat-card">
+      <div class="s-label">3. Historical Avg Pace</div>
+      <div class="s-val" id="totPace">--:-- /mi</div>
+      <div class="s-sub">Across all distance sessions</div>
+    </div>
+    <div class="stat-card">
+      <div class="s-label">4. Historical Avg HR</div>
+      <div class="s-val" id="totAvgHr">-- bpm</div>
+      <div class="s-sub" id="subAvgHr">Time-weighted aerobic HR</div>
+    </div>
+    <div class="stat-card">
+      <div class="s-label">5. Peak Max Heart Rate</div>
+      <div class="s-val" id="totMaxHr">-- bpm</div>
+      <div class="s-sub" id="subMaxHr">Highest recorded HR</div>
+    </div>
+    <div class="stat-card">
+      <div class="s-label">6. Total Calories Burned</div>
+      <div class="s-val" id="totCals">0 kcal</div>
+      <div class="s-sub" id="subCals">Avg 0 kcal / logged wk</div>
+    </div>
+    <div class="stat-card">
+      <div class="s-label">7. Total Elevation Gain</div>
+      <div class="s-val" id="totVert">0 ft</div>
+      <div class="s-sub" id="subSauna">0 Sauna sessions logged</div>
+    </div>
+  </div>
+  <!-- Live Auto-Calculated Weekly Totals & Averages Banner -->
+  <div class="weekly-rollup">
+    <div class="weekly-rollup-top">
+      <h3 id="wkRollupTitle">WEEK 3 AUTO-CALCULATED TOTALS &amp; AVERAGES (FROM YOUR DAILY LOGS BELOW)</h3>
+      <span style="font-size:0.75rem; color:var(--muted);" id="wkPlannedComparison"></span>
+    </div>
+    <div class="weekly-stats-row">
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Miles</div>
+        <div class="ws-num" id="wsMiles">0.00 mi</div>
+        <div class="ws-sub" id="wsMilesSub">Planned Run: 0 mi</div>
+      </div>
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Total Time</div>
+        <div class="ws-num" id="wsTime">0h 00m</div>
+        <div class="ws-sub" id="wsTimeSub">0 mins logged</div>
+      </div>
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Avg Pace</div>
+        <div class="ws-num" id="wsPace">--:-- /mi</div>
+        <div class="ws-sub">Auto-calculated</div>
+      </div>
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Avg HR</div>
+        <div class="ws-num" id="wsAvgHr">-- bpm</div>
+        <div class="ws-sub" id="wsAvgHrSub">Time-weighted avg</div>
+      </div>
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Peak Max HR</div>
+        <div class="ws-num" id="wsMaxHr">-- bpm</div>
+        <div class="ws-sub" id="wsMaxHrSub">Peak HR this week</div>
+      </div>
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Calories</div>
+        <div class="ws-num" id="wsCals">0 kcal</div>
+        <div class="ws-sub" id="wsCalsSub">Total burn</div>
+      </div>
+      <div class="w-stat">
+        <div class="ws-lbl">Weekly Climb / Vert</div>
+        <div class="ws-num" id="wsVert">0 ft</div>
+        <div class="ws-sub" id="wsDaysCount">0 / 7 days logged</div>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<!-- Navigation Tabs -->
+<div class="view-tabs">
+  <button class="view-tab active" id="tabBtnWeekly" onclick="switchView('weekly')">1. Day-by-Day Plan &amp; Accomplishment Logger</button>
+  <button class="view-tab" id="tabBtnHistory" onclick="switchView('history')">2. Historical Weekly Totals &amp; Averages Tracker</button>
+  <button class="view-tab" id="tabBtnMaster" onclick="switchView('master')">3. Full 48-Week Master Grid (Prescribed + Accomplished)</button>
+</div>
+
+<!-- VIEW 1: DAY-BY-DAY PLAN & ACCOMPLISHMENT LOGGER -->
+<div id="viewWeekly" class="section-panel">
+  <div class="section-header">
+    <div>
+      <h2 id="wkTitleDisplay">WEEK 3: OCT 12 – OCT 18, 2026 (BUILD)</h2>
+      <span style="font-size:0.82rem; color:var(--muted);" id="wkBlockDisplay"></span>
+    </div>
+    <div class="btn-group">
+      <button onclick="changeWeek(-1)">&#9664; Prev Week</button>
+      <select id="weekSelect" onchange="selectWeek(this.value)"></select>
+      <button onclick="changeWeek(1)">Next Week &#9654;</button>
+    </div>
+  </div>
+
+  <div class="command" id="weeklyCommand">
+    <h3>WEEKLY COMMAND • LOAD, VERTICAL, SLEEP & READINESS</h3>
+    <div class="command-grid" id="commandGrid"></div>
+    <div class="analytics-note">Running miles exclude hikes, rucks and M6. Estimated incline ascent is used only when explicit vert is absent; totals are not double-counted. Daily sleep values and prior-night beers must be entered manually.</div>
+  </div>
+  <!-- 7 Day Cards (MON - SUN) -->
+  <div class="days-grid" id="daysGrid"></div>
+</div>
+
+<!-- VIEW 2: HISTORICAL WEEKLY TRACKER TABLE -->
+<div id="viewHistory" class="section-panel">
+  <div class="section-header">
+    <div>
+      <h2>48-WEEK HISTORICAL TRACKER — WEEKLY TOTALS, AVERAGES &amp; ACCOMPLISHMENTS</h2>
+      <span style="font-size:0.8rem; color:var(--muted);">Automatically aggregates your daily logs for every week (Start Date: 09/28/2026)</span>
+    </div>
+    <div class="btn-group">
+      <label style="font-size:0.8rem; color:var(--muted); display:flex; align-items:center; gap:6px; cursor:pointer;">
+        <input type="checkbox" id="showAllWeeksToggle" onchange="renderHistoryTable()"> Show All 48 Weeks
+      </label>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Actual Dates (2026–27)</th>
+          <th>Phase / Block</th>
+          <th>Days</th>
+          <th>Run Miles (vs Plan)</th>
+          <th>Total Time</th>
+          <th>Avg Pace</th>
+          <th>Avg HR</th>
+          <th>Max HR</th>
+          <th>Calories Burned</th>
+          <th>Vert (ft)</th>
+          <th>Running / Load / Hope Pass</th><th>Sleep / Beer / Recovery</th><th>Accomplishment Annotations</th>
+          <th>Open</th>
+        </tr>
+      </thead>
+      <tbody id="historyTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- VIEW 3: FULL 48-WEEK MASTER PLAN GRID -->
+<div id="viewMaster" class="section-panel" style="display:none;">
+  <div class="section-header">
+    <div>
+      <h2>FULL 48-WEEK MASTER GRID (PRESCRIBED WORKOUTS + YOUR ACCOMPLISHMENTS)</h2>
+      <span style="font-size:0.8rem; color:var(--muted);">Includes all physiological optimizations &bull; Click any day cell to log or annotate</span>
+    </div>
+    <div class="btn-group">
+      <select id="blockFilter" onchange="renderMasterGrid()">
+        <option value="ALL">All 4 Blocks (Weeks 1–48)</option>
+        <option value="1">Block 1: Weeks 1–12 (Aerobic Anchoring &amp; 14mi Gate Check)</option>
+        <option value="2">Block 2: Weeks 13–24 (Eccentric Armor &amp; 26.2mi Marathon Gate Check)</option>
+        <option value="3">Block 3: Weeks 25–36 (Hope Pass Sandwiches, Sauna Boost &amp; 50K Gate)</option>
+        <option value="4">Block 4: Weeks 37–48 (50-Mile Sim &amp; Sub-30h Leadville Execution)</option>
+      </select>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:105px;">Week / Dates</th>
+          <th>MON (M6 Flush)</th>
+          <th>TUE (Hope Pass Incline)</th>
+          <th>WED (X24 / Run + Dec)</th>
+          <th>THU (Double Day)</th>
+          <th>FRI (Recovery / Sauna)</th>
+          <th>SAT (Long Run / Sim)</th>
+          <th>SUN (Fatigued Load)</th>
+        </tr>
+      </thead>
+      <tbody id="masterGridBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- MODAL FOR LOGGING DAILY WORKOUT, SCREENSHOT OCR & DOUBLE-DAY COMBINER -->
+<div class="modal-backdrop" id="dayModal">
+  <div class="modal">
+    <h3 id="dmTitle">Log Daily Workout &amp; Accomplishment</h3>
+    <div class="m-sub" id="dmRx"></div>
+
+    <!-- Screenshot Upload / Paste Zone -->
+    <div class="ocr-dropzone" onclick="document.getElementById('ocrFile').click()">
+      <strong style="color:var(--accent);">📷 Click to Upload Screenshot (or Press Ctrl+V to Paste Image)</strong>
+      <div style="font-size:0.74rem; color:var(--muted); margin-top:3px;" id="ocrStatus">
+        Saves screenshot thumbnail to this day &amp; auto-extracts Miles, Time, Pace, Avg/Max HR &amp; Calories
+      </div>
+      <input type="file" id="ocrFile" style="display:none" accept="image/*" onchange="handleOCRUpload(event, 1)">
+    </div>
+
+    <div class="modal-grid">
+      <div class="input-field">
+        <label for="dmMiles">Miles Accomplished</label><input type="number" id="dmMiles" step="0.01" placeholder="e.g. 6.0" oninput="autoCalcModalPace()">
+      </div>
+      <div class="input-field">
+        <label for="dmTime">Duration (mins or hh:mm:ss)</label><input type="text" id="dmTime" placeholder="e.g. 65 or 1:05:00" oninput="autoCalcModalPace()">
+      </div>
+      <div class="input-field">
+        <label for="dmPace">Avg Pace (min/mi)</label><input type="text" id="dmPace" placeholder="Auto or e.g. 11:27">
+      </div>
+      <div class="input-field">
+        <label for="dmAvgHr">Avg Heart Rate (bpm)</label><input type="number" id="dmAvgHr" step="1" placeholder="e.g. 131">
+      </div>
+      <div class="input-field">
+        <label for="dmMaxHr">Max Heart Rate (bpm)</label><input type="number" id="dmMaxHr" step="1" placeholder="e.g. 141">
+      </div>
+      <div class="input-field">
+        <label for="dmCals">Calories Burned (kcal)</label><input type="number" id="dmCals" step="1" placeholder="e.g. 680">
+      </div>
+      <div class="input-field">
+        <label for="dmVert">Elevation Gain / Vert (ft)</label><input type="number" id="dmVert" step="1" placeholder="e.g. 1823">
+      </div>
+      <div class="input-field" style="grid-column: span 2; justify-content: flex-end;">
+        <button type="button" class="copper" onclick="toggleSecondSession()">＋ Add / edit second session</button>
+      </div>
+
+      <div id="sessionPreview" role="status" style="grid-column:1/-1"></div>
+      <!-- Optional Session 2 Combiner for Double Days (e.g., Thursday PM M6 or Sunday Ruck) -->
+      <div class="s2-box" id="s2Box" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <strong style="font-size:0.76rem; color:var(--accent);">SESSION 02 · DOUBLE DAY</strong>
+          <button type="button" style="padding:3px 8px; font-size:0.7rem;" onclick="document.getElementById('ocrFile2').click()">📷 Scan 2nd Screenshot</button>
+          <input type="file" id="ocrFile2" style="display:none" accept="image/*" onchange="handleOCRUpload(event, 2)">
+        </div>
+        <p class="analytics-note">Enter each session separately. Totals combine once when saved. Use Add / edit second session to hide and remove session two.</p>
+        <div class="modal-grid">
+                <div class="input-field full"><label for="s2Kind">Activity</label><select id="s2Kind"><option value="m6">M6</option><option value="run">Run</option><option value="hike">Incline Hike</option><option value="stepmill">StepMill</option><option value="ruck">Ruck / Walk</option><option value="recovery">Recovery</option></select></div><div class="input-field"><label for="s2Miles">2nd Miles</label><input type="number" id="s2Miles" step="0.01" placeholder="0.0"></div>
+          <div class="input-field"><label for="s2Time">Duration (mins or hh:mm:ss)</label><input type="text" id="s2Time" placeholder="e.g. 30"></div>
+          <div class="input-field"><label for="s2AvgHr">2nd Avg HR</label><input type="number" id="s2AvgHr" placeholder="e.g. 122"></div>
+          <div class="input-field"><label for="s2MaxHr">2nd Max HR</label><input type="number" id="s2MaxHr" placeholder="e.g. 128"></div>
+          <div class="input-field"><label for="s2Vert">Elevation gain (ft)</label><input id="s2Vert" type="number" min="0" step="1" placeholder="e.g. 600"></div><div class="input-field"><label for="s2Incline">Incline (%)</label><input id="s2Incline" type="number" min="-40" max="40" step="0.1" placeholder="Optional"></div><div class="input-field"><label for="s2Floors">StepMill floors</label><input id="s2Floors" type="number" min="0" step="1" placeholder="Optional"></div><div class="input-field"><label for="s2Steps">StepMill steps</label><input id="s2Steps" type="number" min="0" step="1" placeholder="Optional"></div><div class="input-field"><label for="s2Cals">2nd Calories</label><input type="number" id="s2Cals" placeholder="e.g. 310"></div>
+          <div class="input-field" style="justify-content:flex-end;">
+            <button type="button" class="primary" onclick="mergeSecondSession()">Preview combined totals</button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="input-sep">
+      <div class="input-field full"><label for="dmKind">Primary Session Category</label><select id="dmKind"><option value="auto">Auto-detect from plan</option><option value="run">Run / Tempo / Long / B2B</option><option value="hike">X24 Incline Hike</option><option value="stepmill">StairMaster / StepMill</option><option value="ruck">Weighted Ruck / Walk</option><option value="m6">Bowflex M6 / Low Impact</option><option value="recovery">Recovery / Rest / Structural Reset</option></select>
+      </div>
+      <div class="input-field"><label for="dmIncline">Avg Incline (%) for ascent estimate</label><input type="number" id="dmIncline" step="0.1" min="-40" max="40" placeholder="e.g. 15"></div>
+      <div class="input-field"><label for="dmFloors">StepMill Floors (if no vert)</label><input type="number" id="dmFloors" min="0" step="1" placeholder="10 ft/floor"></div>
+      <div class="input-field"><label for="dmSteps">StepMill Steps (if no vert/floors)</label><input type="number" id="dmSteps" min="0" step="1" placeholder="1.5 steps/ft"></div>
+      <div class="input-field"><label for="dmBeers">Beers Previous Evening</label><input type="number" id="dmBeers" min="0" step="1" placeholder="0, 1, 2..."></div>
+      <div class="input-field"><label for="dmSleepScore">Eight Sleep Fitness Score (0–100)</label><input type="number" id="dmSleepScore" min="0" max="100" step="1"></div>
+      <div class="input-field"><label for="dmRhr">Overnight Resting HR (bpm)</label><input type="number" id="dmRhr" min="0" max="150" step="0.1"></div>
+      <div class="input-field"><label for="dmHrv">HRV (ms)</label><input type="number" id="dmHrv" min="0" step="0.1"></div>
+      <div class="input-field"><label for="dmDeep">Deep Sleep (%)</label><input type="number" id="dmDeep" min="0" max="100" step="0.1"></div>
+      <div class="input-field"><label for="dmResp">Respiratory Rate (breaths/min)</label><input type="number" id="dmResp" min="0" step="0.1"></div>
+      <hr class="input-sep">
+      <div class="input-field"><label for="dmSaunaMins">Relax Infrared Sauna (mins)</label><input type="number" id="dmSaunaMins" min="0" step="1" placeholder="20"></div>
+      <div class="input-field"><label for="dmCompression">CINCOM Compression (mins)</label><input type="number" id="dmCompression" min="0" step="1"></div>
+      <div class="input-field"><label for="dmIntensity">CINCOM Intensity Level</label><input type="text" id="dmIntensity" placeholder="e.g. 2 / medium"></div>
+      <div class="input-field"><label for="dmFuelRate">Gut Fuel Rate (kcal/hr)</label><input type="number" id="dmFuelRate" min="0" step="1" placeholder="200–300"></div>
+      <div class="input-field"><label for="dmGi">Gut Comfort Score (0–10; 10 best)</label><input type="number" id="dmGi" min="0" max="10" step="1"></div>
+
+      <div class="audit" id="dmLiveAudit" style="grid-column:1/-1">Cardiac and beer calibration are calculated after saving.</div>
+      <div class="check-row">
+        <label><input type="checkbox" id="dmSauna"> 20m Infrared Sauna Completed</label>
+        <label><input type="checkbox" id="dmFuel"> Gut Fuel Target Hit</label>
+        <label><input type="checkbox" id="dmStrength"> Eccentric / Step-Down Drills Done</label>
+      </div>
+
+      <div class="input-field full">
+        <label for="dmNotes">What I Accomplished (Detailed Annotation, Splits, Incline %, M6 Resistance, Feel)</label><textarea id="dmNotes" rows="3" placeholder="Annotate what you accomplished today (e.g., 60m X24 @ 15% 3.0mph, 1,823ft vert, felt strong, 20m sauna)..."></textarea>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button onclick="deleteDayLog()" style="margin-right:auto; color:var(--warn);">Clear Day</button>
+      <button onclick="closeDayModal()">Cancel</button>
+      <button class="primary" onclick="saveDayLog()">Save Daily Accomplishment</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const DAYS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+const DAY_ROLES = [
+  "M6 AEROBIC FLUSH",
+  "HOPE PASS INCLINE",
+  "X24 RUN + ECCENTRIC",
+  "DOUBLE DAY (RUN + M6)",
+  "SAUNA & ECCENTRIC",
+  "LONG ENDURANCE SIM",
+  "FATIGUED B2B / RUCK"
+];
+
+// Start Date: Monday, September 28, 2026
+const PROGRAM_START = new Date(2026, 8, 28); // Month is 0-indexed (8 = Sept)
+
+function getWeekDateInfo(wkNum) {
+  const mon = new Date(PROGRAM_START);
+  mon.setDate(mon.getDate() + (wkNum - 1) * 7);
+  const sun = new Date(mon);
+  sun.setDate(mon.getDate() + 6);
+
+  const fmtShort = d => `${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`;
+  const fmtYr = d => `${fmtShort(d)}/${String(d.getFullYear()).slice(-2)}`;
+
+  const dayDates = [];
+  for (let i = 0; i < 7; i++) {
+    const cur = new Date(mon);
+    cur.setDate(mon.getDate() + i);
+    dayDates.push(fmtShort(cur));
+  }
+  return {
+    monShort: fmtShort(mon),
+    rangeStr: `${fmtYr(mon)} – ${fmtYr(sun)}`,
+    dayDates
+  };
+}
+
+// Complete 48-Week Master Plan with All Physiological Optimizations & Errata Fixes Integrated
+const PLAN = [
+  // BLOCK 1 (Weeks 1-12): Caloric Deficit Body-Comp Window + Aerobic Anchoring
+  { wk:1, phase:"BASE", block:1, planMi:19.0, days:[
+    {t:"60m M6 Flush", s:"Zero-impact circulatory flush", cap:134, up:"Deficit Phase Wk 1"},
+    {t:"60m TM Hike", s:"X24: 12% @ 3.2 mph (Poles)", cap:134},
+    {t:"5.0 mi Tempo", s:"X24 @ 3% incline", cap:144},
+    {t:"4.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Heavy eccentric step-downs", cap:134},
+    {t:"Long: 10.0 mi", s:"X24/Trail | Fuel: 200 kcal/hr", cap:144, fuel:"200 kcal/hr"},
+    {t:"45m Ruck (25 lb)", s:"+ 30m easy walk", cap:134}
+  ]},
+  { wk:2, phase:"BUILD", block:1, planMi:25.0, days:[
+    {t:"65m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"60m TM Hike", s:"X24: 14% @ 3.2 mph (Poles)", cap:134},
+    {t:"6.0 mi Tempo", s:"X24 @ 3% incline", cap:144},
+    {t:"5.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Heavy eccentric step-downs", cap:134},
+    {t:"Long: 11.0 mi", s:"X24/Trail | Fuel: 200 kcal/hr", cap:144, fuel:"200 kcal/hr"},
+    {t:"50m Ruck (25 lb)", s:"+ 3.0 mi easy shakeout", cap:134}
+  ]},
+  { wk:3, phase:"BUILD", block:1, planMi:26.5, days:[
+    {t:"70m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"65m TM Hike", s:"X24: 15% @ 3.0 mph (Poles)", cap:134},
+    {t:"6.0 mi Steady", s:"X24: 4mi Easy @ 4% + 2mi Steady @ 2%", cap:134, up:"Clarified Split"},
+    {t:"5.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Tibialis raises / Step-downs", cap:134},
+    {t:"Long: 12.5 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"60m Ruck (30 lb)", s:"+ 3.0 mi easy shakeout", cap:134}
+  ]},
+  { wk:4, phase:"DELOAD", block:1, planMi:16.5, days:[
+    {t:"45m M6 Flush", s:"Deload circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 10% @ 3.0 mph", cap:130},
+    {t:"4.0 mi Easy", s:"X24 @ 2% incline", cap:130, up:"Patched Missing Cell"},
+    {t:"4.0 mi Easy", s:"Single morning run (No PM M6)", cap:130},
+    {t:"Rest / 20m Sauna", s:"Full mobility reset", cap:130},
+    {t:"Long: 8.5 mi", s:"Recovery Aerobic Long Run", cap:140},
+    {t:"45m Easy Walk", s:"Unweighted / Soft surface", cap:130}
+  ]},
+  { wk:5, phase:"BUILD", block:1, planMi:29.5, days:[
+    {t:"70m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"65m TM Hike", s:"X24: 15% @ 3.2 mph (Poles)", cap:134},
+    {t:"7.0 mi Steady", s:"X24 @ 3% incline", cap:134},
+    {t:"5.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 13.5 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"4.0 mi Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:6, phase:"BUILD", block:1, planMi:33.0, days:[
+    {t:"75m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"70m Step / Hike", s:"X24: 16% incline intervals", cap:134},
+    {t:"7.0 mi Steady", s:"X24 @ 4% incline", cap:134},
+    {t:"6.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 15.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"5.0 mi Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:7, phase:"PEAK", block:1, planMi:36.5, days:[
+    {t:"75m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"75m TM Hike", s:"X24: 18% @ 2.8–3.2 mph", cap:134},
+    {t:"8.0 mi Steady", s:"X24 @ 4% incline", cap:134},
+    {t:"6.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs / Mobility", cap:134},
+    {t:"Long: 16.5 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"6.0 mi B2B Run", s:"Tired legs | Zone 2", cap:134}
+  ]},
+  { wk:8, phase:"DELOAD", block:1, planMi:19.0, days:[
+    {t:"50m M6 Flush", s:"Deload circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 10% @ 3.0 mph", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Foam rolling reset", cap:130},
+    {t:"Long: 10.0 mi", s:"Aerobic Deload Long Run", cap:140},
+    {t:"60m Mobility Walk", s:"Zero pack weight", cap:130}
+  ]},
+  { wk:9, phase:"PEAK", block:1, planMi:38.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"80m TM Hike", s:"X24: 18–20% peak incline", cap:134, up:"Consolidated Cell"},
+    {t:"8.0 mi Steady", s:"X24 @ 4% incline", cap:134},
+    {t:"6.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs / Lunges", cap:134},
+    {t:"Long: 18.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"6.0 mi B2B Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:10, phase:"MAX VOL", block:1, planMi:42.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"80m TM Hike", s:"X24: 20% peak incline (Poles)", cap:134, up:"Patched Missing Cell"},
+    {t:"8.0 mi Steady", s:"X24 @ 5% incline", cap:134},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134, up:"Sleep-Safe PM Cap"},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs / Lunges", cap:134},
+    {t:"Long: 20.0 mi", s:"X24/Trail | Fuel: 300 kcal/hr", cap:144, fuel:"300 kcal/hr"},
+    {t:"7.0 mi B2B Run", s:"Fatigued legs practice", cap:134}
+  ]},
+  { wk:11, phase:"TAPER", block:1, planMi:20.0, days:[
+    {t:"50m M6 Flush", s:"Taper circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 3% incline", cap:130},
+    {t:"4.0 mi Easy (AM)", s:"+ 20m M6 Flush (PM ≤125 bpm)", cap:130},
+    {t:"Rest / 20m Sauna", s:"Mobility reset", cap:130},
+    {t:"Long: 11.0 mi", s:"Fresh legs | Controlled", cap:140},
+    {t:"45m Recovery Walk", s:"Unweighted soft path", cap:130}
+  ]},
+  { wk:12, phase:"TEST", block:1, planMi:17.0, days:[
+    {t:"40m M6 Flush", s:"Taper flush", cap:130},
+    {t:"30m TM Hike", s:"X24: 10% steady pace", cap:130},
+    {t:"3.0 mi Shakeout", s:"+ 4x15s uphill strides", cap:130},
+    {t:"20m Easy Spin/M6", s:"Active flush", cap:125},
+    {t:"Full Rest Day", s:"Hydration & salt prep", cap:120},
+    {t:"MILESTONE 1: 14.0 mi", s:"Continuous Pacing & Fuel Trial", cap:144, up:"GATE CHECK #1", fuel:"250 kcal/hr"},
+    {t:"60m Gentle Walk", s:"+ Full lower reset", cap:125}
+  ]},
+
+  // BLOCK 2 (Weeks 13-24): Isocaloric Fueling + X24 Decline Armor + Marathon Build
+  { wk:13, phase:"BASE", block:2, planMi:28.0, days:[
+    {t:"60m M6 Flush", s:"Transition to Isocaloric Maintenance", cap:134, up:"End Caloric Deficit"},
+    {t:"60m TM Hike", s:"X24: 15% @ 3.0 mph + 10m @ -4%", cap:134, up:"Decline Quad Armor"},
+    {t:"6.0 mi Tempo", s:"X24: 4.5mi @ +3% / 1.5mi @ -4% dec", cap:144, up:"X24 -4% Eccentric"},
+    {t:"5.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 12.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"5.0 mi Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:14, phase:"BUILD", block:2, planMi:33.0, days:[
+    {t:"65m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"70m TM Hike", s:"X24: 16% @ 3.0 mph + 10m @ -4%", cap:134, up:"Decline Quad Armor"},
+    {t:"7.0 mi Steady", s:"X24: 5.5mi @ +4% / 1.5mi @ -4% dec", cap:134, up:"X24 -4% Eccentric"},
+    {t:"6.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 14.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"6.0 mi Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:15, phase:"BUILD", block:2, planMi:36.0, days:[
+    {t:"70m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"75m Incline/Stair", s:"Power intervals", cap:144},
+    {t:"7.0 mi Steady", s:"X24: 5mi @ +4% / 2mi @ -4% dec", cap:134, up:"X24 -4% Eccentric"},
+    {t:"6.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 16.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"7.0 mi B2B Run", s:"Aerobic flush", cap:134}
+  ]},
+  { wk:16, phase:"DELOAD", block:2, planMi:19.0, days:[
+    {t:"45m M6 Flush", s:"Deload circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 10% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Mobility / Reset", cap:130},
+    {t:"Long: 10.0 mi", s:"Flush Long Run", cap:140},
+    {t:"60m Gentle Walk", s:"Zero weight / Reset", cap:130}
+  ]},
+  { wk:17, phase:"BUILD", block:2, planMi:40.0, days:[
+    {t:"75m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"75m TM Hike", s:"X24: 18% @ 3.0 mph + 15m @ -5%", cap:134, up:"Decline Quad Armor"},
+    {t:"8.0 mi Sustained", s:"X24: 6mi @ +4% / 2mi @ -5% dec", cap:134, up:"X24 -5% Eccentric"},
+    {t:"6.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 18.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"8.0 mi B2B Run", s:"+ 30m Core / Mobility", cap:134}
+  ]},
+  { wk:18, phase:"BUILD", block:2, planMi:43.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"80m TM Hike", s:"X24: 18–20% incline + 15m @ -5%", cap:134, up:"Decline Quad Armor"},
+    {t:"8.0 mi Sustained", s:"X24: 6mi @ +4% / 2mi @ -5% dec", cap:134, up:"X24 -5% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 20.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"8.0 mi B2B Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:19, phase:"PEAK", block:2, planMi:46.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"85m TM Hike", s:"X24: 20% peak incline + 15m @ -5%", cap:134, up:"Decline Quad Armor"},
+    {t:"9.0 mi Sustained", s:"X24: 7mi @ +4% / 2mi @ -5% dec", cap:134, up:"X24 -5% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 22.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"8.0 mi B2B Run", s:"Fatigued cadence", cap:134}
+  ]},
+  { wk:20, phase:"DELOAD", block:2, planMi:22.0, days:[
+    {t:"50m M6 Flush", s:"Deload circulatory flush", cap:130},
+    {t:"50m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"5.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Deep tissue roll", cap:130},
+    {t:"Long: 12.0 mi", s:"Rolling Deload Run", cap:140},
+    {t:"60m Mobility Walk", s:"Zero pack weight", cap:130}
+  ]},
+  { wk:21, phase:"MAX VOL", block:2, planMi:50.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"90m TM Hike", s:"X24: 18–20% incline + 15m @ -6%", cap:134, up:"Decline Quad Armor"},
+    {t:"9.0 mi Sustained", s:"X24: 6.5mi @ +5% / 2.5mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134, up:"Cleaned Duplicate"},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs / Lunges", cap:134},
+    {t:"Long: 24.0 mi", s:"X24/Trail | Fuel: 300 kcal/hr", cap:144, fuel:"300 kcal/hr"},
+    {t:"10.0 mi B2B Run", s:"Tired legs trial", cap:134}
+  ]},
+  { wk:22, phase:"TAPER 1", block:2, planMi:35.0, days:[
+    {t:"70m M6 Flush", s:"Taper circulatory flush", cap:134},
+    {t:"60m TM Hike", s:"X24: 15% incline", cap:134},
+    {t:"7.0 mi Steady", s:"X24 @ 3% incline", cap:134},
+    {t:"6.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 16.0 mi", s:"Controlled Taper Long Run", cap:140},
+    {t:"6.0 mi Recovery Run", s:"Easy effort", cap:130}
+  ]},
+  { wk:23, phase:"TAPER 2", block:2, planMi:19.0, days:[
+    {t:"50m M6 Flush", s:"Taper circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy (AM)", s:"+ 20m M6 Flush (PM ≤125 bpm)", cap:130},
+    {t:"Rest / 20m Sauna", s:"Mobility reset", cap:130},
+    {t:"Long: 10.0 mi", s:"Fresh legs | Taper", cap:140},
+    {t:"45m Recovery Walk", s:"Unweighted soft walk", cap:130}
+  ]},
+  { wk:24, phase:"TEST", block:2, planMi:29.2, days:[
+    {t:"40m M6 Flush", s:"Taper flush", cap:130},
+    {t:"30m TM Hike", s:"X24: 10% steady pace", cap:130},
+    {t:"3.0 mi Shakeout", s:"+ Strides", cap:130},
+    {t:"20m Easy Flush", s:"M6 or light spin", cap:125},
+    {t:"Full Rest Day", s:"Carb loading & salt", cap:120},
+    {t:"MILESTONE 2: 26.2 mi", s:"Marathon Durability Test (Sub-4 Goal)", cap:144, up:"GATE CHECK #2", fuel:"250-300 kcal/hr"},
+    {t:"Complete Rest Day", s:"Elevation & contrast", cap:120}
+  ]},
+
+  // BLOCK 3 (Weeks 25-36): B2B Volume, Hope Pass Sandwiches, Sauna Plasma & 50K Gate
+  { wk:25, phase:"BASE", block:3, planMi:31.0, days:[
+    {t:"60m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"60m TM Hike", s:"X24: 15% @ 3.2 mph", cap:134},
+    {t:"6.0 mi Steady", s:"X24: 4.5mi @ +3% / 1.5mi @ -4% dec", cap:134, up:"X24 -4% Eccentric"},
+    {t:"5.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs", cap:134},
+    {t:"Long: 14.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"6.0 mi Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:26, phase:"BUILD", block:3, planMi:38.0, days:[
+    {t:"70m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"75m TM Hike", s:"X24: 18% @ 3.0 mph + 15m @ -5%", cap:134, up:"Decline Quad Armor"},
+    {t:"7.0 mi Steady", s:"X24: 5mi @ +4% / 2mi @ -5% dec", cap:134, up:"X24 -5% Eccentric"},
+    {t:"6.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 17.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"8.0 mi B2B Run", s:"Tired legs practice", cap:134}
+  ]},
+  { wk:27, phase:"BUILD", block:3, planMi:44.0, days:[
+    {t:"75m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"80m TM Hike", s:"X24: 20% incline + 15m @ -5%", cap:134, up:"Decline Quad Armor"},
+    {t:"8.0 mi Sustained", s:"X24: 6mi @ +4% / 2mi @ -5% dec", cap:134, up:"X24 -5% Eccentric"},
+    {t:"6.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 20.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"10.0 mi B2B Run", s:"Aerobic shuffle", cap:134}
+  ]},
+  { wk:28, phase:"DELOAD", block:3, planMi:21.0, days:[
+    {t:"50m M6 Flush", s:"Deload circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Full mobility reset", cap:130},
+    {t:"Long: 12.0 mi", s:"Rolling Deload Run", cap:140},
+    {t:"60m Mobility Walk", s:"Zero pack weight", cap:130}
+  ]},
+  { wk:29, phase:"BUILD", block:3, planMi:47.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"85m TM Hike", s:"X24: 20% peak incline", cap:134},
+    {t:"8.0 mi Sustained", s:"X24: 6mi @ +4% / 2mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 22.0 mi Sim", s:"12mi Run + 90m @ 18% Hike + 4mi @ -4%", cap:144, up:"Hope Pass Sandwich #1", fuel:"250 kcal/hr"},
+    {t:"10.0 mi B2B Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:30, phase:"BUILD", block:3, planMi:52.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"90m TM Hike", s:"X24: 20% peak incline", cap:134},
+    {t:"9.0 mi Sustained", s:"X24: 6.5mi @ +5% / 2.5mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 24.0 mi", s:"X24/Trail | Fuel: 300 kcal/hr", cap:144, fuel:"300 kcal/hr"},
+    {t:"12.0 mi B2B (Night Sim)", s:"6mi AM + 6mi PM w/ Savory Broth", cap:134, up:"Circadian Night Sim #1"}
+  ]},
+  { wk:31, phase:"PEAK", block:3, planMi:54.0, days:[
+    {t:"80m M6 + 20m Sauna", s:"Flush + Post-Workout Heat Plasma", cap:134, up:"Sauna Plasma Boost"},
+    {t:"90m Hike + 20m Sauna", s:"X24: 20% intervals + Heat Plasma", cap:134, up:"Sauna Plasma Boost"},
+    {t:"9.0 mi Sustained", s:"X24: 6.5mi @ +5% / 2.5mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 40m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 26.0 mi", s:"X24/Trail | Fuel: 300 kcal/hr", cap:144, fuel:"300 kcal/hr"},
+    {t:"12.0 mi B2B Run", s:"+ 30m Core / Reset", cap:134}
+  ]},
+  { wk:32, phase:"DELOAD", block:3, planMi:25.0, days:[
+    {t:"50m M6 Flush", s:"Deload circulatory flush", cap:130},
+    {t:"50m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"6.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"5.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Deep tissue reset", cap:130},
+    {t:"Long: 14.0 mi", s:"Rolling Deload Run", cap:140},
+    {t:"60m Mobility Walk", s:"Zero pack weight", cap:130}
+  ]},
+  { wk:33, phase:"MAX VOL", block:3, planMi:59.0, days:[
+    {t:"80m M6 + 20m Sauna", s:"Flush + Post-Workout Heat Plasma", cap:134, up:"Sauna Plasma Boost"},
+    {t:"90m Hike + 20m Sauna", s:"X24: 20% peak + Heat Plasma", cap:134, up:"Sauna Plasma Boost"},
+    {t:"9.0 mi Sustained", s:"X24: 6.5mi @ +5% / 2.5mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"8.0 mi Easy (AM)", s:"+ 40m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs / Lunges", cap:134},
+    {t:"Long: 28.0 mi Sim", s:"16mi Run + 100m @ 20% + 6mi @ -5%", cap:144, up:"Hope Pass Sandwich #2", fuel:"300 kcal/hr"},
+    {t:"14.0 mi B2B Run", s:"Target pacing rehearsal", cap:134}
+  ]},
+  { wk:34, phase:"TAPER 1", block:3, planMi:39.0, days:[
+    {t:"70m M6 Flush", s:"Taper circulatory flush", cap:134},
+    {t:"70m TM Hike", s:"X24: 16% incline", cap:134},
+    {t:"7.0 mi Steady", s:"X24 @ 3% incline", cap:134},
+    {t:"6.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 18.0 mi", s:"Controlled Taper Long Run", cap:140},
+    {t:"8.0 mi Recovery Run", s:"Low intensity", cap:130}
+  ]},
+  { wk:35, phase:"TAPER 2", block:3, planMi:20.0, days:[
+    {t:"50m M6 Flush", s:"Taper circulatory flush", cap:130},
+    {t:"45m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy (AM)", s:"+ 20m M6 Flush (PM ≤125 bpm)", cap:130},
+    {t:"Rest / 20m Sauna", s:"Mobility reset", cap:130},
+    {t:"Long: 11.0 mi", s:"Fresh legs | Taper", cap:140},
+    {t:"45m Recovery Walk", s:"Unweighted soft walk", cap:130}
+  ]},
+  { wk:36, phase:"TEST", block:3, planMi:34.1, days:[
+    {t:"40m M6 Flush", s:"Taper flush", cap:130},
+    {t:"30m TM Hike", s:"X24: 10% steady pace", cap:130},
+    {t:"3.0 mi Shakeout", s:"+ Strides", cap:130},
+    {t:"20m Easy Flush", s:"M6 or light spin", cap:125},
+    {t:"Full Rest Day", s:"Carb loading & salt", cap:120},
+    {t:"MILESTONE 3: 50K (31.1mi)", s:"5,000+ ft Vert Mountain Trial", cap:144, up:"GATE CHECK #3", fuel:"300 kcal/hr"},
+    {t:"Complete Rest Day", s:"Elevation & contrast", cap:120}
+  ]},
+
+  // BLOCK 4 (Weeks 37-48): Leadville Specificity, Fixed Wk 40/41 Taper, 50-Miler & Sub-30h Race
+  { wk:37, phase:"BASE", block:4, planMi:32.0, days:[
+    {t:"60m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"60m TM Hike", s:"X24: 15% @ 3.2 mph", cap:134},
+    {t:"6.0 mi Steady", s:"X24 @ 3% incline", cap:134},
+    {t:"5.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs", cap:134},
+    {t:"Long: 15.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"6.0 mi Run", s:"+ 45m Ruck (30 lb)", cap:134}
+  ]},
+  { wk:38, phase:"BUILD", block:4, planMi:44.0, days:[
+    {t:"75m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"80m TM Hike", s:"X24: 18% @ 3.0 mph + 15m @ -5%", cap:134, up:"Decline Quad Armor"},
+    {t:"8.0 mi Sustained", s:"X24: 6mi @ +4% / 2mi @ -5% dec", cap:134, up:"X24 -5% Eccentric"},
+    {t:"6.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 20.0 mi", s:"X24/Trail | Fuel: 250 kcal/hr", cap:144, fuel:"250 kcal/hr"},
+    {t:"10.0 mi B2B Run", s:"Aerobic cadence", cap:134}
+  ]},
+  { wk:39, phase:"BUILD", block:4, planMi:52.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"90m TM Hike", s:"X24: 20% peak incline", cap:134},
+    {t:"8.0 mi Sustained", s:"X24: 6mi @ +5% / 2mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 35m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Heavy step-downs", cap:134},
+    {t:"Long: 25.0 mi Sim", s:"14mi Run + 110m @ 20% + 5mi @ -5%", cap:144, up:"Hope Pass Sandwich #3", fuel:"300 kcal/hr"},
+    {t:"12.0 mi B2B (Night Sim)", s:"6mi AM + 6mi PM Headlamp/Broth", cap:134, up:"Circadian Night Sim #2"}
+  ]},
+  { wk:40, phase:"MAX VOL", block:4, planMi:60.0, days:[
+    {t:"80m M6 Flush", s:"Zero-impact circulatory flush", cap:134},
+    {t:"90m TM Hike", s:"X24: 20% peak incline", cap:134},
+    {t:"9.0 mi Sustained", s:"X24: 6.5mi @ +5% / 2.5mi @ -6% dec", cap:134, up:"X24 -6% Eccentric"},
+    {t:"7.0 mi Easy (AM)", s:"+ 40m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Step-downs / Lunges", cap:134},
+    {t:"Long: 30.0 mi", s:"Peak Time on Feet | 300 kcal/hr", cap:144, up:"Shifted from Wk 41", fuel:"300 kcal/hr"},
+    {t:"14.0 mi B2B Run", s:"Fatigued simulation", cap:134, up:"Shifted from Wk 41"}
+  ]},
+  { wk:41, phase:"TAPER", block:4, planMi:21.0, days:[
+    {t:"50m M6 Flush", s:"Pre-50mi Super-Compensation Taper", cap:130, up:"Super-Comp Taper Fix"},
+    {t:"45m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Full mobility reset", cap:130},
+    {t:"Long: 12.0 mi", s:"Fresh connective tissue flush", cap:140, up:"Super-Comp Taper Fix"},
+    {t:"60m Mobility Walk", s:"Zero pack weight", cap:130}
+  ]},
+  { wk:42, phase:"TEST", block:4, planMi:59.0, days:[
+    {t:"45m M6 Flush", s:"Taper flush", cap:130},
+    {t:"40m TM Hike", s:"X24: 12% steady pace", cap:130},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy (AM)", s:"+ 20m M6 Flush (PM ≤125 bpm)", cap:130},
+    {t:"Full Rest Day", s:"Carb load & salt", cap:120},
+    {t:"MILESTONE 4: 50.0 MI", s:"50-Mile Race / Hope Pass Simulation", cap:144, up:"GATE CHECK #4", fuel:"300 kcal/hr"},
+    {t:"Complete Rest Day", s:"Elevation & contrast", cap:120}
+  ]},
+  { wk:43, phase:"RECOVERY", block:4, planMi:18.0, days:[
+    {t:"45m M6 Flush", s:"Post-50mi recovery flush", cap:125},
+    {t:"40m TM Hike", s:"X24: 10% recovery pace", cap:125},
+    {t:"4.0 mi Shakeout", s:"Flat terrain", cap:125},
+    {t:"4.0 mi Easy", s:"Single morning run", cap:125},
+    {t:"Rest / 20m Sauna", s:"+ Soft tissue reset", cap:125},
+    {t:"Long: 10.0 mi", s:"Recovery Flush Long Run", cap:134},
+    {t:"60m Recovery Walk", s:"Zero pack weight", cap:125}
+  ]},
+  { wk:44, phase:"FINAL VERT", block:4, planMi:41.0, days:[
+    {t:"75m M6 + 20m Sauna", s:"Flush + Heat Plasma Expansion", cap:134, up:"Sauna Plasma Boost"},
+    {t:"75m Hike + 20m Sauna", s:"X24: 18% incline + Heat Plasma", cap:134, up:"Sauna Plasma Boost"},
+    {t:"7.0 mi Steady", s:"X24: 5mi @ +4% / 2mi @ -5% dec", cap:134, up:"Final Eccentric Lock"},
+    {t:"6.0 mi Easy (AM)", s:"+ 30m M6 Flush (PM ≤125 bpm)", cap:134},
+    {t:"Rest / 20m Sauna", s:"+ Eccentric quad drills", cap:134},
+    {t:"Long: 20.0 mi", s:"Final Vert Focus | 250-300 kcal/hr", cap:144, fuel:"250-300 kcal/hr"},
+    {t:"8.0 mi B2B Run", s:"Pacing rehearsal", cap:134}
+  ]},
+  { wk:45, phase:"TAPER 1", block:4, planMi:31.0, days:[
+    {t:"60m M6 + 20m Sauna", s:"Taper Flush + Heat Plasma", cap:130, up:"Sauna Plasma Boost"},
+    {t:"60m Hike + 20m Sauna", s:"X24: 15% incline + Heat Plasma", cap:130, up:"Sauna Plasma Boost"},
+    {t:"6.0 mi Easy", s:"X24 @ 3% incline", cap:130},
+    {t:"5.0 mi Easy (AM)", s:"+ 25m M6 Flush (PM ≤125 bpm)", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Mobility reset", cap:130},
+    {t:"Long: 15.0 mi", s:"Fresh Taper Long Run", cap:140},
+    {t:"5.0 mi Easy Run", s:"+ 30m recovery walk", cap:130}
+  ]},
+  { wk:46, phase:"TAPER 2", block:4, planMi:19.0, days:[
+    {t:"50m M6 + 20m Sauna", s:"Taper Flush + Final Plasma Lock", cap:130, up:"Sauna Plasma Boost"},
+    {t:"45m Hike + 20m Sauna", s:"X24: 12% incline + Final Plasma Lock", cap:130, up:"Sauna Plasma Boost"},
+    {t:"5.0 mi Easy", s:"X24 @ 2% incline", cap:130},
+    {t:"4.0 mi Easy", s:"Single morning run", cap:130},
+    {t:"Rest / 20m Sauna", s:"+ Light mobility", cap:130},
+    {t:"Long: 10.0 mi", s:"Easy Aerobic Taper", cap:134},
+    {t:"45m Gentle Walk", s:"Altitude arrival / breathing window", cap:125}
+  ]},
+  { wk:47, phase:"TAPER 3", block:4, planMi:13.0, days:[
+    {t:"40m M6 / Spin", s:"Light circulatory spin", cap:125},
+    {t:"30m Easy Hike", s:"Gentle elevation walk", cap:125},
+    {t:"4.0 mi Shakeout", s:"Flat belt / trail", cap:125},
+    {t:"3.0 mi Shakeout", s:"+ 4x15s strides", cap:125},
+    {t:"Full Rest Day", s:"Mobility & hydration", cap:120},
+    {t:"Long: 6.0 mi", s:"Light legs check", cap:130},
+    {t:"30m Gentle Stroll", s:"Carb & sodium loading", cap:120}
+  ]},
+  { wk:48, phase:"RACE", block:4, planMi:102.0, days:[
+    {t:"20m Easy Spin", s:"Zero HR stress", cap:120},
+    {t:"20m Walk", s:"Gear, poles & pack check", cap:120},
+    {t:"2.0 mi Shakeout", s:"+ Light mobility", cap:125},
+    {t:"Crew / Drop Bags", s:"Final logistics check", cap:120},
+    {t:"Full Rest Day", s:"Sleep, fluids & sodium", cap:120},
+    {t:"LEADVILLE 100 (DAY 1)", s:"4:00 AM Start -> Winfield (50mi) -> Inbound", cap:144, up:"CHAMPIONSHIP", fuel:"250-300 kcal/hr"},
+    {t:"LEADVILLE 100 (DAY 2)", s:"Powerline -> Boulevard -> Sub-30h Buckle!", cap:144, up:"SUB-30H BUCKLE"}
+  ]}
+];
+
+const BLOCK_NAMES = {
+  1: "Block 1 (Weeks 1–12): Body-Comp Deficit Window, Aerobic Anchoring & 14mi Gate Check",
+  2: "Block 2 (Weeks 13–24): Isocaloric Fueling, X24 Decline Quad Armor & 26.2mi Marathon Gate Check",
+  3: "Block 3 (Weeks 25–36): Back-to-Back Volume, Hope Pass Sandwiches, Sauna Plasma & 50K Gate Check",
+  4: "Block 4 (Weeks 37–48): Leadville Specificity, 50-Mile Simulation & Sub-30:00:00 Buckle Execution"
+};
+
+let currentWeek = 3; // Started 09/28/26 -> Week 3 is 10/12/26 - 10/18/26
+let activeModalDay = null;
+let currentImgDataUrl = "";
+let store = {
+  theme: "copper",
+  daily: {} // key: "wk-DAY" -> { miles, timeMins, pace, avgHr, maxHr, cals, vert, sauna, fuel, strength, notes, img }
+};
+
+
+const KINDS = {run:['green','RUN / ENDURANCE'],hike:['orange','VERTICAL HIKE'],stepmill:['orange','STAIRMASTER'],ruck:['orange','WEIGHTED RUCK'],m6:['blue','AEROBIC FLUSH'],recovery:['purple','RECOVERY']};
+const CONVERSION_SEC_PER_BPM = 4.75; // 4.5–5 sec/mi per bpm; heuristic, not physiological measurement
+const GRADE_SECONDS_PER_PERCENT = 12; // explicitly labeled heuristic grade adjustment, NOT measured equivalence
+let nasRevision = null, nasReady = false, nasLoading = false, syncTimer = null, syncBusy = false, syncPending = false;
+const num = x => Number.isFinite(Number(x)) && x!=='' && x!==null && x!==undefined ? Number(x) : 0;
+const optionalNumber = x => (x==='' || x===null || x===undefined || !Number.isFinite(Number(x))) ? null : Number(x);
+function fingerprint(data){const str=JSON.stringify(data?.daily||{});let a=2166136261,b=5381;for(let i=0;i<str.length;i++){a=Math.imul(a^str.charCodeAt(i),16777619);b=(Math.imul(b,33)^str.charCodeAt(i))|0;}return str.length+':'+(a>>>0).toString(36)+':'+(b>>>0).toString(36);}
+function markSynced(data){localStorage.setItem('leadvilleNasLastSyncedFingerprint',fingerprint(data));}
+function isLastSynced(data){return localStorage.getItem('leadvilleNasLastSyncedFingerprint')===fingerprint(data);}
+function sessionCompliance(w,day,e){if(!e||!Array.isArray(e.sessions)||e.sessions.length<2)return '';return e.sessions.map((x,i)=>{const k=x.kind||kindFor(w,day,e);const cap=k==='m6'&&day==='THU'?125:(k==='run'&&day==='SAT'?144:PLAN[w-1].days[DAYS.indexOf(day)].cap);return `<div>${i+1}. ${safe(KINDS[k]?.[1]||k)} • ≤${cap} bpm ${complianceBadge(x.avgHr,cap)}</div>`;}).join('');}
+const safe = x => String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const one = (n,d=1)=>Number(n).toFixed(d);
+const avg = arr => arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : null;
+const hasLog = e => !!(e && (num(e.miles)>0 || num(e.timeMins)>0 || num(e.cals)>0 || e.notes || e.sauna || num(e.saunaMins)>0 || e.strength || e.sleepScore!=null || e.beers!=null));
+function defaultKind(day,rx){if(day==='MON')return 'm6';if(day==='TUE')return 'hike';if(day==='WED'||day==='THU'||day==='SAT')return 'run';if(day==='FRI')return 'recovery';if(day==='SUN')return /ruck|walk/i.test(rx.t)&&!/run/i.test(rx.t) ? 'ruck' : 'run';return 'run';}
+function kindFor(w,day,e){const rx=PLAN[w-1].days[DAYS.indexOf(day)];return e?.kind && e.kind!=='auto' ? e.kind : defaultKind(day,rx);}
+function categoryFor(w,day,e){const k=kindFor(w,day,e); if(k==='run' && day==='WED')return ['red','TEMPO / THRESHOLD'];return KINDS[k] || KINDS.run;}
+function compliance(hr,cap){if(!(num(hr)>0))return ['unknown','HR not logged'];const diff=num(hr)-num(cap);return diff<=0?['ok','🟢 In-Zone']:diff<=5?['drift','🟡 Drift Warning']:['over','🔴 Over-Cap'];}
+function complianceBadge(hr,cap){const [cls,label]=compliance(hr,cap);return `<span class="comply ${cls}" title="Based on session average HR vs prescribed cap; peaks may exceed cap">${label}</span>`;}
+function allSessions(w,day,e){if(!e)return [];if(Array.isArray(e.sessions)&&e.sessions.length)return e.sessions.map((s,i)=>({...s,kind:s.kind||kindFor(w,day,e)}));return [{kind:kindFor(w,day,e),miles:num(e.miles),timeMins:num(e.timeMins),avgHr:num(e.avgHr),maxHr:num(e.maxHr),vert:num(e.vert),incline:optionalNumber(e.incline),floors:num(e.floors),steps:num(e.steps)}];}
+function ascent(s){if(num(s.vert)>0)return {ft:num(s.vert),method:'logged'};if(num(s.floors)>0)return {ft:num(s.floors)*10,method:'floors × 10'};if(num(s.steps)>0)return {ft:num(s.steps)/1.5,method:'steps ÷ 1.5'};if(num(s.incline)>0&&num(s.miles)>0)return {ft:num(s.miles)*5280*num(s.incline)/100,method:'incline estimate'};return {ft:0,method:'not logged'};}
+function workoutStats(w,day,e){const ss=allSessions(w,day,e),rx=PLAN[w-1].days[DAYS.indexOf(day)];let runMiles=0,aerobic=0,feet=0,flush=0,vert=0,hrSum=0,hrDuration=0;const methods=new Set();for(const q of ss){const k=q.kind||defaultKind(day,rx);if(k==='run')runMiles+=num(q.miles);if(k!=='recovery')aerobic+=num(q.timeMins);if(['run','hike','stepmill','ruck'].includes(k))feet+=num(q.timeMins);if(k==='m6')flush+=num(q.timeMins);const a=ascent(q);vert+=a.ft;if(a.ft)methods.add(a.method);if(num(q.avgHr)>0&&num(q.timeMins)>0){hrSum+=num(q.avgHr)*num(q.timeMins);hrDuration+=num(q.timeMins)}}return {runMiles,aerobic,feet,flush,vert,methods:[...methods],hr:hrDuration?hrSum/hrDuration:num(e?.avgHr)};}
+function runMeasurement(w,day,e){const runs=allSessions(w,day,e).filter(q=>q.kind==='run');const miles=runs.reduce((a,q)=>a+num(q.miles),0),time=runs.reduce((a,q)=>a+num(q.timeMins),0);const weighted=runs.filter(q=>num(q.avgHr)>0&&num(q.timeMins)>0);const hrTime=weighted.reduce((a,q)=>a+num(q.timeMins),0);const hr=hrTime>0?weighted.reduce((a,q)=>a+num(q.timeMins)*num(q.avgHr),0)/hrTime:num(e?.avgHr);return {miles,time,hr,pace:miles>0&&time>0?time/miles:null};}
+function paceDecimal(e){if(num(e?.miles)>0&&num(e?.timeMins)>0)return num(e.timeMins)/num(e.miles);if(e?.pace){const parts=String(e.pace).split(':').map(Number);if(parts.length===2&&parts.every(Number.isFinite))return parts[0]+parts[1]/60;}return null;}
+function secToPace(dec){if(!Number.isFinite(dec)||dec<=0)return '—';let t=Math.round(dec*60);return `${Math.floor(t/60)}:${String(t%60).padStart(2,'0')}`;}
+function allEntries(){const es=[];for(let w=1;w<=48;w++)DAYS.forEach((d,i)=>{const e=store.daily?.[`${w}-${d}`];if(e)es.push({w,day:d,i,e,order:(w-1)*7+i})});return es;}
+function cleanBaseline(order){const candidates=allEntries().filter(x=>x.order<order&&x.e.beers===0&&kindFor(x.w,x.day,x.e)==='run'&&num(x.e.avgHr)>0&&paceDecimal(x.e)>0).sort((a,b)=>b.order-a.order).slice(0,12);
+ const normalized=candidates.map(x=>{const m=runMeasurement(x.w,x.day,x.e),p=m.pace,grade=Math.max(0,num(x.e.incline));return {hb:(p-grade*GRADE_SECONDS_PER_PERCENT/60)*m.hr,hr:m.hr}}).filter(x=>x.hb>0);
+ const sleep=allEntries().filter(x=>x.order<order&&x.e.beers===0&&num(x.e.rhr)>0).sort((a,b)=>b.order-a.order).slice(0,12);
+ return {n:normalized.length,hb:avg(normalized.map(x=>x.hb)),hr:avg(normalized.map(x=>x.hr)),rhr:avg(sleep.map(x=>num(x.e.rhr))),rhrN:sleep.length};}
+function analyticsFor(w,day,e){if(!e)return {};const stats=workoutStats(w,day,e),run=runMeasurement(w,day,e),p=run.pace,hr=run.hr,r=run.miles>0,pKnown=!!p&&hr>0;
+ const beats=r&&pKnown?p*hr:null,cap=PLAN[w-1].days[DAYS.indexOf(day)].cap;
+ const normalized=r&&pKnown?secToPace(p+(hr-cap)*CONVERSION_SEC_PER_BPM/60):null;
+ const climbing=allSessions(w,day,e).filter(q=>['hike','stepmill'].includes(q.kind));const climbVert=climbing.reduce((a,q)=>a+ascent(q).ft,0),climbTime=climbing.reduce((a,q)=>a+num(q.timeMins),0);const climbRate=climbVert>0&&climbTime>0?climbVert/climbTime:null;const climbHR=climbTime>0?climbing.reduce((a,q)=>a+num(q.avgHr)*num(q.timeMins),0)/climbTime:0;
+ const beatsPerFt=climbRate&&climbHR>0?climbHR/climbRate:null;
+ const order=(w-1)*7+DAYS.indexOf(day),baseline=cleanBaseline(order),beers=optionalNumber(e.beers);
+ let tax=null;
+ if(r&&pKnown&&beers!==null&&beers>0&&baseline.n>=3&&baseline.hb>0){
+  const grade=Math.max(0,num(e.incline)),gradeAdjustment=grade*GRADE_SECONDS_PER_PERCENT/60;
+  const expectedBeats=baseline.hb+gradeAdjustment*hr; // estimated matched-grade cardiac cost
+  const excess=beats-expectedBeats;
+  const cleanHr=expectedBeats/p,cleanPace=expectedBeats/hr;
+  tax={excess,perBeer:excess/beers,deltaHr:hr-cleanHr,bpmPerBeer:(hr-cleanHr)/beers,cleanHr,cleanPace,overnight:baseline.rhr!=null&&num(e.rhr)>0?num(e.rhr)-baseline.rhr:null,baselineN:baseline.n,baselineRhrN:baseline.rhrN};
+ }
+ return {beats,normalized,climbRate,beatsPerFt,baseline,beers,tax,stats};
+}
+function analyticsHtml(w,day,e){const a=analyticsFor(w,day,e),st=a.stats||{};let p=[];
+ if(a.beats!=null)p.push(`<div>❤️ Running: <strong>${Math.round(a.beats).toLocaleString()} beats/mi</strong> • @ ${PLAN[w-1].days[DAYS.indexOf(day)].cap} bpm ≈ <strong>${a.normalized}/mi</strong></div>`);
+ if(a.climbRate)p.push(`<div>⛰️ Climb: <strong>${one(a.climbRate)} ft/min</strong>${a.beatsPerFt?` • <strong>${one(a.beatsPerFt,2)} beats/vertical ft</strong>`:''}</div>`);
+ if(st.vert>0)p.push(`<div>↗️ ${Math.round(st.vert).toLocaleString()} vert ft (${st.methods.join(', ')})</div>`);
+ if(e.beers!=null)p.push(`<div>🍺 Prior-evening beers: <strong>${safe(e.beers)}</strong></div>`);
+ if(a.tax){const t=a.tax;p.push(`<div>🍺 <strong>Estimated Beer Tax</strong>: ${t.deltaHr>=0?'+':''}${one(t.deltaHr)} bpm total (${t.bpmPerBeer>=0?'+':''}${one(t.bpmPerBeer)} / beer); ${t.perBeer>=0?'+':''}${Math.round(t.perBeer)} excess beats/mi/beer</div><div>🏃 Clean-equivalent HR ≈ ${one(t.cleanHr)} bpm • Clean-equivalent pace ≈ ${secToPace(t.cleanPace)}/mi</div><div>🛏️ RHR delta: ${t.overnight==null?'—':(t.overnight>=0?'+':'')+one(t.overnight)+' bpm'} (${a.baseline.rhrN} clean nights)</div>`)}
+ else if(a.beers>0)p.push(`<div>🍺 Beer estimate unavailable: need ≥3 prior clean running logs with pace & HR.</div>`);
+ if(e.sleepScore!=null||e.rhr!=null||e.hrv!=null||e.deep!=null||e.resp!=null)p.push(`<div>🛏️ Eight Sleep: score ${e.sleepScore??'—'} • RHR ${e.rhr??'—'} • HRV ${e.hrv??'—'} • deep ${e.deep??'—'}% • resp ${e.resp??'—'}</div>`);
+ const tags=[];if(num(e.saunaMins)>0)tags.push(`🔥 Sauna ${e.saunaMins}m`);else if(e.sauna)tags.push('🔥 Sauna ✓');if(num(e.compression)>0)tags.push(`🦵 CINCOM ${e.compression}m (${safe(e.intensity||'level —')})`);
+ if(e.fuelRate!=null)tags.push(`⚡ ${e.fuelRate} kcal/hr`);if(e.gi!=null)tags.push(`GI ${e.gi}/10`);
+ if(tags.length)p.push(`<div>${tags.join(' • ')}</div>`);
+ return p.join('');}
+function weeklyCommand(w){const rows=DAYS.map(day=>({day,e:store.daily[`${w}-${day}`]})).filter(x=>x.e);let run=0,aero=0,feet=0,flush=0,vert=0;
+ let sleep={score:[],rhr:[],hrv:[],deep:[],resp:[]},beers=0,sauna=0,compression=0,fuels=[],gi=[];
+ for(const {day,e} of rows){const x=workoutStats(w,day,e);run+=x.runMiles;aero+=x.aerobic;feet+=x.feet;flush+=x.flush;vert+=x.vert;
+ for(const [k,field] of [['score','sleepScore'],['rhr','rhr'],['hrv','hrv'],['deep','deep'],['resp','resp']]){const v=optionalNumber(e[field]);if(v!=null)sleep[k].push(v)}
+ if(e.beers!=null)beers+=num(e.beers);sauna+=num(e.saunaMins)|| (e.sauna?20:0);compression+=num(e.compression);if(e.fuelRate!=null)fuels.push(num(e.fuelRate));if(e.gi!=null)gi.push(num(e.gi));}
+ const fmt=(v,d=1)=>v==null?'—':one(v,d);
+ const baseline=cleanBaseline(w*7);
+ const cards=[['Running miles',`${one(run,2)} mi`,'Runs only; excludes M6, hikes, rucks'],['Aerobic volume',formatMinsToHrMin(aero),'All logged moving sessions'],['Time on feet',formatMinsToHrMin(feet),'X24 + StepMill + rucks'],['M6 / zero-impact',formatMinsToHrMin(flush),'Bowflex M6 minutes'],['Vertical climb',`${Math.round(vert).toLocaleString()} ft`,`${one(vert/3400,2)}× Hope Pass (3,400 ft)`],['Sleep Fitness',fmt(avg(sleep.score),0),`${sleep.score.length} nights; 0–100`],['Overnight RHR',`${fmt(avg(sleep.rhr))} bpm`,`${sleep.rhr.length} nights`],['HRV',`${fmt(avg(sleep.hrv))} ms`,`${sleep.hrv.length} nights`],['Deep Sleep',`${fmt(avg(sleep.deep))}%`,`${sleep.deep.length} nights`],['Respiration',`${fmt(avg(sleep.resp))}/min`,`${sleep.resp.length} nights`],['Recovery stack',`${Math.round(sauna)}m sauna • ${Math.round(compression)}m compression`,'Recorded recovery duration'],['Gut & lifestyle',`${beers} beers • GI ${fmt(avg(gi))}/10`,`Fuel ${fmt(avg(fuels),0)} kcal/hr • logged values only`],['Clean HR baseline',baseline.n>=3?`${Math.round(baseline.hb)} beats/mi`:'Not calibrated',`${baseline.n}/12 prior clean runs • grade heuristic`],['Clean RHR baseline',baseline.rhr!=null?`${fmt(baseline.rhr)} bpm`:'—',`${baseline.rhrN}/12 prior clean nights`]];
+ document.getElementById('commandGrid').innerHTML=cards.map(([k,v,h],i)=>`<div class="command-stat"><span class="command-icon" aria-hidden="true">${["↗","◷","◈","≈","△","☾","♡","⌁","☾","≋","✦","◉","⌁","♡"][i]}</span><div class="ws-lbl">${k}</div><div class="val">${v}</div><div class="hint">${h}</div></div>`).join('');
+}
+function nasToken(){return sessionStorage.getItem('leadvilleNasToken')||'';}
+function nasStatus(msg,klass='warning'){const el=document.getElementById('syncStatus');el.className='sync-status '+klass;el.textContent=msg;}
+function configureNas(){const current=nasToken();const x=prompt('Enter your NAS sync access token (configured in api.php). Stored for this browser tab session only.',current);if(x===null)return;sessionStorage.setItem('leadvilleNasToken',x.trim());loadFromNas(false);}
+async function nasRequest(method,body){const headers={'X-Leadville-Token':nasToken(),'Accept':'application/json'};if(method!=='GET')headers['Content-Type']='application/json';let res=await fetch('./api.php',{method,headers,cache:'no-store',body:body?JSON.stringify(body):undefined});let obj=await res.json().catch(()=>({error:'Non-JSON response: verify PHP is enabled for this site.'}));if(!res.ok)throw Object.assign(new Error(obj.error||`HTTP ${res.status}`),{status:res.status});return obj;}
+function dataCount(x){return Object.keys(x?.daily||{}).length;}
+function mergeStores(remote,local){const merged=structuredClone(remote&&typeof remote==='object'?remote:{theme:'copper',daily:{}});merged.daily={...(remote?.daily||{}),...(local?.daily||{})};merged.theme=local.theme||remote?.theme||'copper';return merged;}
+function renderAll(){const theme=store.theme||'copper';document.documentElement.setAttribute('data-theme',theme);document.getElementById('themeSelector').value=theme;selectWeek(currentWeek);renderHistoryTable();if(document.getElementById('viewMaster').style.display!=='none')renderMasterGrid();updateTopBanner();}
+async function loadFromNas(force){if(nasLoading)return;nasLoading=true;nasReady=false;clearTimeout(syncTimer);nasStatus('Contacting NAS…');try{const reply=await nasRequest('GET');nasRevision=reply.revision;const remote=reply.store||{daily:{}};const same=JSON.stringify(remote.daily||{})===JSON.stringify(store.daily||{});
+ if(force){if(dataCount(store)>0&&!confirm('Replace this device’s displayed data with NAS data? Export a JSON backup first. This does NOT delete the NAS file.')){nasStatus('Refresh cancelled. Local data kept.','warning');return;}store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');return;}
+ if((!dataCount(store)||isLastSynced(store))&&dataCount(remote)){store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');}
+ else if(same){nasReady=true;markSynced(store);nasStatus('Connected to NAS. Auto-save is ON.','good');}
+ else {nasStatus(`NAS connected, but device and NAS differ (${dataCount(store)} device entries / ${dataCount(remote)} NAS entries). Export backup, then click “Merge this device to NAS”. Auto-save paused to prevent overwrites.`,'warning');}
+ }catch(err){nasStatus(`NAS unavailable (${err.message}). Changes save locally only.`, 'warning');}finally{nasLoading=false;}}
+async function uploadToNas(){if(!nasToken()){configureNas();if(!nasToken())return;}
+ if(!confirm('Merge this device’s day logs into NAS? Entries with identical day keys will use THIS DEVICE values; the NAS makes a backup of its previous version. Export this device first.'))return;
+ try{nasStatus('Merging local entries with NAS…');const response=await nasRequest('GET');const merged=mergeStores(response.store,store);const saved=await nasRequest('PUT',{revision:response.revision,store:merged});nasRevision=saved.revision;store=merged;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('Merged to NAS. Auto-save is ON. Open your phone and configure the same token.','good');}
+ catch(err){nasReady=false;nasStatus(`NAS merge failed: ${err.message}. Local data preserved.`, 'warning');}}
+function queueNasSync(){if(!nasReady)return;clearTimeout(syncTimer);syncTimer=setTimeout(flushNasSync,700);}
+async function flushNasSync(){if(!nasReady)return;if(syncBusy){syncPending=true;return;}syncBusy=true;const snapshot=JSON.stringify(store);try{const reply=await nasRequest('PUT',{revision:nasRevision,store:JSON.parse(snapshot)});nasRevision=reply.revision;markSynced(JSON.parse(snapshot));nasStatus('Saved to NAS • synced across devices','good');}
+ catch(err){nasReady=false;nasStatus(`NAS save failed (${err.message}). Local backup remains on this device. Export JSON before refreshing, then resolve via merge.`, 'warning');}
+ finally{syncBusy=false;if(nasReady&&(syncPending||JSON.stringify(store)!==snapshot)){syncPending=false;queueNasSync();}}}
+
+function init() {
+  const saved = localStorage.getItem("leadvilleCloudCity_v4");
+  if (saved) {
+    try { store = JSON.parse(saved); } catch(e) {}
+  }
+  if (store.theme) {
+    document.documentElement.setAttribute("data-theme", store.theme);
+    document.getElementById("themeSelector").value = store.theme;
+  }
+
+  // Listen for clipboard image paste inside Day Modal
+  window.addEventListener("paste", e => {
+    if (document.getElementById("dayModal").style.display !== "flex") return;
+    const items = e.clipboardData?.items;
+    if (!items) return;
+    for (let item of items) {
+      if (item.type.indexOf("image") !== -1) {
+        const file = item.getAsFile();
+        processScreenshotFile(file, 1);
+      }
+    }
+  });
+
+  populateWeekDropdown();
+  selectWeek(3);
+  renderHistoryTable();
+  renderMasterGrid();
+  updateTopBanner();
+  weeklyCommand(currentWeek);
+  if(nasToken())loadFromNas(false);
+}
+
+function saveStore() {
+  try {localStorage.setItem("leadvilleCloudCity_v4", JSON.stringify(store));} catch(err){nasStatus("Browser storage full: export a JSON backup and reduce screenshot sizes; NAS write will still be attempted.","warning");}
+  queueNasSync();
+  updateTopBanner();
+  renderHistoryTable();
+  if (document.getElementById("viewMaster").style.display !== "none") {
+    renderMasterGrid();
+  }
+  weeklyCommand(currentWeek);
+}
+
+function setTheme(themeName) {
+  store.theme = themeName;
+  document.documentElement.setAttribute("data-theme", themeName);
+  saveStore();
+}
+
+// Time & Pace Helpers
+function parseTimeToMins(val) {
+  if (!val && val !== 0) return 0;
+  const s = String(val).trim();
+  if (!s) return 0;
+  if (s.includes(":")) {
+    const parts = s.split(":").map(Number);
+    if (parts.length === 3) return parts[0]*60 + parts[1] + parts[2]/60;
+    if (parts.length === 2) return parts[0]*60 + parts[1];
+  }
+  const num = parseFloat(s);
+  return isNaN(num) ? 0 : num;
+}
+
+function formatMinsToHrMin(mins) {
+  if (!mins || mins <= 0) return "0m";
+  const h = Math.floor(mins / 60);
+  const m = Math.round(mins % 60);
+  return h > 0 ? `${h}h ${String(m).padStart(2,"0")}m` : `${m}m`;
+}
+
+function calcPaceStr(miles, mins) {
+  if (!miles || miles <= 0 || !mins || mins <= 0) return "";
+  const paceDec = mins / miles;
+  const pMin = Math.floor(paceDec);
+  let pSec = Math.round((paceDec - pMin) * 60);
+  if (pSec === 60) return `${pMin + 1}:00`;
+  return `${pMin}:${String(pSec).padStart(2, "0")}`;
+}
+
+function populateWeekDropdown() {
+  const sel = document.getElementById("weekSelect");
+  sel.innerHTML = "";
+  PLAN.forEach(w => {
+    const dInfo = getWeekDateInfo(w.wk);
+    const opt = document.createElement("option");
+    opt.value = w.wk;
+    opt.textContent = `Week ${w.wk}: ${dInfo.rangeStr} (${w.phase})${w.wk === 3 ? " ★ ACTIVE" : ""}`;
+    sel.appendChild(opt);
+  });
+}
+
+function selectWeek(wkNum) {
+  currentWeek = Math.max(1, Math.min(48, parseInt(wkNum, 10)));
+  document.getElementById("weekSelect").value = currentWeek;
+  const wObj = PLAN.find(w => w.wk === currentWeek);
+  const dInfo = getWeekDateInfo(wObj.wk);
+
+  document.getElementById("wkTitleDisplay").textContent =
+    `WEEK ${wObj.wk}: ${dInfo.rangeStr} — ${wObj.phase}${wObj.wk === 3 ? " (CURRENT ACTIVE WEEK)" : ""}`;
+  document.getElementById("wkBlockDisplay").textContent = BLOCK_NAMES[wObj.block];
+  document.getElementById("wkRollupTitle").textContent =
+    `WEEK ${wObj.wk} AUTO-CALCULATED TOTALS & AVERAGES (${dInfo.rangeStr})`;
+
+  renderWeekDays(wObj, dInfo);
+  updateWeeklyRollup(wObj);
+  weeklyCommand(wObj.wk);
+}
+
+function changeWeek(delta) { selectWeek(currentWeek + delta); }
+function jumpToWeek(wkNum) { switchView("weekly"); selectWeek(wkNum); }
+
+function renderWeekDays(wObj, dInfo) {
+ const grid=document.getElementById('daysGrid');grid.innerHTML='';
+ wObj.days.forEach((d,idx)=>{const day=DAYS[idx],e=store.daily[`${wObj.wk}-${day}`]||{},logged=hasLog(store.daily[`${wObj.wk}-${day}`]);
+ const [color,category]=categoryFor(wObj.wk,day,e);const status=complianceBadge(e.avgHr,d.cap);
+ const tags=[`<span class="tag tag-cap">Cap ≤${d.cap} bpm</span>`];if(d.fuel)tags.push(`<span class="tag tag-fuel">${safe(d.fuel)}</span>`);if(d.up)tags.push(`<span class="tag tag-up">${safe(d.up)}</span>`);
+ const stats=logged?workoutStats(wObj.wk,day,e):null;
+ const card=document.createElement('div');card.className=`day-card cat-${color}`;
+ const notes= safe(e.notes||'');
+ card.innerHTML=`<div><div class="day-top-bar"><span>${day} ${dInfo.dayDates[idx]}</span>${logged?status:'Not logged'}</div>
+ <div class="day-role"><span class="cat-chip">${category}</span></div>
+ <div class="rx-box"><div class="rx-box-label">Prescribed</div><div class="rx-title">${safe(d.t)}</div><div class="rx-sub">${safe(d.s)}</div><div class="rx-badges">${tags.join(' ')}</div></div></div>
+ <div class="acc-box"><div><div class="acc-header"><span>ACCOMPLISHED</span><span>${e.pace?safe(e.pace)+' /mi':''}</span></div>
+ <div class="acc-metrics"><div><span>Miles:</span> <strong>${e.miles??'—'}</strong></div><div><span>Time:</span> <strong>${e.timeMins?formatMinsToHrMin(e.timeMins):'—'}</strong></div>
+ <div><span>Avg HR:</span> <strong>${e.avgHr||'—'}</strong></div><div><span>Max HR:</span> <strong>${e.maxHr||'—'}</strong></div>
+ <div><span>Run mi:</span> <strong>${stats?one(stats.runMiles,2):'—'}</strong></div><div><span>Vert:</span> <strong>${stats?Math.round(stats.vert).toLocaleString():'—'} ft</strong></div></div>
+ <div class="mini-analytics">${logged?sessionCompliance(wObj.wk,day,e)+analyticsHtml(wObj.wk,day,e):''}</div>
+ <textarea class="acc-annotation" placeholder="Quick note (saves on change)">${notes}</textarea>
+ ${e.img?`<img class="thumb-preview" alt="Workout screenshot" src="${safe(e.img)}">`:''}</div>
+ <div class="card-actions"><button class="primary">Log / Edit Session</button></div></div>`;
+ card.querySelector('textarea').addEventListener('change',evt=>quickSaveNote(wObj.wk,day,evt.target.value));
+ card.querySelector('button.primary').addEventListener('click',()=>openDayModal(wObj.wk,day));
+ card.querySelector('img')?.addEventListener('click',()=>openDayModal(wObj.wk,day));grid.appendChild(card);
+ });
+}
+
+function quickSaveNote(wkNum, dayCode, noteText) {
+  const key = `${wkNum}-${dayCode}`;
+  if (!store.daily[key]) {
+    store.daily[key] = { miles: 0, timeMins: 0, pace: "", avgHr: 0, maxHr: 0, cals: 0, vert: 0, notes: "" };
+  }
+  store.daily[key].notes = noteText.trim();
+  saveStore();
+  const wObj = PLAN.find(w => w.wk === wkNum);
+  updateWeeklyRollup(wObj);
+}
+
+// Compute Weekly Totals & Averages from Daily Entries
+function getWeekAggregated(wkNum) {
+  let miles = 0, timeMins = 0, cals = 0, vert = 0;
+  let hrWeightedSum = 0, hrTimeWeight = 0, hrSimpleSum = 0, hrCount = 0;
+  let maxHr = 0, dayCount = 0, saunaCount = 0;
+  let distMiles = 0, distMins = 0;
+  let notesList = [];
+
+  DAYS.forEach(d => {
+    const e = store.daily[`${wkNum}-${d}`];
+    if (!e) return;
+    const hasActivity = (e.miles > 0 || e.timeMins > 0 || e.cals > 0 || e.notes || e.sauna || e.strength);
+    if (!hasActivity) return;
+
+    dayCount++;
+    const mi = Number(e.miles) || 0;
+    const mins = Number(e.timeMins) || 0;
+    const running=runMeasurement(wkNum,d,e);
+    miles += running.miles;
+    timeMins += mins;
+    if(running.miles>0&&running.time>0){distMiles+=running.miles;distMins+=running.time;}
+    cals += Number(e.cals) || 0;
+    vert += workoutStats(wkNum,d,e).vert;
+    if (e.sauna) saunaCount++;
+
+    const avgH = Number(e.avgHr) || 0;
+    if (avgH > 0) {
+      hrSimpleSum += avgH;
+      hrCount++;
+      if (mins > 0) {
+        hrWeightedSum += (avgH * mins);
+        hrTimeWeight += mins;
+      }
+    }
+    const maxH = Number(e.maxHr) || 0;
+    if (maxH > maxHr) maxHr = maxH;
+    if (e.notes) notesList.push(`<strong>${d}:</strong> ${safe(e.notes)}`);
+  });
+
+  const avgHr = hrTimeWeight > 0
+    ? Math.round(hrWeightedSum / hrTimeWeight)
+    : (hrCount > 0 ? Math.round(hrSimpleSum / hrCount) : 0);
+
+  const pace = calcPaceStr(distMiles, distMins) || calcPaceStr(miles, timeMins);
+
+  return {
+    hasData: dayCount > 0,
+    dayCount,
+    miles: Number(miles.toFixed(2)),
+    timeMins: Number(timeMins.toFixed(1)),
+    pace,
+    avgHr,
+    maxHr,
+    cals: Math.round(cals),
+    vert: Math.round(vert),
+    saunaCount,
+    notesHtml: notesList.join(" &bull; ")
+  };
+}
+
+function updateWeeklyRollup(wObj) {
+  const agg = getWeekAggregated(wObj.wk);
+  const pctPlan = wObj.planMi > 0 ? Math.round((agg.miles / wObj.planMi) * 100) : 0;
+
+  document.getElementById("wsMiles").textContent = `${agg.miles.toFixed(2)} mi`;
+  document.getElementById("wsMilesSub").textContent = `Plan Run Base: ${wObj.planMi} mi (${pctPlan}%)`;
+
+  document.getElementById("wsTime").textContent = formatMinsToHrMin(agg.timeMins);
+  document.getElementById("wsTimeSub").textContent = `${Math.round(agg.timeMins)} total mins`;
+
+  document.getElementById("wsPace").textContent = agg.pace ? `${agg.pace} /mi` : "--:-- /mi";
+
+  document.getElementById("wsAvgHr").textContent = agg.avgHr ? `${agg.avgHr} bpm` : "-- bpm";
+  document.getElementById("wsAvgHrSub").textContent = agg.avgHr
+    ? (agg.avgHr <= 134 ? `✓ ${134 - agg.avgHr} bpm under 134 cap` : `Within 144 Long Cap`)
+    : "Time-weighted avg";
+
+  document.getElementById("wsMaxHr").textContent = agg.maxHr ? `${agg.maxHr} bpm` : "-- bpm";
+  document.getElementById("wsCals").textContent = `${agg.cals.toLocaleString()} kcal`;
+  const wVert=DAYS.reduce((sum,d)=>sum+workoutStats(wObj.wk,d,store.daily[`${wObj.wk}-${d}`]).vert,0);
+  document.getElementById("wsVert").textContent = `${Math.round(wVert).toLocaleString()} ft`;
+  document.getElementById("wsDaysCount").textContent = `${agg.dayCount} / 7 days logged`;
+}
+
+// Modal Open / Save / Double-Day Combiner / OCR
+function openDayModal(wkNum, dayCode) {
+  activeModalDay = { wk: wkNum, day: dayCode };
+  const wObj = PLAN.find(w => w.wk === wkNum);
+  const dInfo = getWeekDateInfo(wkNum);
+  const dIdx = DAYS.indexOf(dayCode);
+  const dObj = wObj.days[dIdx];
+
+  document.getElementById("dmTitle").textContent =
+    `Week ${wkNum} • ${dayCode} (${dInfo.dayDates[dIdx]}) — ${DAY_ROLES[dIdx]}`;
+  document.getElementById("dmRx").textContent =
+    `Prescribed: ${dObj.t} | ${dObj.s} (Cap ≤ ${dObj.cap} bpm)`;
+  document.getElementById("ocrStatus").textContent =
+    "Saves screenshot thumbnail to this day & auto-extracts Miles, Time, Pace, Avg/Max HR & Calories";
+  document.getElementById("s2Box").style.display = "none";
+  document.getElementById("s2Kind").value = "m6";
+
+  const ex = store.daily[`${wkNum}-${dayCode}`] || {};
+  currentImgDataUrl = ex.img || "";
+  document.getElementById("dmMiles").value = ex.miles || "";
+  document.getElementById("dmTime").value = ex.timeMins || "";
+  document.getElementById("dmPace").value = ex.pace || "";
+  document.getElementById("dmAvgHr").value = ex.avgHr || "";
+  document.getElementById("dmMaxHr").value = ex.maxHr || "";
+  document.getElementById("dmCals").value = ex.cals || "";
+  document.getElementById("dmVert").value = ex.vert || "";
+  document.getElementById("dmSauna").checked = !!ex.sauna;
+  document.getElementById("dmFuel").checked = !!ex.fuel;
+  document.getElementById("dmStrength").checked = !!ex.strength;
+  document.getElementById("dmNotes").value = ex.notes || "";
+  const fields={dmKind:ex.kind||'auto',dmIncline:ex.incline,dmFloors:ex.floors,dmSteps:ex.steps,dmBeers:ex.beers,dmSleepScore:ex.sleepScore,dmRhr:ex.rhr,dmHrv:ex.hrv,dmDeep:ex.deep,dmResp:ex.resp,dmSaunaMins:ex.saunaMins??(ex.sauna?20:null),dmCompression:ex.compression,dmIntensity:ex.intensity,dmFuelRate:ex.fuelRate,dmGi:ex.gi};
+  Object.entries(fields).forEach(([id,value])=>document.getElementById(id).value=value??'');
+  window.pendingSecondSession=null;
+  const primary=ex.sessions?.[0];const secondary=ex.sessions?.[1];
+  if(primary){for(const [id,key] of Object.entries({dmMiles:'miles',dmTime:'timeMins',dmAvgHr:'avgHr',dmMaxHr:'maxHr',dmVert:'vert',dmIncline:'incline',dmFloors:'floors',dmSteps:'steps',dmKind:'kind'}))document.getElementById(id).value=primary[key]??'';document.getElementById('dmCals').value=primary.cals??Math.max(0,num(ex.cals)-num(secondary?.cals));autoCalcModalPace();}
+  for(const [id,key] of Object.entries({s2Miles:'miles',s2Time:'timeMins',s2AvgHr:'avgHr',s2MaxHr:'maxHr',s2Cals:'cals',s2Vert:'vert',s2Incline:'incline',s2Floors:'floors',s2Steps:'steps',s2Kind:'kind'}))document.getElementById(id).value=secondary?.[key]??(id==='s2Kind'?'m6':'');
+  document.getElementById('s2Box').style.display=secondary?'block':'none';
+  document.getElementById('sessionPreview').textContent='Session totals combine automatically when you save. Hide session two to remove it.';
+
+  document.getElementById('dmLiveAudit').innerHTML=analyticsHtml(wkNum,dayCode,ex)||'Add workout and sleep measurements to see analytics.';
+
+  document.getElementById("dayModal").style.display = "flex";
+}
+
+function closeDayModal() {
+  document.getElementById("dayModal").style.display = "none";
+  activeModalDay = null;
+}
+
+function autoCalcModalPace() {
+  const mi = parseFloat(document.getElementById("dmMiles").value);
+  const mins = parseTimeToMins(document.getElementById("dmTime").value);
+  if (mi > 0 && mins > 0) {
+    document.getElementById("dmPace").value = calcPaceStr(mi, mins);
+  }
+}
+
+function toggleSecondSession() {
+  const box = document.getElementById("s2Box");
+  box.style.display = box.style.display === "none" ? "block" : "none";
+}
+
+function mergeSecondSession(apply = false) {
+  const m1 = parseFloat(document.getElementById("dmMiles").value) || 0;
+  const t1 = parseTimeToMins(document.getElementById("dmTime").value);
+  const hr1 = parseFloat(document.getElementById("dmAvgHr").value) || 0;
+  const max1 = parseFloat(document.getElementById("dmMaxHr").value) || 0;
+  const c1 = parseFloat(document.getElementById("dmCals").value) || 0;
+
+  const m2 = parseFloat(document.getElementById("s2Miles").value) || 0;
+  const t2 = parseTimeToMins(document.getElementById("s2Time").value);
+  const hr2 = parseFloat(document.getElementById("s2AvgHr").value) || 0;
+  const max2 = parseFloat(document.getElementById("s2MaxHr").value) || 0;
+  const c2 = parseFloat(document.getElementById("s2Cals").value) || 0;
+
+  const previous=window.pendingSecondSession;
+  window.pendingSecondSession={
+    first:{cals:c1,kind:document.getElementById('dmKind').value==='auto'?defaultKind(activeModalDay.day,PLAN[activeModalDay.wk-1].days[DAYS.indexOf(activeModalDay.day)]):document.getElementById('dmKind').value,miles:m1,timeMins:t1,avgHr:hr1,maxHr:max1,vert:num(document.getElementById('dmVert').value),incline:optionalNumber(document.getElementById('dmIncline').value),floors:num(document.getElementById('dmFloors').value),steps:num(document.getElementById('dmSteps').value)},
+    second:{kind:document.getElementById('s2Kind').value,miles:m2,timeMins:t2,avgHr:hr2,maxHr:max2,cals:c2,vert:num(document.getElementById("s2Vert").value),incline:optionalNumber(document.getElementById("s2Incline").value),floors:num(document.getElementById("s2Floors").value),steps:num(document.getElementById("s2Steps").value)}
+  };
+  const totM = Number((m1 + m2).toFixed(2));
+  const totT = Number((t1 + t2).toFixed(1));
+  const totC = Math.round(c1 + c2);
+  let combinedAvgHr = hr1 || hr2;
+  if (hr1 > 0 && hr2 > 0 && (t1 + t2) > 0) {
+    combinedAvgHr = Math.round(((hr1 * t1) + (hr2 * t2)) / (t1 + t2));
+  }
+  const combinedMaxHr = Math.max(max1, max2);
+
+  document.getElementById('sessionPreview').textContent=`Combined: ${totM} mi · ${formatMinsToHrMin(totT)} · ${totC} kcal · ${combinedAvgHr || '—'} bpm average. Each session stays separate until saved.`;
+  if(!apply)return;
+  document.getElementById('dmVert').value=window.pendingSecondSession.first.vert+window.pendingSecondSession.second.vert;
+  document.getElementById("dmMiles").value = totM || "";
+  document.getElementById("dmTime").value = totT || "";
+  document.getElementById("dmAvgHr").value = combinedAvgHr || "";
+  document.getElementById("dmMaxHr").value = combinedMaxHr || "";
+  document.getElementById("dmCals").value = totC || "";
+  autoCalcModalPace();
+
+  document.getElementById("s2Box").style.display = "none";
+}
+
+function handleOCRUpload(event, sessionSlot) {
+  const file = event.target.files[0];
+  if (!file) return;
+  processScreenshotFile(file, sessionSlot);
+  event.target.value = "";
+}
+
+async function processScreenshotFile(file, sessionSlot) {
+  const statusEl = document.getElementById("ocrStatus");
+  statusEl.textContent = "⏳ Compressing preview & scanning screenshot text via OCR...";
+
+  // Generate compressed thumbnail DataURL for storage
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const maxW = 480;
+      const scale = Math.min(1, maxW / img.width);
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+      currentImgDataUrl = canvas.toDataURL("image/jpeg", 0.72);
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+
+  try {
+    const result = await Tesseract.recognize(file, "eng");
+    const text = result.data.text;
+
+    const miMatch = text.match(/(\d+\.\d{1,2})\s*(?:mi|miles|distance)/i) || text.match(/\b(\d{1,2}\.\d{2})\b/);
+    const timeMatch = text.match(/(\d{1,2}:\d{2}:\d{2})/) || text.match(/(\d{1,3}:\d{2})/);
+    const calMatch = text.match(/(\d{3,4})\s*(?:kcal|cal|calories)/i);
+    const vertMatch = text.match(/(\d{3,5})\s*(?:ft|feet|elev|vert)/i);
+    const hrMatches = [...text.matchAll(/\b(1[0-7]\d)\b/g)].map(m => parseInt(m[1], 10));
+
+    if (sessionSlot === 2) {
+      if (miMatch) document.getElementById("s2Miles").value = miMatch[1];
+      if (timeMatch) document.getElementById("s2Time").value = parseTimeToMins(timeMatch[1]).toFixed(1);
+      if (calMatch) document.getElementById("s2Cals").value = calMatch[1];
+      if (hrMatches.length > 0) {
+        document.getElementById("s2AvgHr").value = Math.min(...hrMatches);
+        document.getElementById("s2MaxHr").value = Math.max(...hrMatches);
+      }
+      statusEl.textContent = "✓ 2nd Screenshot Scanned! Click 'Preview combined totals' below.";
+    } else {
+      if (miMatch) document.getElementById("dmMiles").value = miMatch[1];
+      if (timeMatch) document.getElementById("dmTime").value = parseTimeToMins(timeMatch[1]).toFixed(1);
+      if (calMatch) document.getElementById("dmCals").value = calMatch[1];
+      if (vertMatch) document.getElementById("dmVert").value = vertMatch[1];
+      if (hrMatches.length > 0) {
+        document.getElementById("dmAvgHr").value = Math.min(...hrMatches);
+        document.getElementById("dmMaxHr").value = Math.max(...hrMatches);
+      }
+      autoCalcModalPace();
+      statusEl.textContent = "✓ Screenshot Scanned & Thumbnail Attached! Verify fields below.";
+    }
+  } catch (err) {
+    statusEl.textContent = "✓ Screenshot Thumbnail Attached! Enter or adjust numbers manually below.";
+  }
+}
+
+function saveDayLog() {
+  if (!activeModalDay) return;
+  if(document.getElementById('s2Box').style.display!=='none'){
+    if(!(parseTimeToMins(document.getElementById('s2Time').value)>0)){alert('Enter a duration for session two, or hide it to save only session one.');return;}
+    mergeSecondSession(true);
+  }else{window.pendingSecondSession=null;}
+  const { wk, day } = activeModalDay;
+  const key = `${wk}-${day}`;
+
+  const mi = parseFloat(document.getElementById("dmMiles").value) || 0;
+  const mins = parseTimeToMins(document.getElementById("dmTime").value);
+  const pace = document.getElementById("dmPace").value.trim() || calcPaceStr(mi, mins);
+  const avgHr = parseInt(document.getElementById("dmAvgHr").value, 10) || 0;
+  const maxHr = parseInt(document.getElementById("dmMaxHr").value, 10) || 0;
+  const cals = parseInt(document.getElementById("dmCals").value, 10) || 0;
+  const vert = parseInt(document.getElementById("dmVert").value, 10) || 0;
+  const sauna = document.getElementById("dmSauna").checked;
+  const fuel = document.getElementById("dmFuel").checked;
+  const strength = document.getElementById("dmStrength").checked;
+  const notes = document.getElementById("dmNotes").value.trim();
+
+  const old=store.daily[key]||{};
+  const optional=id=>optionalNumber(document.getElementById(id).value);
+  const kind=document.getElementById('dmKind').value;
+  store.daily[key] = {
+    ...old,
+    miles: mi,
+    timeMins: Number(mins.toFixed(1)),
+    pace,
+    avgHr,
+    maxHr,
+    cals,
+    vert,
+    sauna,
+    fuel,
+    strength,
+    notes,
+    img: currentImgDataUrl,
+    kind,
+    incline:optional('dmIncline'), floors:optional('dmFloors'), steps:optional('dmSteps'),
+    beers:optional('dmBeers'),sleepScore:optional('dmSleepScore'),rhr:optional('dmRhr'),hrv:optional('dmHrv'),deep:optional('dmDeep'),resp:optional('dmResp'),
+    saunaMins:optional('dmSaunaMins'),compression:optional('dmCompression'),intensity:document.getElementById('dmIntensity').value,
+    fuelRate:optional('dmFuelRate'),gi:optional('dmGi'),
+    sessions:window.pendingSecondSession?[window.pendingSecondSession.first,window.pendingSecondSession.second]:null
+  };
+
+  saveStore();
+  selectWeek(wk);
+  closeDayModal();
+}
+
+function deleteDayLog() {
+  if (!activeModalDay) return;
+  const { wk, day } = activeModalDay;
+  delete store.daily[`${wk}-${day}`];
+  saveStore();
+  selectWeek(wk);
+  closeDayModal();
+}
+
+// Render 48-Week Historical Tracker Table
+function renderHistoryTable() {
+  const tbody = document.getElementById("historyTableBody");
+  const showAll = document.getElementById("showAllWeeksToggle").checked;
+  tbody.innerHTML = "";
+
+  PLAN.forEach(w => {
+    const agg = getWeekAggregated(w.wk);
+    const dInfo = getWeekDateInfo(w.wk);
+    if (!showAll && !agg.hasData && w.wk > 3) return;
+
+    const tr = document.createElement("tr");
+    if (w.wk === 3) tr.className = "current-wk-highlight";
+
+    tr.innerHTML = `
+      <td><strong>WK ${w.wk}</strong> ${w.wk === 3 ? '<span class="tag tag-cap">ACTIVE</span>' : ''}</td>
+      <td style="font-family:monospace; font-size:0.74rem;">${dInfo.rangeStr}</td>
+      <td><span class="tag tag-up">B${w.block} • ${w.phase}</span></td>
+      <td style="font-family:monospace;">${agg.dayCount}/7</td>
+      <td>
+        <strong>${agg.hasData ? agg.miles.toFixed(2) + " mi" : "--"}</strong>
+        <div style="font-size:0.68rem; color:var(--muted);">Plan: ${w.planMi} mi</div>
+      </td>
+      <td style="font-family:monospace;">${agg.hasData ? formatMinsToHrMin(agg.timeMins) : "--"}</td>
+      <td style="font-family:monospace; color:var(--accent); font-weight:700;">${agg.hasData && agg.pace ? agg.pace + " /mi" : "--"}</td>
+      <td style="font-family:monospace;">${agg.hasData && agg.avgHr ? agg.avgHr + " bpm" : "--"}</td>
+      <td style="font-family:monospace;">${agg.hasData && agg.maxHr ? agg.maxHr + " bpm" : "--"}</td>
+      <td style="font-family:monospace;"><strong>${agg.hasData && agg.cals ? agg.cals.toLocaleString() + " kcal" : "--"}</strong></td>
+      <td style="font-family:monospace;">${agg.hasData && agg.vert ? agg.vert.toLocaleString() + " ft" : "--"}</td>
+      <td style="font-size:0.72rem;">${(()=>{const x=DAYS.reduce((a,d)=>{const z=workoutStats(w.wk,d,store.daily[`${w.wk}-${d}`]);a.run+=z.runMiles;a.aero+=z.aerobic;a.feet+=z.feet;a.flush+=z.flush;a.vert+=z.vert;return a},{run:0,aero:0,feet:0,flush:0,vert:0});return `${one(x.run,1)} run mi<br>${formatMinsToHrMin(x.feet)} on feet / ${formatMinsToHrMin(x.flush)} M6<br>${Math.round(x.vert)} ft • ${one(x.vert/3400,2)}× Hope Pass`;})()}</td>
+      <td style="font-size:0.72rem;">${(()=>{const logs=DAYS.map(d=>store.daily[`${w.wk}-${d}`]).filter(Boolean);return `Sleep ${one(avg(logs.map(x=>x.sleepScore).filter(x=>x!=null))??0,0)}${logs.some(x=>x.sleepScore!=null)?'':' (no data)'}<br>RHR ${avg(logs.map(x=>x.rhr).filter(x=>x!=null))==null?'—':one(avg(logs.map(x=>x.rhr).filter(x=>x!=null)))}<br>Beers ${logs.reduce((a,x)=>a+num(x.beers),0)}`;})()}</td>
+      <td style="font-size:0.73rem; max-width:300px;">${agg.notesHtml || '<span style="color:var(--muted);">No annotations logged yet</span>'}</td>
+      <td><button onclick="jumpToWeek(${w.wk})">Week ${w.wk}</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// Render Full 48-Week Master Plan Grid (Prescribed + Accomplished inside every cell)
+function renderMasterGrid() {
+  const tbody = document.getElementById("masterGridBody");
+  const filter = document.getElementById("blockFilter").value;
+  tbody.innerHTML = "";
+
+  PLAN.forEach(w => {
+    if (filter !== "ALL" && String(w.block) !== filter) return;
+    const agg = getWeekAggregated(w.wk);
+    const dInfo = getWeekDateInfo(w.wk);
+
+    const tr = document.createElement("tr");
+    if (w.wk === 3) tr.className = "current-wk-highlight";
+
+    let html = `<td onclick="jumpToWeek(${w.wk})" style="cursor:pointer;">
+      <div style="font-weight:900; color:var(--accent); font-size:0.88rem;">WK ${w.wk} ${w.wk === 3 ? "★" : ""}</div>
+      <div style="font-size:0.69rem; color:var(--muted); margin:2px 0;">${dInfo.rangeStr}</div>
+      <span class="tag tag-up">${w.phase}</span>
+      ${agg.hasData ? `<div style="margin-top:6px; font-family:monospace; font-size:0.7rem; color:var(--pass);">
+        <strong>${agg.miles} mi</strong><br>${formatMinsToHrMin(agg.timeMins)}<br>${agg.cals} kcal
+      </div>` : ""}
+    </td>`;
+
+    w.days.forEach((d, idx) => {
+      const dayCode = DAYS[idx];
+      const log = store.daily[`${w.wk}-${dayCode}`];
+      const overCap = log && log.avgHr && log.avgHr > d.cap;
+
+      let accHtml = "";
+      if (log && (log.miles > 0 || log.timeMins > 0 || log.cals > 0 || log.notes)) {
+        const stats = [];
+        if (log.miles) stats.push(`${log.miles}mi`);
+        if (log.timeMins) stats.push(formatMinsToHrMin(log.timeMins));
+        if (log.pace) stats.push(`${log.pace}/mi`);
+        if (log.avgHr) stats.push(`Avg ${log.avgHr}bpm`);
+        if (log.maxHr) stats.push(`Max ${log.maxHr}bpm`);
+        if (log.cals) stats.push(`${log.cals}kcal`);
+        if (log.vert) stats.push(`${log.vert}ft`);
+
+        accHtml = `<div class="master-acc-pill ${overCap ? 'warn' : ''}">
+          <div style="font-weight:800; font-family:monospace;">✓ ${stats.join(" | ")}</div>
+          ${log.notes ? `<div style="margin-top:2px; opacity:0.9;">"${log.notes}"</div>` : ""}
+        </div>`;
+      }
+
+      const [color,category]=categoryFor(w.wk,dayCode,log);
+      html += `<td class="cat-${color}" onclick="openDayModal(${w.wk}, '${dayCode}')" style="cursor:pointer;">
+        <div class="cat-chip">${category}</div><div style="font-size:0.66rem; color:var(--muted); font-weight:700;">${dayCode} ${dInfo.dayDates[idx]} &bull; Cap &le;${d.cap}</div>
+        ${complianceBadge(log?.avgHr,d.cap)}
+        <div style="font-weight:800; color:var(--text); margin:2px 0;">${d.t}</div>
+        <div style="font-size:0.72rem; color:var(--muted);">${d.s}</div>
+        ${d.up ? `<div style="margin-top:3px;"><span class="tag tag-up">${d.up}</span></div>` : ""}
+        ${accHtml}
+        ${log?`<div class="mini-analytics">${sessionCompliance(w.wk,dayCode,log)}${analyticsHtml(w.wk,dayCode,log)}</div>`:""}
+      </td>`;
+    });
+
+    tr.innerHTML = html;
+    tbody.appendChild(tr);
+  });
+}
+
+// Update All-Time Top Summary Cards
+function updateTopBanner() {
+  let totMi = 0, totMins = 0, totCals = 0, totVert = 0, totSauna = 0;
+  let distMi = 0, distMins = 0;
+  let hrWeightedSum = 0, hrTimeWeight = 0, peakMaxHr = 0, peakMaxWk = 0;
+  let loggedWorkouts = 0, loggedWeeks = 0;
+
+  PLAN.forEach(w => {
+    const agg = getWeekAggregated(w.wk);
+    if (agg.hasData) {
+      loggedWeeks++;
+      loggedWorkouts += agg.dayCount;
+      totMi += agg.miles;
+      totMins += agg.timeMins;
+      totCals += agg.cals;
+      totVert += DAYS.reduce((sum,d)=>sum+workoutStats(w.wk,d,store.daily[`${w.wk}-${d}`]).vert,0);
+      totSauna += agg.saunaCount;
+      if (agg.avgHr > 0 && agg.timeMins > 0) {
+        hrWeightedSum += (agg.avgHr * agg.timeMins);
+        hrTimeWeight += agg.timeMins;
+      }
+      if (agg.maxHr > peakMaxHr) {
+        peakMaxHr = agg.maxHr;
+        peakMaxWk = w.wk;
+      }
+    }
+    DAYS.forEach(d => {
+      const e = store.daily[`${w.wk}-${d}`];
+      if(e){const r=runMeasurement(w.wk,d,e);if(r.miles>0&&r.time>0){distMi+=r.miles;distMins+=r.time;}}
+    });
+  });
+
+  document.getElementById("totMiles").textContent = `${totMi.toFixed(2)} mi`;
+  document.getElementById("subMiles").textContent = `${loggedWorkouts} workouts across ${loggedWeeks} wk(s)`;
+
+  document.getElementById("totTime").textContent = formatMinsToHrMin(totMins);
+  document.getElementById("subTime").textContent = `${Math.round(totMins).toLocaleString()} total mins`;
+
+  const overallPace = calcPaceStr(distMi, distMins) || calcPaceStr(totMi, totMins);
+  document.getElementById("totPace").textContent = overallPace ? `${overallPace} /mi` : "--:-- /mi";
+
+  const overallAvgHr = hrTimeWeight > 0 ? Math.round(hrWeightedSum / hrTimeWeight) : 0;
+  document.getElementById("totAvgHr").textContent = overallAvgHr > 0 ? `${overallAvgHr} bpm` : "-- bpm";
+
+  document.getElementById("totMaxHr").textContent = peakMaxHr > 0 ? `${peakMaxHr} bpm` : "-- bpm";
+  document.getElementById("subMaxHr").textContent = peakMaxWk > 0 ? `Recorded in Week ${peakMaxWk}` : "Highest recorded HR";
+
+  document.getElementById("totCals").textContent = `${totCals.toLocaleString()} kcal`;
+  document.getElementById("subCals").textContent = loggedWeeks > 0 ? `Avg ${Math.round(totCals / loggedWeeks).toLocaleString()} kcal / wk` : "Avg 0 kcal / wk";
+
+  document.getElementById("totVert").textContent = `${totVert.toLocaleString()} ft`;
+  document.getElementById("subSauna").textContent = `${totSauna} Sauna sessions logged`;
+
+  // Progress Bars
+  const miPct = Math.min(100, (totMi / 1650) * 100);
+  document.getElementById("barMilesTxt").textContent = `${totMi.toFixed(1)} / 1,650.0 mi (${miPct.toFixed(1)}%)`;
+  document.getElementById("barMilesFill").style.width = `${miPct}%`;
+
+  const everests = totVert / 29032;
+  const vertPct = Math.min(100, (totVert / 240000) * 100);
+  document.getElementById("barVertTxt").textContent = `${totVert.toLocaleString()} ft (${everests.toFixed(2)}x Everest)`;
+  document.getElementById("barVertFill").style.width = `${vertPct}%`;
+}
+
+function switchView(view) {
+  document.getElementById("viewWeekly").style.display = (view === "weekly") ? "block" : "none";
+  document.getElementById("viewHistory").style.display = (view === "weekly" || view === "history") ? "block" : "none";
+  document.getElementById("viewMaster").style.display = (view === "master") ? "block" : "none";
+
+  document.getElementById("tabBtnWeekly").classList.toggle("active", view === "weekly");
+  document.getElementById("tabBtnHistory").classList.toggle("active", view === "history");
+  document.getElementById("tabBtnMaster").classList.toggle("active", view === "master");
+
+  if (view === "master") renderMasterGrid();
+}
+
+function exportBackup() {
+  const blob = new Blob([JSON.stringify(store, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `Leadville_100_Master_Backup_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+
+function importBackup(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const imported=JSON.parse(ev.target.result);
+      if(!imported || typeof imported!=='object'||!imported.daily||typeof imported.daily!=='object'||Array.isArray(imported.daily))throw new Error('Invalid backup structure');
+      if(!confirm(`Import ${Object.keys(imported.daily).length} records and merge with this device? Matching dates will use imported records. Export current data first.`))return;
+      store=mergeStores(store,imported);
+      nasReady=false;
+      nasStatus('Imported locally. Click “Merge this device to NAS” to upload; auto-save paused until then.','warning');
+      if (store.theme) {
+        document.documentElement.setAttribute("data-theme", store.theme);
+        document.getElementById("themeSelector").value = store.theme;
+      }
+      saveStore();
+      selectWeek(currentWeek);
+      renderMasterGrid();
+    } catch (err) {
+      alert("Invalid backup JSON file.");
+    }
+  };
+  reader.readAsText(file);
+}
+
+init();
+</script>
+</body>
+</html>
