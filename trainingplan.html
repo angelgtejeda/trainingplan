@@ -618,7 +618,7 @@ hr.input-sep{border:0;border-top:1px solid var(--border);margin:10px 0;grid-colu
   <div class="header-top">
     <div class="title-group">
       <h1>PROJECT CLOUD CITY: 10,200 FT — LEADVILLE 100 MASTER LOG</h1>
-      <p>Start Date: Mon 09/28/2026 &bull; Active Week: Week 3 (10/12 – 10/18/26) &bull; Caps: Easy/M6 &le; 134 bpm | Long &le; 144 bpm | PM Flush &le; 125 bpm</p>
+      <p id="programWeekSummary"></p>
     </div>
     <div class="btn-group">
       <select id="themeSelector" onchange="setTheme(this.value)" title="Change Color Theme">
@@ -1476,7 +1476,35 @@ const BLOCK_NAMES = {
   4: "Block 4 (Weeks 37–48): Leadville Specificity, 50-Mile Simulation & Sub-30:00:00 Buckle Execution"
 };
 
-let currentWeek = 3; // Started 09/28/26 -> Week 3 is 10/12/26 - 10/18/26
+// Compare local calendar dates as UTC day numbers to avoid DST-length weeks.
+function getActiveWeek(today = new Date()) {
+  const elapsedDays = (Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) -
+    Date.UTC(PROGRAM_START.getFullYear(), PROGRAM_START.getMonth(), PROGRAM_START.getDate())) / 86400000;
+  return Math.max(1, Math.min(PLAN.length, Math.floor(elapsedDays / 7) + 1));
+}
+let activeCalendarWeek = getActiveWeek();
+let currentWeek = activeCalendarWeek;
+function updateProgramWeekSummary() {
+  const week = getActiveWeek();
+  document.getElementById('programWeekSummary').textContent =
+    `Start Date: Mon 09/28/2026 • Active Week: Week ${week} (${getWeekDateInfo(week).rangeStr}) • Caps: Easy/M6 ≤ 134 bpm | Long ≤ 144 bpm | PM Flush ≤ 125 bpm`;
+}
+function refreshActiveWeek() {
+  const nextWeek = getActiveWeek();
+  if (nextWeek === activeCalendarWeek || activeModalDay !== null) return;
+  const wasFollowing = currentWeek === activeCalendarWeek;
+  activeCalendarWeek = nextWeek;
+  populateWeekDropdown();
+  selectWeek(wasFollowing ? nextWeek : currentWeek);
+  renderHistoryTable();
+  renderMasterGrid();
+  updateProgramWeekSummary();
+}
+setInterval(refreshActiveWeek, 30000);
+window.addEventListener('focus', refreshActiveWeek);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) refreshActiveWeek();
+});
 let activeModalDay = null;
 let currentImgDataUrl = "";
 let store = {
@@ -1601,7 +1629,8 @@ function init() {
   });
 
   populateWeekDropdown();
-  selectWeek(3);
+  selectWeek(getActiveWeek());
+  updateProgramWeekSummary();
   renderHistoryTable();
   renderMasterGrid();
   updateTopBanner();
@@ -1664,7 +1693,7 @@ function populateWeekDropdown() {
     const dInfo = getWeekDateInfo(w.wk);
     const opt = document.createElement("option");
     opt.value = w.wk;
-    opt.textContent = `Week ${w.wk}: ${dInfo.rangeStr} (${w.phase})${w.wk === 3 ? " ★ ACTIVE" : ""}`;
+    opt.textContent = `Week ${w.wk}: ${dInfo.rangeStr} (${w.phase})${w.wk === getActiveWeek() ? " ★ ACTIVE" : ""}`;
     sel.appendChild(opt);
   });
 }
@@ -1676,7 +1705,7 @@ function selectWeek(wkNum) {
   const dInfo = getWeekDateInfo(wObj.wk);
 
   document.getElementById("wkTitleDisplay").textContent =
-    `WEEK ${wObj.wk}: ${dInfo.rangeStr} — ${wObj.phase}${wObj.wk === 3 ? " (CURRENT ACTIVE WEEK)" : ""}`;
+    `WEEK ${wObj.wk}: ${dInfo.rangeStr} — ${wObj.phase}${wObj.wk === getActiveWeek() ? " (CURRENT ACTIVE WEEK)" : ""}`;
   document.getElementById("wkBlockDisplay").textContent = BLOCK_NAMES[wObj.block];
   document.getElementById("wkRollupTitle").textContent =
     `WEEK ${wObj.wk} AUTO-CALCULATED TOTALS & AVERAGES (${dInfo.rangeStr})`;
@@ -2044,13 +2073,13 @@ function renderHistoryTable() {
   PLAN.forEach(w => {
     const agg = getWeekAggregated(w.wk);
     const dInfo = getWeekDateInfo(w.wk);
-    if (!showAll && !agg.hasData && w.wk > 3) return;
+    if (!showAll && !agg.hasData && w.wk > getActiveWeek()) return;
 
     const tr = document.createElement("tr");
-    if (w.wk === 3) tr.className = "current-wk-highlight";
+    if (w.wk === getActiveWeek()) tr.className = "current-wk-highlight";
 
     tr.innerHTML = `
-      <td><strong>WK ${w.wk}</strong> ${w.wk === 3 ? '<span class="tag tag-cap">ACTIVE</span>' : ''}</td>
+      <td><strong>WK ${w.wk}</strong> ${w.wk === getActiveWeek() ? '<span class="tag tag-cap">ACTIVE</span>' : ''}</td>
       <td style="font-family:monospace; font-size:0.74rem;">${dInfo.rangeStr}</td>
       <td><span class="tag tag-up">B${w.block} • ${w.phase}</span></td>
       <td style="font-family:monospace;">${agg.dayCount}/7</td>
@@ -2085,10 +2114,10 @@ function renderMasterGrid() {
     const dInfo = getWeekDateInfo(w.wk);
 
     const tr = document.createElement("tr");
-    if (w.wk === 3) tr.className = "current-wk-highlight";
+    if (w.wk === getActiveWeek()) tr.className = "current-wk-highlight";
 
     let html = `<td onclick="jumpToWeek(${w.wk})" style="cursor:pointer;">
-      <div style="font-weight:900; color:var(--accent); font-size:0.88rem;">WK ${w.wk} ${w.wk === 3 ? "★" : ""}</div>
+      <div style="font-weight:900; color:var(--accent); font-size:0.88rem;">WK ${w.wk} ${w.wk === getActiveWeek() ? "★" : ""}</div>
       <div style="font-size:0.69rem; color:var(--muted); margin:2px 0;">${dInfo.rangeStr}</div>
       <span class="tag tag-up">${w.phase}</span>
       ${agg.hasData ? `<div style="margin-top:6px; font-family:monospace; font-size:0.7rem; color:var(--pass);">
