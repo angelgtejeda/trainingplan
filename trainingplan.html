@@ -632,7 +632,7 @@ hr.input-sep{border:0;border-top:1px solid var(--border);margin:10px 0;grid-colu
       <button class="primary" onclick="jumpToWeek(3)">★ Active Wk 3 (10/12)</button>
       <button onclick="exportBackup()">Export Backup (.json)</button>
        <button onclick="configureNas()">🔐 NAS Setup</button>
-       <button onclick="loadFromNas(true)">↓ Refresh from NAS</button>
+       <button onclick="loadFromNas(true)" title="Load the NAS copy onto this device">↓ Load NAS to device</button>
        <button onclick="uploadToNas()">↑ Merge this device to NAS</button>
       <button onclick="document.getElementById('importInput').click()">Import Backup</button>
       <input type="file" id="importInput" style="display:none" accept=".json" onchange="importBackup(event)">
@@ -1589,7 +1589,7 @@ function dataCount(x){return Object.keys(x?.daily||{}).length+Object.keys(x?.nut
 function mergeStores(remote,local){const merged=structuredClone(remote&&typeof remote==='object'?remote:{theme:'copper',daily:{}});merged.daily={...(remote?.daily||{}),...(local?.daily||{})};merged.theme=local.theme||remote?.theme||'copper';merged.nutrition=fuelMergeNutrition(remote?.nutrition,local?.nutrition);return merged;}
 function renderAll(){fuelEnsure();renderFuel();const theme=store.theme||'copper';document.documentElement.setAttribute('data-theme',theme);document.getElementById('themeSelector').value=theme;selectWeek(currentWeek);renderHistoryTable();if(document.getElementById('viewMaster').style.display!=='none')renderMasterGrid();updateTopBanner();}
 async function loadFromNas(force){if(nasLoading)return;nasLoading=true;nasReady=false;clearTimeout(syncTimer);nasStatus('Contacting NAS…');try{const reply=await nasRequest('GET');nasRevision=reply.revision;const remote=reply.store||{daily:{}};const same=fingerprint(remote)===fingerprint(store);
- if(force){if(dataCount(store)>0&&!confirm('Replace this device’s displayed data with NAS data? Export a JSON backup first. This does NOT delete the NAS file.')){nasStatus('Refresh cancelled. Local data kept.','warning');return;}store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');return;}
+ if(force){if(dataCount(store)>0&&!confirm('Load the NAS copy onto this device? This replaces this device’s displayed workouts, meal library and food logs. Export a JSON backup first if you have device-only changes. The NAS copy will not be changed.')){nasStatus('NAS load cancelled. Device data kept.','warning');return;}store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');return;}
  if((!dataCount(store)||isLastSynced(store))&&dataCount(remote)){store=remote;localStorage.setItem('leadvilleCloudCity_v4',JSON.stringify(store));nasReady=true;markSynced(store);renderAll();nasStatus('NAS loaded. Auto-save is ON.','good');}
  else if(same){nasReady=true;markSynced(store);nasStatus('Connected to NAS. Auto-save is ON.','good');}
  else {nasStatus(`NAS connected, but device and NAS differ (${dataCount(store)} device records / ${dataCount(remote)} NAS records). Export backup, then click “Merge this device to NAS”. Auto-save paused to prevent overwrites.`,'warning');}
